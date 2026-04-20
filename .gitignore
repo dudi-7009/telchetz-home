@@ -1,0 +1,8 @@
+_design_pkg/
+_*.b64
+_*_part_*
+.DS_Store
+Thumbs.db
+.vscode/
+node_modules/
+*.log

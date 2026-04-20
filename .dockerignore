@@ -1,0 +1,10 @@
+_design_pkg/
+.git/
+.gitignore
+.vscode/
+.claude/
+*.md
+node_modules/
+npm-debug.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,1919 @@
+<!doctype html>
+<html dir="rtl" lang="he-IL">
+<head>
+<meta charset="utf-8"/>
+<title>תוכנה לניהול מוסד חינוכי · מערכת תל-חץ לישיבות, ת״ת, סמינרים ומרכזי סיוע</title>
+<meta name="description" content="תל-חץ · תוכנה לניהול מוסד חינוכי במגזר החרדי. 13 מודולים: תלמידים, נוכחות, ציונים, חיוב הורים, צוות, דוחות; כולל AI לדיקטציה וזיהוי מבחנים. משמשת 19 מוסדות ב־6 רשתות."/>
+<meta name="keywords" content="תוכנה לניהול מוסד חינוכי, מערכת ניהול ישיבה, תוכנה לת״ת, תוכנה לסמינר, תוכנה לחיידר, מערכת נוכחות תלמידים, תוכנת ציונים, חיוב הורים, ניהול חינוכי חרדי, תוכנה למרכז סיוע, ניהול תלמוד תורה, מערכת ניהול בית ספר"/>
+<meta name="author" content="תל-חץ"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="theme-color" content="#0F2847"/>
+<meta name="geo.region" content="IL-JM"/>
+<meta name="geo.placename" content="ביתר עילית"/>
+<link rel="canonical" href="https://telchetz.com/"/>
+<link rel="alternate" hreflang="he-IL" href="https://telchetz.com/"/>
+<link rel="alternate" hreflang="x-default" href="https://telchetz.com/"/>
+<link rel="icon" type="image/svg+xml" href="/assets/mark.svg"/>
+<link rel="apple-touch-icon" href="/assets/logo-full.png"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="תל-חץ"/>
+<meta property="og:title" content="תוכנה לניהול מוסד חינוכי · תל-חץ"/>
+<meta property="og:description" content="מערכת הניהול המובילה למוסדות חינוך ומרכזי סיוע במגזר החרדי. 13 מודולים, AI מובנה, שליטה מלאה של המנהל. 19 מוסדות, 6 רשתות."/>
+<meta property="og:url" content="https://telchetz.com/"/>
+<meta property="og:image" content="https://telchetz.com/assets/logo-full.png"/>
+<meta property="og:image:alt" content="תל-חץ · ניהול חכם, התקדמות מהירה"/>
+<meta property="og:locale" content="he_IL"/>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="תוכנה לניהול מוסד חינוכי · תל-חץ"/>
+<meta name="twitter:description" content="13 מודולים, AI מובנה, שליטה מלאה של המנהל. עברית מלאה, מותאם למגזר החרדי."/>
+<meta name="twitter:image" content="https://telchetz.com/assets/logo-full.png"/>
+
+<link rel="stylesheet" href="/assets/telchetz.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Miriam+Libre:wght@400;700&family=Assistant:wght@200;300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest" defer></script>
+
+<!-- Structured data: Organization + LocalBusiness + SoftwareApplication + WebSite + FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": "https://telchetz.com/#org",
+      "name": "תל-חץ",
+      "alternateName": "Tel-Chetz",
+      "url": "https://telchetz.com/",
+      "logo": "https://telchetz.com/assets/logo-full.png",
+      "image": "https://telchetz.com/assets/logo-full.png",
+      "description": "תוכנה לניהול מוסד חינוכי במגזר החרדי — ישיבות, תלמודי תורה, סמינרים, בתי ספר ומרכזי סיוע.",
+      "telephone": "+972-2-375-0599",
+      "email": "office@telchetz.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "המגיד ממעזריטש 40",
+        "addressLocality": "ביתר עילית",
+        "addressCountry": "IL"
+      },
+      "areaServed": { "@type": "Country", "name": "IL" },
+      "contactPoint": [
+        { "@type": "ContactPoint", "contactType": "sales", "telephone": "+972-2-375-0599", "email": "office@telchetz.com", "availableLanguage": ["Hebrew"] },
+        { "@type": "ContactPoint", "contactType": "customer support", "email": "support@telchetz.com", "availableLanguage": ["Hebrew"] }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://telchetz.com/#website",
+      "url": "https://telchetz.com/",
+      "name": "תל-חץ",
+      "inLanguage": "he-IL",
+      "publisher": { "@id": "https://telchetz.com/#org" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://telchetz.com/#software",
+      "name": "תל-חץ",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "School Management Software",
+      "operatingSystem": "Web · Cloud",
+      "inLanguage": "he-IL",
+      "url": "https://telchetz.com/",
+      "description": "תוכנה לניהול מוסד חינוכי: 13 מודולים לניהול תלמידים, צוות, כיתות, נוכחות, ציונים, פגישות, משימות, תקשורת, קבצים, הרשאות, חיוב, תהליכים, וניהול מערכת. כולל שכבת בינה מלאכותית לדיקטציה וזיהוי מבחנים.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "ILS",
+        "price": "0",
+        "priceValidUntil": "2027-12-31",
+        "availability": "https://schema.org/InStock",
+        "description": "הצעת מחיר מותאמת לגודל המוסד — צור קשר"
+      },
+      "featureList": [
+        "ניהול תלמידים ומשפחות",
+        "ניהול צוות ושיבוצים",
+        "כיתות ומערכת שעות",
+        "נוכחות יומית עם התראות",
+        "ציונים ומבחנים (OCR)",
+        "פגישות הורים וחדרים",
+        "משימות עם SLA",
+        "תקשורת ושיחות",
+        "קבצים ותיקיות",
+        "הרשאות רב-צירי",
+        "חיוב הורים ותשלומים",
+        "תהליכים ואישורים רב-שלבים",
+        "ניהול מערכת ו-Audit log",
+        "דיקטציה וניסוח אוטומטי ב-AI"
+      ],
+      "publisher": { "@id": "https://telchetz.com/#org" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://telchetz.com/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "כמה זמן לוקחת הטמעה במוסד חדש?", "acceptedAnswer": { "@type": "Answer", "text": "בדרך כלל בין שבועיים לחודש, תלוי בגודל המוסד ובכמות הנתונים להעברה. הצוות שלנו מלווה אתכם לאורך כל התהליך — מייבוא המסד הקיים ועד הדרכה מלאה." } },
+        { "@type": "Question", "name": "המערכת מתאימה גם למרכזי סיוע?", "acceptedAnswer": { "@type": "Answer", "text": "כן. תל-חץ משמשת מוסדות חינוך פורמליים, ישיבות, תלמודי תורה, סמינרים, מרכזי סיוע ומסגרות טיפוליות במגזר החרדי." } },
+        { "@type": "Question", "name": "מה לגבי אבטחת מידע ופרטיות המשפחות?", "acceptedAnswer": { "@type": "Answer", "text": "אבטחה ברמה בנקאית: גישה רב-גורמית, הצפנת מידע במנוחה ובתנועה, הרשאות מפורטות ברמת השדה, גיבויים אוטומטיים, יומן פעולות. התשתית ממוקמת בשרתים בישראל." } },
+        { "@type": "Question", "name": "אפשר לייבא נתונים קיימים מ-Excel או ממערכת אחרת?", "acceptedAnswer": { "@type": "Answer", "text": "כן. תומכים בייבוא מ-Excel, CSV, וממערכות נפוצות. צוות הקליטה עובר איתכם על המידע הקיים, מנרמל ומעלה ללא אובדן נתונים." } },
+        { "@type": "Question", "name": "האם הממשק באמת בעברית מלאה?", "acceptedAnswer": { "@type": "Answer", "text": "כולה. תל-חץ נבנתה כמערכת RTL-first. לוח עברי, חודשים, ימי השבוע, מונחים פדגוגיים — הכל מותאם למגזר החרדי." } },
+        { "@type": "Question", "name": "מה לגבי תמיכה טכנית שוטפת?", "acceptedAnswer": { "@type": "Answer", "text": "תמיכה בעברית, בטלפון ובמייל, א׳-ה׳ 08:30-18:00. ללקוחות Premium — קו ישיר עם מנהל חשבון ייעודי וזמן תגובה מובטח." } }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  /* === Typography system · ONE sans (Rubik) + italic gloss (Fraunces) + data mono ===
+     Modular scale: 1.333 (perfect fourth). Base 16px.
+     xs .75rem · sm .875rem · base 1rem · lg 1.333rem · xl 1.777rem
+     display: 3.16rem / 4.21rem / 5.61rem / 7.48rem / 9.97rem (extreme scale jumps for hero) */
+  :root {
+    --font-sans: "Assistant", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-display: "Suez One", "Miriam Libre", system-ui, sans-serif;
+    --font-title: "Miriam Libre", "Assistant", system-ui, sans-serif;
+    --font-serif: "Fraunces", Georgia, serif;
+    --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    --navy: #0A1628;
+    --navy-classic: #0F2847;
+    --navy-deep: #050E1B;
+    --gold: #D4A014;
+    --gold-bright: #F5C23C;
+    --gold-muted: #EBD79A;
+    --bg: #F5F1E8;
+    --bg-card: #FFFFFF;
+    --cream: #EDE6D3;
+    --leading-body: 1.55;
+    --leading-tight: 0.88;
+  }
+  html, body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: var(--leading-body);
+    font-weight: 400;
+    font-feature-settings: "kern", "ss01", "cv11";
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: var(--leading-tight);
+  }
+  .hero-title, .mega-title, h2.section-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.035em;
+  }
+  .tabular, .stat-num, .mini-stat-num, .big-num, .hero-numbers .stat-num { font-variant-numeric: tabular-nums; }
+  .editorial-italic { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-variation-settings: "opsz" 96, "SOFT" 80; letter-spacing: -0.015em; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--fg); overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: 0; background: none; }
+
+  /* ===== Grain + paper texture for the whole page ===== */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.11  0 0 0 0 0.10  0 0 0 0 0.09  0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  /* ===== NAV ===== */
+  .topnav {
+    position: fixed; inset: 0 0 auto 0;
+    z-index: 60;
+    display: flex; align-items: center; gap: 28px;
+    padding: 18px 40px;
+    background: rgba(250, 250, 247, 0.82);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid transparent;
+    transition: all 220ms var(--ease-out);
+  }
+  .topnav.scrolled { border-bottom-color: rgba(28, 43, 58, 0.08); background: rgba(250, 250, 247, 0.95); padding: 12px 40px; }
+  .topnav .brand { display: flex; align-items: center; gap: 12px; }
+  .topnav .brand-logo { height: 44px; width: auto; display: block; transition: height 220ms var(--ease-out); }
+  .topnav.scrolled .brand-logo { height: 36px; }
+  .topnav .brand-text {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--navy-classic);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .topnav nav { display: flex; gap: 26px; margin-inline-start: auto; margin-inline-end: 16px; }
+  .topnav nav a { font-size: 13px; font-weight: 500; color: var(--fg-2); transition: color 200ms; }
+  .topnav nav a:hover { color: var(--navy-classic); }
+  .topnav .sign-in { font-size: 13px; color: var(--navy-classic); font-weight: 500; padding: 8px 14px; border-radius: 8px; transition: background 200ms; }
+  .topnav .sign-in:hover { background: rgba(28, 43, 58, 0.06); }
+  .topnav .cta { font-size: 13px; font-weight: 600; color: #fff; background: var(--navy-classic); padding: 10px 18px; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px; transition: transform 200ms, box-shadow 200ms; box-shadow: 0 2px 10px rgba(28,43,58,0.18); }
+  .topnav .cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(28,43,58,0.25); }
+  .topnav .cta .lucide { width: 14px; height: 14px; transform: scaleX(-1); }
+
+  /* ===== HERO · Post-Modern 2026 ===== */
+  .hero { position: relative; padding: 180px 40px 120px; max-width: 1600px; margin: 0 auto; }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 85% 20%, rgba(212,160,20,0.18) 0%, transparent 45%),
+      radial-gradient(circle at 15% 80%, rgba(10,22,40,0.08) 0%, transparent 55%),
+      radial-gradient(circle at 60% 50%, rgba(245,194,60,0.09) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: 0; align-items: start; }
+  .hero-caps {
+    font-family: var(--font-mono);
+    font-size: 11px; font-weight: 500; letter-spacing: 0.22em; color: var(--gold);
+    margin-bottom: 40px;
+    display: flex; align-items: center; gap: 14px;
+    text-transform: uppercase;
+  }
+  .hero-caps::before { content: ''; width: 48px; height: 1px; background: var(--gold); }
+  .hero-caps::after { content: '◎'; color: var(--gold); font-size: 9px; }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(80px, 13vw, 232px);
+    font-weight: 400;
+    color: var(--navy-classic);
+    line-height: 0.85;
+    letter-spacing: -0.045em;
+    margin: 0;
+    position: relative;
+  }
+  .hero-title .block { display: block; position: relative; }
+  .hero-title .block-1 { transform: translateX(-1%); }
+  .hero-title .block-2 { padding-inline-start: 10%; }
+  .hero-title .block-3 { transform: translateX(2%); padding-inline-start: 4%; }
+  .hero-title .em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--gold);
+    position: relative;
+    display: inline-block;
+    letter-spacing: -0.03em;
+    transform: translateY(-0.04em);
+    font-variation-settings: "opsz" 144, "SOFT" 80;
+  }
+  .hero-title .em::after { display: none; }
+  .hero-title .knows {
+    font-family: var(--font-mono);
+    font-size: 0.1em;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    position: absolute;
+    top: -0.5em;
+    inset-inline-start: 12%;
+    transform: rotate(-1.5deg);
+    background: var(--navy-classic);
+    color: var(--gold-bright);
+    padding: 0.5em 0.9em;
+    border-radius: 4px;
+    text-transform: none;
+    white-space: nowrap;
+    box-shadow: 0 8px 24px rgba(10,22,40,0.2);
+  }
+
+  .hero-below {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 0.4fr 1fr 0.8fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .hero-lede {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.45;
+    color: var(--navy);
+    font-weight: 400;
+    text-wrap: pretty;
+    grid-column: 2;
+  }
+  .hero-lede strong { color: var(--navy-classic); font-weight: 700; background: linear-gradient(180deg, transparent 60%, rgba(212,160,20,0.35) 60%); }
+  .hero-lede .sarcasm {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold);
+  }
+  .hero-lede .q-inline {
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--navy-classic);
+    padding: 2px 10px;
+    margin: 0 4px;
+    background: rgba(212,160,20,0.14);
+    border-inline-start: 2px solid var(--gold);
+    font-variation-settings: "opsz" 72;
+  }
+  .hero-lede .q-inline em { font-style: italic; }
+  .hero-ctas { margin: 64px 0 0; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+
+  .hero-aside-num {
+    grid-column: 1;
+    position: relative;
+    padding-inline-end: 24px;
+    border-inline-end: 1px solid rgba(10,22,40,0.15);
+  }
+  .hero-aside-num::before {
+    content: '';
+    position: absolute;
+    top: 0; inset-inline-end: -1px;
+    width: 2px; height: 44px;
+    background: var(--gold);
+  }
+  .big-num {
+    font-family: var(--font-display);
+    font-size: 120px;
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -0.06em;
+    color: var(--navy-classic);
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 12px;
+  }
+  .big-num-lbl {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--navy);
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .hero-stats-mini {
+    grid-column: 3;
+    display: flex; flex-direction: column; gap: 18px;
+    padding: 24px 28px;
+    background: var(--navy-classic);
+    color: #fff;
+    border-radius: 0;
+    position: relative;
+    transform: rotate(-1deg) translateY(-10px);
+    box-shadow: 12px 12px 0 var(--gold);
+  }
+  .hero-stats-mini::before {
+    content: 'IN PRODUCTION';
+    position: absolute;
+    top: -12px; inset-inline-end: 16px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    background: var(--gold-bright);
+    color: var(--navy-deep);
+    padding: 3px 8px;
+    font-weight: 600;
+  }
+  .mini-stat { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 1px dashed rgba(255,255,255,0.15); padding-bottom: 14px; }
+  .mini-stat:last-child { border-bottom: 0; padding-bottom: 0; }
+  .mini-stat-num {
+    font-family: var(--font-display);
+    font-size: 38px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+    color: var(--gold-bright);
+    display: flex; align-items: baseline; gap: 1px;
+  }
+  .mini-stat-num .u { font-size: 18px; color: #fff; font-weight: 500; margin-inline-start: 2px; }
+  .mini-stat-lbl {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+  }
+
+  .hero-signature {
+    margin-top: 120px;
+    font-family: var(--font-display);
+    font-size: clamp(40px, 7vw, 110px);
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(10,22,40,0.18);
+    letter-spacing: -0.05em;
+    line-height: 0.95;
+    user-select: none;
+    pointer-events: none;
+    display: flex; flex-direction: column; gap: 0;
+    overflow: hidden;
+    mask-image: linear-gradient(180deg, #000 20%, transparent 95%);
+  }
+  .hero-signature .sig-line:nth-child(2) { transform: translateX(8%); }
+  .hero-signature em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--gold);
+    -webkit-text-stroke: 0;
+  }
+  .btn-primary-xl {
+    font-size: 14px; font-weight: 600; color: #fff;
+    background: var(--navy-classic);
+    padding: 15px 26px; border-radius: 10px;
+    display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 4px 14px rgba(28,43,58,0.22), inset 0 1px 0 rgba(255,255,255,0.1);
+    transition: transform 200ms var(--ease-out), box-shadow 200ms;
+    position: relative; overflow: hidden;
+  }
+  .btn-primary-xl::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(110deg, transparent 30%, rgba(196,146,42,0.25) 50%, transparent 70%);
+    transform: translateX(100%); transition: transform 700ms var(--ease-out);
+  }
+  .btn-primary-xl:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(28,43,58,0.3); }
+  .btn-primary-xl:hover::after { transform: translateX(-100%); }
+  .btn-primary-xl .lucide { width: 16px; height: 16px; transform: scaleX(-1); }
+  .btn-ghost-xl {
+    font-size: 14px; font-weight: 500; color: var(--navy-classic);
+    padding: 15px 22px; border-radius: 10px;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: background 200ms;
+  }
+  .btn-ghost-xl:hover { background: rgba(28,43,58,0.06); }
+  .btn-ghost-xl .lucide { width: 14px; height: 14px; }
+
+  /* Hero right column — numbers */
+  .hero-numbers {
+    position: relative;
+    padding: 32px 0;
+    border-top: 1px solid rgba(28, 43, 58, 0.14);
+  }
+  .hero-numbers::before {
+    content: ''; position: absolute; top: -1px; inset-inline-start: 0;
+    width: 120px; height: 2px;
+    background: var(--gold);
+    transform-origin: right;
+  }
+  .hero-numbers-caps {
+    font-size: 10px; font-weight: 500; letter-spacing: 0.28em; color: var(--fg-2); margin-bottom: 26px;
+  }
+  .hero-numbers-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 40px;
+  }
+  .stat { border-inline-end: 1px solid rgba(28, 43, 58, 0.08); padding-inline-end: 24px; }
+  .stat:nth-child(even) { border-inline-end: none; padding-inline-end: 0; }
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 56px;
+    font-weight: 500;
+    color: var(--navy-classic);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    font-variant-numeric: tabular-nums;
+    display: flex; align-items: baseline; gap: 2px;
+  }
+  .stat-num .u { font-size: 20px; color: var(--gold); font-weight: 400; margin-inline-start: 4px; }
+  .stat-lbl {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.18em; color: var(--fg-2);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dotted rgba(28,43,58,0.18);
+  }
+
+  /* Hero credibility strip */
+  .credibility {
+    max-width: 1400px; margin: 0 auto;
+    padding: 28px 40px 60px;
+    display: flex; align-items: center; gap: 40px;
+    border-top: 1px solid rgba(28, 43, 58, 0.08);
+  }
+  .credibility-label { font-size: 10px; letter-spacing: 0.28em; color: var(--fg-2); font-weight: 500; flex-shrink: 0; max-width: 140px; line-height: 1.5; }
+  .credibility-logos { display: flex; gap: 48px; flex-wrap: wrap; align-items: center; flex: 1; }
+  .inst-logo { display: flex; align-items: center; gap: 10px; opacity: 0.55; transition: opacity 300ms; filter: grayscale(1); }
+  .inst-logo:hover { opacity: 1; filter: grayscale(0); }
+  .inst-logo-mark { width: 22px; height: 22px; border-radius: 50%; background: var(--navy-classic); color: #fff; font-family: var(--font-serif); font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .inst-logo-name { font-family: var(--font-serif); font-size: 16px; font-weight: 500; color: var(--navy-classic); letter-spacing: -0.01em; }
+
+  /* ===== MARQUEE TICKER ===== */
+  .ticker {
+    position: relative;
+    background: var(--navy-deep);
+    color: #fff;
+    padding: 22px 0;
+    overflow: hidden;
+    border-block: 1px solid rgba(196, 146, 42, 0.25);
+  }
+  .ticker::before, .ticker::after {
+    content: ''; position: absolute; inset-block: 0; width: 80px; z-index: 2;
+  }
+  .ticker::before { inset-inline-start: 0; background: linear-gradient(to right, var(--navy-deep), transparent); }
+  .ticker::after { inset-inline-end: 0; background: linear-gradient(to left, var(--navy-deep), transparent); }
+  .ticker-track {
+    display: flex; gap: 56px; align-items: center;
+    animation: ticker-scroll 60s linear infinite;
+    width: max-content;
+  }
+  .ticker-item {
+    display: flex; align-items: center; gap: 14px;
+    font-family: var(--font-serif);
+    font-size: 22px;
+    color: rgba(238,242,247,0.9);
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .ticker-item .code {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    font-weight: 500;
+    padding: 3px 8px;
+    border: 1px solid rgba(196,146,42,0.35);
+    border-radius: 3px;
+  }
+  .ticker-item .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); opacity: 0.5; }
+  @keyframes ticker-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(50%); }
+  }
+
+  /* ===== SECTION SCAFFOLD ===== */
+  .section { max-width: 1400px; margin: 0 auto; padding: 120px 40px; }
+  .section-head { margin-bottom: 64px; max-width: 820px; }
+  .section-caps { font-size: 11px; font-weight: 500; letter-spacing: 0.28em; color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+  .section-caps::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(36px, 5.5vw, 68px);
+    font-weight: 500;
+    color: var(--navy-classic);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .section-title .em { font-style: italic; color: var(--gold); font-weight: 400; }
+  .section-sub { margin-top: 22px; font-size: 17px; color: var(--fg-2); line-height: 1.55; max-width: 640px; text-wrap: pretty; }
+
+  /* ===== SYSTEM / 13 MODULES ===== */
+  .system-wrap { background: linear-gradient(180deg, var(--bg) 0%, #f5f1e8 100%); position: relative; }
+  .system-wrap::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(28,43,58,0.08) 1px, transparent 0);
+    background-size: 24px 24px;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  .modules-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 80px;
+    align-items: start;
+    position: relative;
+  }
+  .modules-sticky { position: sticky; top: 120px; }
+  .module-count {
+    font-family: var(--font-serif);
+    font-size: 220px;
+    font-weight: 500;
+    line-height: 0.85;
+    color: var(--navy-classic);
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+    position: relative;
+    display: inline-block;
+  }
+  .module-count::after {
+    content: '';
+    position: absolute;
+    inset-block: 0; inset-inline-end: -16px;
+    width: 3px;
+    background: var(--gold);
+  }
+  .module-count-label {
+    font-family: var(--font-sans);
+    font-size: 11px; letter-spacing: 0.28em; color: var(--fg-2);
+    font-weight: 500; margin-top: 24px;
+    max-width: 220px; line-height: 1.7;
+  }
+  .modules-list {
+    display: flex; flex-direction: column;
+    border-top: 1px solid rgba(28,43,58,0.12);
+  }
+  .module-row {
+    display: grid;
+    grid-template-columns: 56px 140px 1fr auto;
+    align-items: center;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(28,43,58,0.1);
+    cursor: pointer;
+    transition: padding 300ms var(--ease-out);
+    position: relative;
+  }
+  .module-row::before {
+    content: ''; position: absolute;
+    inset-inline-start: -40px; inset-block: 0; width: 2px;
+    background: var(--gold);
+    transform: scaleY(0); transform-origin: top;
+    transition: transform 300ms var(--ease-out);
+  }
+  .module-row:hover { padding-inline-start: 12px; }
+  .module-row:hover::before { transform: scaleY(1); }
+  .module-idx {
+    font-family: var(--font-mono);
+    font-size: 11px; letter-spacing: 0.15em; color: var(--fg-3);
+    font-variant-numeric: tabular-nums;
+  }
+  .module-code {
+    font-family: var(--font-mono);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.24em; color: var(--gold);
+    padding: 4px 10px;
+    border: 1px solid rgba(196,146,42,0.35);
+    border-radius: 3px;
+    justify-self: start;
+    transition: background 200ms;
+  }
+  .module-row:hover .module-code { background: rgba(196,146,42,0.1); }
+  .module-name {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--navy-classic);
+    letter-spacing: -0.015em;
+    display: flex; align-items: baseline; gap: 14px;
+  }
+  .module-name small { font-family: var(--font-sans); font-size: 13px; color: var(--fg-2); font-weight: 400; letter-spacing: 0; }
+  .module-arrow {
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--fg-3);
+    transition: color 300ms, transform 300ms var(--ease-out);
+  }
+  .module-row:hover .module-arrow { color: var(--gold); transform: translateX(-6px); }
+  .module-arrow .lucide { width: 18px; height: 18px; transform: scaleX(-1); }
+
+  /* ===== DASHBOARD PEEK ===== */
+  .peek-wrap { background: var(--navy-deep); color: var(--fg-on-dark); padding: 120px 40px; position: relative; overflow: hidden; }
+  .peek-wrap::before {
+    content: ''; position: absolute;
+    top: -200px; inset-inline-end: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(196,146,42,0.14), transparent 70%);
+    pointer-events: none;
+  }
+  .peek-wrap::after {
+    content: ''; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(196,146,42,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(196,146,42,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse at top, #000 30%, transparent 80%);
+  }
+  .peek-inner { max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; }
+  .peek-head { max-width: 780px; margin-bottom: 56px; }
+  .peek-head .section-title { color: #fff; }
+  .peek-head .section-title .em { color: var(--gold); }
+  .peek-head .section-sub { color: rgba(238,242,247,0.75); }
+  .peek-head .section-caps { color: var(--gold); }
+
+  .browser {
+    background: var(--bg);
+    border-radius: 14px 14px 4px 4px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px -20px rgba(0,0,0,0.5), 0 0 0 1px rgba(196,146,42,0.2);
+    transform: perspective(2400px) rotateX(2deg);
+    transform-origin: center bottom;
+  }
+  .browser-chrome {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 16px;
+    background: #e7e5e0;
+    border-bottom: 1px solid rgba(28,43,58,0.1);
+    direction: ltr;
+  }
+  .browser-dots { display: flex; gap: 6px; }
+  .browser-dot { width: 10px; height: 10px; border-radius: 50%; background: #cbd5e1; }
+  .browser-url {
+    flex: 1; text-align: center;
+    font-family: var(--font-mono); font-size: 11px; color: var(--fg-2);
+    background: #fff; padding: 4px 12px; border-radius: 6px;
+    max-width: 320px; margin: 0 auto;
+    direction: ltr;
+  }
+  .browser-url .lock { color: var(--success); margin-inline-end: 6px; }
+
+  .peek-app {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-areas: "main side";
+    min-height: 480px;
+    direction: ltr;
+  }
+  .peek-side { grid-area: side; direction: rtl; }
+  .peek-main { grid-area: main; padding: 28px 36px; direction: rtl; }
+  .peek-side { background: var(--navy-deep); color: var(--fg-on-dark); padding: 20px 12px; display: flex; flex-direction: column; gap: 2px; }
+  .peek-side-head { display: flex; align-items: center; gap: 8px; padding: 4px 8px 16px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px; }
+  .peek-side-head img { width: 28px; height: 28px; border-radius: 7px; }
+  .peek-side-head .n { font-size: 12px; font-weight: 600; color: #fff; }
+  .peek-side-head .s { font-size: 9px; color: rgba(238,242,247,0.5); }
+  .peek-nav-group { font-size: 9px; letter-spacing: 0.2em; color: rgba(238,242,247,0.4); font-weight: 600; padding: 8px 8px 3px; }
+  .peek-nav-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 8px; border-radius: 5px;
+    font-size: 11px; color: rgba(238,242,247,0.7);
+    position: relative;
+  }
+  .peek-nav-item .lucide { width: 12px; height: 12px; }
+  .peek-nav-item.active {
+    background: rgba(255,255,255,0.06); color: #fff;
+  }
+  .peek-nav-item.active::before {
+    content: ''; position: absolute; inset-block: 4px; inset-inline-end: 0; width: 2px; background: var(--gold); border-radius: 0 2px 2px 0;
+  }
+  .peek-hero { margin-bottom: 20px; }
+  .peek-caps { font-size: 9px; letter-spacing: 0.24em; color: var(--gold); font-weight: 500; margin-bottom: 6px; }
+  .peek-h1 { font-family: var(--font-serif); font-size: 36px; font-weight: 500; color: var(--navy-classic); letter-spacing: -0.02em; line-height: 1; }
+  .peek-stats { display: flex; gap: 18px; margin-top: 10px; }
+  .peek-stat-n { font-family: var(--font-serif); font-size: 16px; font-weight: 700; color: var(--navy-classic); font-variant-numeric: tabular-nums; }
+  .peek-stat-l { font-size: 10px; color: var(--fg-3); }
+  .peek-rule { height: 2px; background: linear-gradient(to left, var(--gold), transparent); border-radius: 2px; margin: 14px 0 20px; }
+  .peek-qgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+  .peek-qs { background: #fff; padding: 10px 12px; }
+  .peek-qs-l { font-size: 8px; letter-spacing: 0.1em; color: var(--fg-3); font-weight: 500; text-transform: uppercase; }
+  .peek-qs-v { font-family: var(--font-serif); font-size: 20px; font-weight: 700; color: var(--navy-classic); line-height: 1.1; margin-top: 2px; font-variant-numeric: tabular-nums; }
+  .peek-qs-d { font-size: 9px; font-family: var(--font-mono); margin-top: 1px; }
+  .peek-cards { display: grid; grid-template-columns: 1.4fr 1fr; gap: 10px; }
+  .peek-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 12px; position: relative; overflow: hidden; }
+  .peek-card.action::before { content: ''; position: absolute; top: 0; inset-inline: 0; height: 2px; background: var(--gold); }
+  .peek-card-head { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+  .peek-card-ico { width: 20px; height: 20px; border-radius: 5px; background: #fef3c7; color: var(--warning); display: flex; align-items: center; justify-content: center; }
+  .peek-card-ico .lucide { width: 10px; height: 10px; }
+  .peek-card-title { font-size: 11px; font-weight: 600; color: var(--navy-classic); }
+  .peek-card-count { margin-inline-start: auto; font-size: 9px; font-weight: 700; color: var(--warning); background: #fef3c7; padding: 1px 6px; border-radius: 9999px; }
+  .peek-event { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; margin-top: 6px; position: relative; overflow: hidden; }
+  .peek-event::before { content: ''; position: absolute; top: 0; inset-inline: 0; height: 2px; background: var(--gold); }
+  .peek-event-t { font-size: 10px; font-weight: 600; color: var(--fg); }
+  .peek-event-s { font-size: 9px; color: var(--fg-2); margin-top: 1px; }
+  .peek-item { display: flex; align-items: center; gap: 6px; padding: 4px 0; }
+  .peek-item-dot { width: 5px; height: 5px; border-radius: 50%; }
+  .peek-item-t { font-size: 10px; font-weight: 500; color: var(--fg); }
+  .peek-item-s { font-size: 9px; color: var(--fg-2); }
+
+  /* animated cursor hint */
+  .peek-cursor {
+    position: absolute;
+    inset-inline-end: 28%;
+    top: 38%;
+    z-index: 3;
+    width: 18px; height: 18px;
+    animation: cursor-nudge 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes cursor-nudge {
+    0%, 100% { transform: translate(0, 0); opacity: 0.9; }
+    50% { transform: translate(-10px, 8px); opacity: 1; }
+  }
+
+  /* ===== FEATURES (3 pillars) ===== */
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(28,43,58,0.1); border: 1px solid rgba(28,43,58,0.1); border-radius: 16px; overflow: hidden; margin-top: 48px; }
+  .pillar { background: #fff; padding: 44px 36px; position: relative; min-height: 340px; display: flex; flex-direction: column; transition: background 300ms; }
+  .pillar:hover { background: #fffdf7; }
+  .pillar::before { content: ''; position: absolute; top: 0; inset-inline: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: right; transition: transform 400ms var(--ease-out); }
+  .pillar:hover::before { transform: scaleX(1); }
+  .pillar-num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.24em; color: var(--fg-3); font-weight: 500; margin-bottom: 28px; }
+  .pillar-title { font-family: var(--font-serif); font-size: 32px; font-weight: 500; color: var(--navy-classic); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 16px; }
+  .pillar-title .em { color: var(--gold); font-style: italic; font-weight: 400; }
+  .pillar-body { font-size: 14.5px; color: var(--fg-2); line-height: 1.6; flex: 1; text-wrap: pretty; }
+  .pillar-foot { margin-top: 28px; font-size: 12px; color: var(--navy-classic); font-weight: 500; display: flex; align-items: center; gap: 6px; border-top: 1px solid rgba(28,43,58,0.08); padding-top: 16px; }
+  .pillar-foot .lucide { width: 12px; height: 12px; transform: scaleX(-1); color: var(--gold); }
+
+  /* ===== PERSONAS ===== */
+  .personas-wrap { background: #fff; border-top: 1px solid rgba(28,43,58,0.08); }
+  .personas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .persona {
+    padding: 44px 32px 56px;
+    border-inline-start: 1px solid rgba(28,43,58,0.08);
+    position: relative;
+    transition: background 300ms;
+    cursor: default;
+  }
+  .persona:first-child { border-inline-start: none; }
+  .persona:hover { background: #fffdf7; }
+  .persona-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: var(--navy-deep);
+    color: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 22px;
+    position: relative;
+  }
+  .persona-icon .lucide { width: 20px; height: 20px; }
+  .persona-icon::after {
+    content: ''; position: absolute; bottom: -4px; inset-inline-end: -4px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid #fff;
+  }
+  .persona-role {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; color: var(--gold); font-weight: 500; margin-bottom: 10px;
+  }
+  .persona-title {
+    font-family: var(--font-serif); font-size: 22px; font-weight: 500; color: var(--navy-classic); letter-spacing: -0.015em; line-height: 1.15; margin-bottom: 14px;
+  }
+  .persona-body { font-size: 13.5px; color: var(--fg-2); line-height: 1.6; margin-bottom: 22px; }
+  .persona-uses { display: flex; flex-direction: column; gap: 6px; }
+  .persona-use { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--fg); }
+  .persona-use .c { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.18em; color: var(--gold); font-weight: 600; min-width: 56px; }
+
+  /* ===== EDITORIAL QUOTE ===== */
+  .quote-wrap {
+    background: var(--bg-amber-tint);
+    border-block: 1px solid rgba(196,146,42,0.2);
+    padding: 120px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .quote-wrap::before {
+    content: '“';
+    position: absolute;
+    font-family: var(--font-serif);
+    font-size: 600px;
+    color: var(--gold);
+    opacity: 0.08;
+    top: -100px;
+    inset-inline-start: 40px;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .quote-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+  .quote-caps { font-size: 11px; font-weight: 500; letter-spacing: 0.28em; color: var(--gold); margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
+  .quote-caps::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+  .quote-body {
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 3.8vw, 52px);
+    font-weight: 400;
+    color: var(--navy-classic);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .quote-body .em { color: var(--gold); font-style: italic; }
+  .quote-attr {
+    margin-top: 40px;
+    display: flex; align-items: center; gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(28,43,58,0.12);
+  }
+  .quote-avatar {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    color: #fff; font-family: var(--font-serif); font-weight: 700; font-size: 20px;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid var(--gold);
+  }
+  .quote-attr-name { font-size: 15px; font-weight: 600; color: var(--navy-classic); }
+  .quote-attr-role { font-size: 13px; color: var(--fg-2); }
+
+  /* ===== FAQ ===== */
+  .faq-wrap { background: var(--bg); padding: 120px 40px; }
+  .faq-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 340px 1fr; gap: 80px; align-items: start; }
+  .faq-list { border-top: 1px solid rgba(28,43,58,0.14); }
+  .faq-item { border-bottom: 1px solid rgba(28,43,58,0.1); }
+  .faq-q {
+    width: 100%; text-align: start;
+    display: flex; align-items: center; gap: 20px;
+    padding: 24px 0;
+    font-family: var(--font-serif); font-size: 22px; font-weight: 500;
+    color: var(--navy-classic);
+    letter-spacing: -0.015em;
+    transition: color 200ms;
+  }
+  .faq-q:hover { color: var(--gold); }
+  .faq-q-idx { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); font-weight: 500; letter-spacing: 0.1em; flex-shrink: 0; }
+  .faq-q-mark { margin-inline-start: auto; width: 24px; height: 24px; border: 1px solid rgba(28,43,58,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 300ms; }
+  .faq-item.open .faq-q-mark { background: var(--navy-classic); border-color: var(--navy-classic); color: #fff; transform: rotate(45deg); }
+  .faq-q-mark .lucide { width: 12px; height: 12px; }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 300ms var(--ease-out);
+  }
+  .faq-item.open .faq-a { max-height: 300px; }
+  .faq-a-inner {
+    padding: 0 0 28px 44px;
+    font-size: 15px; color: var(--fg-2); line-height: 1.65;
+    max-width: 640px;
+    text-wrap: pretty;
+  }
+
+  /* ===== CTA ===== */
+  .cta-wrap {
+    background: var(--navy-deep);
+    color: #fff;
+    padding: 140px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-wrap::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(196,146,42,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(196,146,42,0.05) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+  .cta-wrap::after {
+    content: ''; position: absolute;
+    top: 50%; inset-inline-start: 50%;
+    width: 900px; height: 900px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(196,146,42,0.12), transparent 60%);
+    pointer-events: none;
+  }
+  .cta-inner { max-width: 1100px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
+  .cta-caps { font-size: 11px; font-weight: 500; letter-spacing: 0.32em; color: var(--gold); margin-bottom: 28px; }
+  .cta-title {
+    font-family: var(--font-serif);
+    font-size: clamp(44px, 7vw, 96px);
+    font-weight: 500;
+    color: #fff;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .cta-title .em { color: var(--gold); font-style: italic; font-weight: 400; }
+  .cta-sub {
+    font-size: 18px; color: rgba(238,242,247,0.7);
+    margin-top: 28px; max-width: 620px; margin-inline: auto; line-height: 1.55;
+  }
+  .cta-form {
+    margin-top: 48px;
+    display: flex; gap: 10px;
+    max-width: 520px;
+    margin-inline: auto;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(196,146,42,0.3);
+    border-radius: 14px;
+    padding: 8px;
+    backdrop-filter: blur(10px);
+  }
+  .cta-input {
+    flex: 1;
+    background: transparent; border: 0;
+    padding: 14px 16px;
+    font-family: inherit; font-size: 14.5px;
+    color: #fff;
+  }
+  .cta-input:focus { outline: none; }
+  .cta-input::placeholder { color: rgba(238,242,247,0.45); }
+  .cta-btn {
+    font-size: 13.5px; font-weight: 600;
+    background: var(--gold); color: var(--navy-deep);
+    padding: 0 22px; border-radius: 10px;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: all 200ms;
+  }
+  .cta-btn:hover { background: #d4a433; transform: translateX(2px); }
+
+  /* ===== AI / INTELLIGENCE SECTION ===== */
+  .ai-wrap {
+    background: #0a1426;
+    color: #fff;
+    padding: 140px 40px 160px;
+    position: relative;
+    overflow: hidden;
+    border-block: 1px solid rgba(196,146,42,0.15);
+  }
+  .ai-wrap::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(196,146,42,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(196,146,42,0.045) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 80% 70% at 70% 40%, #000 30%, transparent 85%);
+    pointer-events: none;
+  }
+  .ai-wrap::after {
+    content: '';
+    position: absolute;
+    top: 10%; inset-inline-start: 70%;
+    width: 560px; height: 560px;
+    background: radial-gradient(circle, rgba(196,146,42,0.18), transparent 65%);
+    pointer-events: none;
+    filter: blur(10px);
+  }
+  .ai-inner { max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; }
+  .ai-head { max-width: 820px; margin-bottom: 84px; }
+  .ai-head .section-caps { color: var(--gold); }
+  .ai-head h2 { color: #fff; font-family: var(--font-serif); font-size: clamp(40px, 6vw, 80px); font-weight: 500; line-height: 0.98; letter-spacing: -0.025em; margin: 0; text-wrap: balance; }
+  .ai-head h2 .em { color: var(--gold); font-style: italic; font-weight: 400; }
+  .ai-head p { color: rgba(238,242,247,0.72); font-size: 18px; line-height: 1.55; margin-top: 28px; max-width: 640px; text-wrap: pretty; }
+
+  .ai-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 72px;
+    align-items: center;
+  }
+  .ai-copy .ai-chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px; border-radius: 9999px;
+    background: rgba(196,146,42,0.12); border: 1px solid rgba(196,146,42,0.3);
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; color: var(--gold); font-weight: 600;
+    margin-bottom: 24px;
+  }
+  .ai-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 10px var(--gold); animation: pulse 2.2s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .ai-copy h3 { font-family: var(--font-serif); font-size: clamp(28px, 3.6vw, 44px); font-weight: 500; color: #fff; letter-spacing: -0.02em; line-height: 1.08; margin: 0 0 18px; }
+  .ai-copy h3 .em { color: var(--gold); font-style: italic; font-weight: 400; }
+  .ai-copy p { color: rgba(238,242,247,0.72); font-size: 15.5px; line-height: 1.6; text-wrap: pretty; margin: 0 0 28px; max-width: 520px; }
+  .ai-features { display: flex; flex-direction: column; gap: 2px; }
+  .ai-feat {
+    display: grid; grid-template-columns: 32px 1fr; gap: 16px; align-items: start;
+    padding: 16px 0;
+    border-top: 1px solid rgba(238,242,247,0.1);
+  }
+  .ai-feat:last-child { border-bottom: 1px solid rgba(238,242,247,0.1); }
+  .ai-feat-idx { font-family: var(--font-mono); font-size: 10px; color: var(--gold); letter-spacing: 0.2em; font-weight: 600; padding-top: 3px; }
+  .ai-feat-t { font-size: 14.5px; font-weight: 600; color: #fff; margin-bottom: 3px; }
+  .ai-feat-s { font-size: 13px; color: rgba(238,242,247,0.6); line-height: 1.55; }
+
+  /* Dictation demo card */
+  .dict-card {
+    background: #fff;
+    color: var(--fg);
+    border-radius: 18px;
+    padding: 0;
+    box-shadow: 0 30px 80px -20px rgba(0,0,0,0.5), 0 0 0 1px rgba(196,146,42,0.2);
+    overflow: hidden;
+    position: relative;
+  }
+  .dict-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    background: #fafaf7;
+  }
+  .dict-mic {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--danger); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    box-shadow: 0 0 0 0 rgba(220,38,38,0.5);
+    animation: mic-pulse 2.2s ease-out infinite;
+  }
+  @keyframes mic-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(220,38,38,0.5); }
+    70% { box-shadow: 0 0 0 14px rgba(220,38,38,0); }
+    100% { box-shadow: 0 0 0 0 rgba(220,38,38,0); }
+  }
+  .dict-mic .lucide { width: 16px; height: 16px; }
+  .dict-head-info { flex: 1; }
+  .dict-head-t { font-size: 13px; font-weight: 600; color: var(--navy-classic); }
+  .dict-head-s { font-size: 11px; color: var(--fg-2); font-family: var(--font-mono); letter-spacing: 0.05em; }
+  .dict-wave { display: flex; align-items: center; gap: 2px; height: 20px; }
+  .dict-wave i { display: block; width: 2px; background: var(--gold); border-radius: 2px; animation: wave 1.2s ease-in-out infinite; }
+  .dict-wave i:nth-child(1) { height: 40%; animation-delay: 0s; }
+  .dict-wave i:nth-child(2) { height: 90%; animation-delay: 0.1s; }
+  .dict-wave i:nth-child(3) { height: 60%; animation-delay: 0.2s; }
+  .dict-wave i:nth-child(4) { height: 100%; animation-delay: 0.3s; }
+  .dict-wave i:nth-child(5) { height: 50%; animation-delay: 0.4s; }
+  .dict-wave i:nth-child(6) { height: 80%; animation-delay: 0.5s; }
+  .dict-wave i:nth-child(7) { height: 30%; animation-delay: 0.6s; }
+  @keyframes wave { 0%, 100% { transform: scaleY(0.4); } 50% { transform: scaleY(1); } }
+
+  .dict-split { display: grid; grid-template-columns: 1fr 1fr; min-height: 340px; }
+  .dict-col { padding: 22px 24px; }
+  .dict-col + .dict-col { border-inline-start: 1px dashed var(--border); background: #fffbf0; }
+  .dict-label { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; color: var(--fg-3); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .dict-label .tag { font-family: var(--font-mono); font-size: 9px; padding: 2px 7px; border-radius: 3px; background: var(--bg-muted); color: var(--fg-3); letter-spacing: 0.1em; }
+  .dict-col + .dict-col .dict-label .tag { background: var(--gold); color: #fff; }
+  .dict-raw { font-size: 14px; color: var(--fg-2); line-height: 1.75; font-style: italic; }
+  .dict-raw .cursor { display: inline-block; width: 1px; height: 1em; background: var(--gold); vertical-align: -2px; animation: blink 1s step-end infinite; margin-inline-start: 2px; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .dict-formal { font-family: var(--font-serif); font-size: 14.5px; color: var(--navy-classic); line-height: 1.65; }
+  .dict-formal p { margin: 0 0 10px; }
+  .dict-formal .hl { background: rgba(196,146,42,0.18); padding: 0 4px; border-radius: 3px; }
+  .dict-foot {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 20px;
+    background: #fafaf7;
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+  }
+  .dict-foot-left { display: flex; align-items: center; gap: 18px; color: var(--fg-3); }
+  .dict-foot-left span { display: flex; align-items: center; gap: 5px; }
+  .dict-foot-left .lucide { width: 11px; height: 11px; color: var(--gold); }
+  .dict-save { font-size: 11px; font-weight: 600; color: var(--navy-classic); display: flex; align-items: center; gap: 5px; padding: 5px 10px; border-radius: 6px; background: #fff; border: 1px solid var(--border); }
+  .dict-save .lucide { width: 11px; height: 11px; }
+
+  /* OCR / scan demo */
+  .scan-card {
+    background: #fff;
+    color: var(--fg);
+    border-radius: 18px;
+    box-shadow: 0 30px 80px -20px rgba(0,0,0,0.5), 0 0 0 1px rgba(196,146,42,0.2);
+    overflow: hidden;
+    position: relative;
+  }
+  .scan-head {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 10px;
+    background: #fafaf7;
+    font-size: 12px; color: var(--fg-2);
+  }
+  .scan-head .pill { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; padding: 3px 8px; border-radius: 3px; background: var(--gold); color: #fff; font-weight: 600; margin-inline-start: auto; }
+  .scan-body { display: grid; grid-template-columns: 220px 1fr; min-height: 320px; }
+
+  .scan-page {
+    background: #f8f4ea;
+    position: relative;
+    padding: 16px 12px;
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 10.5px;
+    line-height: 1.45;
+    color: #2a2618;
+    overflow: hidden;
+    border-inline-end: 1px solid var(--border);
+  }
+  .scan-page::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8'/><feColorMatrix values='0 0 0 0 0.6  0 0 0 0 0.5  0 0 0 0 0.3  0 0 0 0.15 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    mix-blend-mode: multiply; pointer-events: none; opacity: 0.5;
+  }
+  .scan-page-title { text-align: center; font-weight: 700; font-size: 12px; margin-bottom: 8px; }
+  .scan-page-row { display: flex; justify-content: space-between; margin-bottom: 6px; padding-bottom: 3px; border-bottom: 1px dotted #bfb18c; }
+  .scan-page-row .q { flex: 1; }
+  .scan-page-row .s { font-weight: 700; margin-inline-start: 8px; font-family: var(--font-mono); font-size: 10px; }
+  /* scanning line */
+  .scan-line {
+    position: absolute; inset-inline: 0;
+    height: 60px;
+    background: linear-gradient(180deg, transparent, rgba(196,146,42,0.35), transparent);
+    animation: scan-move 3s ease-in-out infinite;
+    z-index: 2;
+  }
+  @keyframes scan-move {
+    0%, 100% { top: -60px; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; }
+  }
+
+  .scan-extract { padding: 20px 22px; display: flex; flex-direction: column; gap: 10px; background: var(--bg-amber-tint); }
+  .scan-extract-label { font-size: 10px; letter-spacing: 0.22em; color: var(--fg-3); font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+  .scan-extract-label .tag { font-family: var(--font-mono); font-size: 9px; padding: 2px 7px; border-radius: 3px; background: var(--success); color: #fff; }
+  .scan-field {
+    display: grid; grid-template-columns: 120px 1fr auto; gap: 12px;
+    align-items: center;
+    padding: 8px 12px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 12.5px;
+  }
+  .scan-field .k { color: var(--fg-2); font-size: 11px; }
+  .scan-field .v { font-weight: 600; color: var(--navy-classic); font-variant-numeric: tabular-nums; }
+  .scan-field .conf { font-family: var(--font-mono); font-size: 9px; color: var(--success); font-weight: 600; display: flex; align-items: center; gap: 3px; }
+  .scan-field .conf .lucide { width: 10px; height: 10px; }
+  .scan-total {
+    display: grid; grid-template-columns: 120px 1fr auto; gap: 12px;
+    align-items: center;
+    padding: 10px 12px;
+    background: var(--navy-classic); color: #fff;
+    border-radius: 8px;
+    font-size: 12.5px;
+    margin-top: 4px;
+  }
+  .scan-total .k { font-size: 11px; color: rgba(255,255,255,0.7); }
+  .scan-total .v { font-family: var(--font-serif); font-weight: 700; font-size: 18px; font-variant-numeric: tabular-nums; }
+  .scan-total .grade { font-family: var(--font-mono); font-size: 10px; background: var(--gold); color: var(--navy-deep); padding: 3px 8px; border-radius: 4px; letter-spacing: 0.1em; font-weight: 700; }
+
+  .ai-row { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 120px; align-items: center; }
+  .ai-row.reverse { direction: ltr; }
+  .ai-row.reverse > * { direction: rtl; }
+  .cta-btn .lucide { width: 14px; height: 14px; transform: scaleX(-1); }
+  .cta-note {
+    margin-top: 20px;
+    font-size: 12px; color: rgba(238,242,247,0.5);
+    display: flex; align-items: center; justify-content: center; gap: 18px;
+  }
+  .cta-note span { display: flex; align-items: center; gap: 6px; }
+  .cta-note .lucide { width: 12px; height: 12px; color: var(--gold); }
+
+  /* ===== FOOTER ===== */
+  footer.site-foot {
+    background: var(--navy-deep);
+    color: rgba(238,242,247,0.7);
+    padding: 80px 40px 40px;
+    border-top: 1px solid rgba(196,146,42,0.2);
+  }
+  .foot-inner { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 60px; }
+  .foot-brand { display: flex; flex-direction: column; gap: 18px; }
+  .foot-logo {
+    display: block;
+    width: 240px; height: auto;
+    background: var(--bg);
+    padding: 18px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.25), 0 0 0 1px rgba(196,146,42,0.25);
+  }
+  .foot-brand p { font-size: 13px; color: rgba(238,242,247,0.6); line-height: 1.6; max-width: 360px; margin: 0; }
+  .foot-col-head { font-size: 10px; letter-spacing: 0.28em; color: var(--gold); font-weight: 500; margin-bottom: 18px; }
+  .foot-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .foot-col a { font-size: 13px; color: rgba(238,242,247,0.7); transition: color 200ms; }
+  .foot-col a:hover { color: var(--gold); }
+  .foot-bottom { max-width: 1400px; margin: 56px auto 0; padding-top: 28px; border-top: 1px solid rgba(238,242,247,0.08); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: rgba(238,242,247,0.45); }
+  .foot-bottom .foot-mono { font-family: var(--font-mono); letter-spacing: 0.12em; }
+
+  /* ===== REVEAL ANIMATIONS ===== */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-stagger > * { opacity: 0; transform: translateY(16px); transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out); }
+  .reveal-stagger.visible > * { opacity: 1; transform: translateY(0); }
+  .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0ms; }
+  .reveal-stagger.visible > *:nth-child(2) { transition-delay: 80ms; }
+  .reveal-stagger.visible > *:nth-child(3) { transition-delay: 160ms; }
+  .reveal-stagger.visible > *:nth-child(4) { transition-delay: 240ms; }
+  .reveal-stagger.visible > *:nth-child(5) { transition-delay: 320ms; }
+
+  /* responsiveness — keep it dignified on smaller screens */
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+    .modules-layout { grid-template-columns: 1fr; gap: 48px; }
+    .modules-sticky { position: static; }
+    .module-count { font-size: 140px; }
+    .pillars, .personas { grid-template-columns: 1fr; }
+    .foot-inner { grid-template-columns: 1fr 1fr; }
+    .faq-inner { grid-template-columns: 1fr; gap: 40px; }
+    .section { padding: 80px 24px; }
+    .hero { padding: 120px 24px 60px; }
+    .credibility { flex-direction: column; align-items: flex-start; padding: 24px; }
+    .topnav { padding: 14px 20px; }
+    .topnav nav { display: none; }
+    /* peek stacks only at very narrow widths — see @media max-width: 720 */
+    .module-row { grid-template-columns: 40px 100px 1fr auto; gap: 12px; }
+    .module-name { font-size: 20px; }
+  }
+  @media (max-width: 720px) {
+    .peek-app { grid-template-columns: 1fr; grid-template-areas: "side" "main"; direction: rtl; }
+    .peek-side { display: block; order: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================ NAV ============================ -->
+<header class="topnav" id="topnav">
+  <a href="#" class="brand">
+    <img src="assets/logo-full.png" alt="תל-חץ" class="brand-logo"/>
+    <span class="brand-text">תל-חץ</span>
+  </a>
+  <nav>
+    <a href="#system">המערכת</a>
+    <a href="#ai">AI</a>
+    <a href="#peek">האפליקציה</a>
+    <a href="#personas">למי זה מיועד</a>
+    <a href="#faq">שאלות נפוצות</a>
+  </nav>
+  <a href="https://app.telchetz.com/" class="sign-in">כניסה ללקוחות</a>
+  <a href="#contact" class="cta">הצעת מחיר <i data-lucide="arrow-left"></i></a>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="reveal">
+      <div class="hero-caps"><span>תשפ״ו</span><span style="opacity:.4">·</span><span>תוכנה לניהול מוסד חינוכי</span><span style="opacity:.4">·</span><span>19 מוסדות · 6 רשתות</span></div>
+      <h1 class="hero-title">
+        <span class="block block-1">עם תל-חץ,</span>
+        <span class="block block-2">אני <span class="em">שולט</span></span>
+        <span class="block block-3">בהכל.<span class="knows">Full control · לא מנוהל</span></span>
+      </h1>
+    </div>
+
+    <div class="hero-below reveal">
+      <aside class="hero-aside-num">
+        <div class="big-num" data-count="19">0</div>
+        <div class="big-num-lbl">מוסדות<br/>שולטים. עובדים.</div>
+      </aside>
+      <p class="hero-lede">
+        <strong>תל-חץ</strong> היא <strong>תוכנה לניהול מוסד חינוכי</strong> שבנויה סביב <strong>המנהל</strong> —
+        לא סביב התוכנה, לא סביב המורה, לא סביב הרכזת. מתאימה לישיבות, תלמודי תורה, סמינרים, בתי ספר ומרכזי סיוע במגזר החרדי.
+        <br/><br/>
+        13 מודולים. תלמידים, צוות, כיתות, נוכחות, ציונים, מפגשים, משימות, תקשורת, קבצים, הרשאות, חיוב ועוד — <strong>מסונכרנים במערכת אחת</strong>, עם תצוגה אחת שרואה הכל.
+        אתה לא מקווה. <span class="sarcasm">אתה יודע.</span> אתה לא שואל. <span class="sarcasm">אתה שולט.</span>
+      </p>
+      <div class="hero-stats-mini">
+        <div class="mini-stat"><div class="mini-stat-num"><span data-count="19">0</span></div><div class="mini-stat-lbl">מוסדות בפנים</div></div>
+        <div class="mini-stat"><div class="mini-stat-num">13</div><div class="mini-stat-lbl">מודולים מחוברים</div></div>
+        <div class="mini-stat"><div class="mini-stat-num"><span data-count="100">0</span><span class="u">%</span></div><div class="mini-stat-lbl">שליטה אצל המנהל</div></div>
+      </div>
+    </div>
+
+    <div class="hero-ctas reveal">
+      <a href="#contact" class="btn-primary-xl">קבע הדגמה חיה <i data-lucide="arrow-left"></i></a>
+      <a href="#system" class="btn-ghost-xl"><i data-lucide="layout-grid"></i>ראה את 13 המודולים</a>
+    </div>
+  </div>
+</section>
+
+<!-- credibility strip — 6 real client networks, displayed with written consent -->
+<div class="credibility reveal">
+  <div class="credibility-label">משמשת 19 מוסדות<br/>ב־6 רשתות חינוך</div>
+  <div class="credibility-logos">
+    <div class="inst-logo"><div class="inst-logo-mark">ב</div><div class="inst-logo-name">רשת באיאן · ת״ת וישיבה קטנה</div></div>
+    <div class="inst-logo"><div class="inst-logo-mark">ב</div><div class="inst-logo-name">רשת בעלזא · תלמודי תורה</div></div>
+    <div class="inst-logo"><div class="inst-logo-mark">מ</div><div class="inst-logo-name">רשת מתיקות התורה</div></div>
+    <div class="inst-logo"><div class="inst-logo-mark">מ</div><div class="inst-logo-name">מתיקות החינוך · בנות</div></div>
+    <div class="inst-logo"><div class="inst-logo-mark">ו</div><div class="inst-logo-name">מרכז הרב וובר</div></div>
+    <div class="inst-logo"><div class="inst-logo-mark">ש</div><div class="inst-logo-name">מרכז שלהבת</div></div>
+  </div>
+</div>
+
+<!-- ============================ TICKER ============================ -->
+<div class="ticker">
+  <div class="ticker-track" id="ticker-track">
+    <!-- items will be duplicated via JS for seamless scroll -->
+  </div>
+</div>
+
+<!-- ============================ THE SYSTEM (13 modules) ============================ -->
+<section class="system-wrap" id="system">
+  <div class="section">
+    <div class="modules-layout">
+      <aside class="modules-sticky reveal">
+        <div class="section-caps">המערכת השלמה · שליטה מלאה</div>
+        <div class="module-count">13</div>
+        <div class="module-count-label">שלושה עשר מודולים. מסונכרנים.<br/>המנהל רואה הכל.<br/><strong>שולט בהכל.</strong></div>
+      </aside>
+
+      <div class="modules-list reveal-stagger">
+        <div class="module-row"><div class="module-idx">01</div><div class="module-code">STUDENTS</div><div class="module-name">תלמידים <small>— פרופיל מלא, משפחה, היסטוריה, תיוגים</small></div><div class="module-arrow"><i data-lucide="arrow-left"></i></div></div>
+        <div class="module-row"><div class="module-idx">02</div><div class="module-code">STAFF</div><div class="module-name">צוות <small>— פרופילים, שיבוצים, צוותים, תפקידים</small></div><div class="module-arrow"><i data-lucide="arrow-left"></i></div></div>
+        <div class="module-row"><div class="module-idx">03</div><div class="module-code">CLASSES</div><div class="module-name">כיתות &amp; שנת לימודים <small>— קבוצות למידה, מערכת שעות</small></div><div class="module-arrow"><i data-lucide="arrow-left"></i></div></div>
+        <div class="module-row"><div class="module-idx">04</div><div class="module-code">ATTENDANCE</div><div class="module-name">נוכחות <small>— יומי, סטטיסטיקות, התראות אוטומטיות</small></div><div class="module-arrow"><i data-lucide="arrow-left"></i></div></div>
+        <div class="module-row"><div class="module-idx">05</div><div class="module-code">GRADES</div><div class="module-name">ציונים ומבחנים <small>— gradebook, תעודות, היסטוריה</small></div><div class="module-arrow"><i data-lucide="arrow-left"></i></div></div>
+        <div class="module-row"><div class="module-idx">06</div><div class="module-code">MEETINGS</div><div class="module-name">פגישות &amp; חדרים <small>— הורים, צוות, הזמנת חדרים</small></div><div class="module-arrow"><i data-lucide="arrow-left"></i></div></div>
+        <div class="module-row"><div class="module-idx">07</div><div class="module-code">TASKS</div><div class="module-name">משימות <small>— SLA, תגיות, אוטומציה</small></div><div class="module-arrow"><i data-lucide="arrow-left"></i></div></div>
+        <div class="module-row"><div class="module-idx">08</div><div class="module-code">COMM</div><div class="module-name">תקשורת <small>— שיחות, הודעות, התראות, העדפות</small></div><div class="module-arrow"><i data-lucide="arrow-left"></i></div></div>
+        <div class="module-row"><div class="module-idx">09</div><div class="module-code">FILES</div><div class="module-name">קבצים <small>— תיקיות היררכיות, הרשאות, שיתוף</small></div><div class="module-arrow"><i data-lucide="arrow-left"></i></div></div>
+        <div class="module-row"><div class="module-idx">10</div><div class="module-code">PERMS</div><div class="module-name">הרשאות <small>— 3 צירים: שיבוץ · תפקיד · שיתוף</small></div><div class="module-arrow"><i data-lucide="arrow-left"></i></div></div>
+        <div class="module-row"><div class="module-idx">11</div><div class="module-code">BILLING</div><div class="module-name">חיוב ותשלומים <small>— שכ״ל, חשבוניות, Stripe</small></div><div class="module-arrow"><i data-lucide="arrow-left"></i></div></div>
+        <div class="module-row"><div class="module-idx">12</div><div class="module-code">PROCESS</div><div class="module-name">תהליכים <small>— Workflows, אישורים רב-שלבים</small></div><div class="module-arrow"><i data-lucide="arrow-left"></i></div></div>
+        <div class="module-row"><div class="module-idx">13</div><div class="module-code">ADMIN</div><div class="module-name">ניהול מערכת <small>— Audit logs, מטריצת הרשאות, הגדרות</small></div><div class="module-arrow"><i data-lucide="arrow-left"></i></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ DASHBOARD PEEK ============================ -->
+<section class="peek-wrap" id="peek">
+  <div class="peek-inner">
+    <div class="peek-head reveal">
+      <div class="section-caps" style="color: var(--gold)">לוח הבקרה</div>
+      <h2 class="section-title">הבוקר של המנהל, <span class="em">על מסך אחד.</span></h2>
+      <p class="section-sub">ברגע שאתם נכנסים — אתם רואים את היום. לא "מה יש במערכת", אלא מה חשוב היום. פגישות, התראות, תשלומים, משימות שמחכות לאישור. הכל בקצב שלכם.</p>
+    </div>
+
+    <div class="browser reveal">
+      <div class="browser-chrome">
+        <div class="browser-dots">
+          <div class="browser-dot" style="background:#ff5f57"></div>
+          <div class="browser-dot" style="background:#febc2e"></div>
+          <div class="browser-dot" style="background:#28c840"></div>
+        </div>
+        <div class="browser-url"><span class="lock">🔒</span> app.telchetz.com/dashboard</div>
+        <div style="width: 40px"></div>
+      </div>
+      <div class="peek-app">
+        <div class="peek-main">
+          <div class="peek-hero">
+            <div class="peek-caps">י״ט בניסן תשפ״ו · יום שלישי</div>
+            <div class="peek-h1">בוקר טוב, שמואל</div>
+            <div class="peek-stats">
+              <div><span class="peek-stat-n">247</span> <span class="peek-stat-l">תלמידים</span></div>
+              <div><span class="peek-stat-n">34</span> <span class="peek-stat-l">מחנכים</span></div>
+              <div><span class="peek-stat-n">18</span> <span class="peek-stat-l">כיתות</span></div>
+            </div>
+            <div class="peek-rule"></div>
+          </div>
+
+          <div class="peek-qgrid">
+            <div class="peek-qs"><div class="peek-qs-l">נוכחות היום</div><div class="peek-qs-v">94%</div><div class="peek-qs-d" style="color: var(--success)">↑ 2.1%</div></div>
+            <div class="peek-qs"><div class="peek-qs-l">פגישות</div><div class="peek-qs-v">23</div><div class="peek-qs-d" style="color: var(--fg-2)">12 פעילות</div></div>
+            <div class="peek-qs"><div class="peek-qs-l">התראות</div><div class="peek-qs-v">7</div><div class="peek-qs-d" style="color: var(--danger)">↑ 3 חדשות</div></div>
+            <div class="peek-qs"><div class="peek-qs-l">תקציב</div><div class="peek-qs-v">72%</div><div class="peek-qs-d" style="color: var(--fg-2)">₪847K / 1.18M</div></div>
+          </div>
+
+          <div class="peek-cards">
+            <div class="peek-card action">
+              <div class="peek-card-head">
+                <div class="peek-card-ico"><i data-lucide="calendar"></i></div>
+                <div class="peek-card-title">פגישות היום</div>
+                <div class="peek-card-count">3</div>
+              </div>
+              <div class="peek-event">
+                <div class="peek-event-t">פגישת הורים · כיתה ז׳ א׳</div>
+                <div class="peek-event-s">16:00 — משרד המנהל · משפ׳ רוזנברג</div>
+              </div>
+              <div class="peek-event">
+                <div class="peek-event-t">ועדת השמה · מרדכי כהן</div>
+                <div class="peek-event-s">17:30 — חדר ישיבות</div>
+              </div>
+            </div>
+            <div class="peek-card action">
+              <div class="peek-card-head">
+                <div class="peek-card-ico" style="background: #fee2e2; color: var(--danger);"><i data-lucide="bell"></i></div>
+                <div class="peek-card-title">התראות פתוחות</div>
+                <div class="peek-card-count" style="background: #fee2e2; color: var(--danger)">7</div>
+              </div>
+              <div class="peek-item"><div class="peek-item-dot" style="background: var(--danger)"></div><div><div class="peek-item-t">איחורים חוזרים</div><div class="peek-item-s">משה גולדברג</div></div></div>
+              <div class="peek-item"><div class="peek-item-dot" style="background: var(--warning)"></div><div><div class="peek-item-t">תשלום מתעכב</div><div class="peek-item-s">משפ׳ כהן · 14 יום</div></div></div>
+              <div class="peek-item"><div class="peek-item-dot" style="background: var(--warning)"></div><div><div class="peek-item-t">טופס חסר</div><div class="peek-item-s">יוסף ברגר</div></div></div>
+            </div>
+          </div>
+        </div>
+        <aside class="peek-side">
+          <div class="peek-side-head">
+            <img src="/assets/mark.svg" alt=""/>
+            <div><div class="n">תלמוד תורה באיאן</div><div class="s">ביתר עילית</div></div>
+          </div>
+          <div class="peek-nav-item active"><i data-lucide="layout-dashboard"></i>לוח בקרה</div>
+          <div class="peek-nav-item"><i data-lucide="message-square"></i>שיחות</div>
+          <div class="peek-nav-group">ניהול</div>
+          <div class="peek-nav-item"><i data-lucide="users"></i>תלמידים</div>
+          <div class="peek-nav-item"><i data-lucide="user-cog"></i>צוות</div>
+          <div class="peek-nav-item"><i data-lucide="graduation-cap"></i>כיתות</div>
+          <div class="peek-nav-item"><i data-lucide="house"></i>משפחות</div>
+          <div class="peek-nav-group">מעקב</div>
+          <div class="peek-nav-item"><i data-lucide="award"></i>מבחנים</div>
+          <div class="peek-nav-item"><i data-lucide="square-check"></i>משימות</div>
+          <div class="peek-nav-item"><i data-lucide="clock"></i>נוכחות</div>
+          <div class="peek-nav-group">כספים</div>
+          <div class="peek-nav-item"><i data-lucide="receipt"></i>חיובים</div>
+          <div class="peek-nav-item"><i data-lucide="piggy-bank"></i>תקציב</div>
+        </aside>
+      </div>
+      <svg class="peek-cursor" viewBox="0 0 18 18" fill="none">
+        <path d="M1 1L17 8L9 10L7 17L1 1Z" fill="var(--navy-classic)" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ AI / INTELLIGENCE ============================ -->
+<section class="ai-wrap" id="ai">
+  <div class="ai-inner">
+    <div class="ai-head reveal">
+      <div class="section-caps">אינטליגנציה מובנית</div>
+      <h2>לא להקליד. <span class="em">לדבר.</span><br/>לא לבדוק ידנית. <span class="em">לצלם.</span></h2>
+      <p>
+        תל-חץ נבנתה עם שכבה של בינה מלאכותית בתוכה — לא כתוספת. הדיבור הופך לדיווחים מנוסחים. מבחן סרוק הופך לציונים מתויגים במערכת. עבודה שלקחה שעות, לוקחת שניות.
+      </p>
+    </div>
+
+    <!-- Row 1 — Dictation -->
+    <div class="ai-grid">
+      <div class="ai-copy reveal">
+        <div class="ai-chip"><span class="dot"></span>DICTATION · ניסוח אוטומטי</div>
+        <h3>אתם מדברים.<br/>המערכת <span class="em">כותבת מכובד.</span></h3>
+        <p>לוחצים על הכפתור, מדברים בקצב רגיל — שיחת הורים, הערה פדגוגית, סיכום ועדה, דוח תלמיד. תל-חץ מבינה עברית חרדית, מנרמלת את השיח לשפה רשמית, מסדרת את הנקודות, משלימה שדות חסרים, ושומרת במקום הנכון.</p>
+        <div class="ai-features">
+          <div class="ai-feat"><div class="ai-feat-idx">01</div><div><div class="ai-feat-t">הבנה בעברית רבנית וחרדית</div><div class="ai-feat-s">מוֹדל שאומן על השיח הייחודי במגזר. "בחור מסור" ו"מתקדם בלימוד" יובנו נכון.</div></div></div>
+          <div class="ai-feat"><div class="ai-feat-idx">02</div><div><div class="ai-feat-t">ניסוח רשמי ומכובד</div><div class="ai-feat-s">הופך דיבור חופשי לדוח פורמלי — מותאם לסגנון המסמך ולנמען (הורים · רשות · תיק פנימי).</div></div></div>
+          <div class="ai-feat"><div class="ai-feat-idx">03</div><div><div class="ai-feat-t">זיהוי אוטומטי של שדות</div><div class="ai-feat-s">אומרים "ישיבה עם משפחת כהן מחר בארבע" — ונקבעת פגישה עם המשתתפים, התאריך והשעה.</div></div></div>
+          <div class="ai-feat"><div class="ai-feat-idx">04</div><div><div class="ai-feat-t">שמירה אוטומטית בתיק הנכון</div><div class="ai-feat-s">דוח על תלמיד ישמר בתיקו. סיכום ועדה ישמר ב־PROCESS. לא צריך לחשוב איפה.</div></div></div>
+        </div>
+      </div>
+
+      <div class="dict-card reveal">
+        <div class="dict-head">
+          <div class="dict-mic"><i data-lucide="mic"></i></div>
+          <div class="dict-head-info">
+            <div class="dict-head-t">מקליט · דיווח שיחה עם הורים</div>
+            <div class="dict-head-s">00:42 · עברית</div>
+          </div>
+          <div class="dict-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="dict-split">
+          <div class="dict-col">
+            <div class="dict-label">דיבור חופשי <span class="tag">RAW</span></div>
+            <div class="dict-raw" id="dict-raw"></div>
+          </div>
+          <div class="dict-col">
+            <div class="dict-label">מנוסח אוטומטית <span class="tag">AI · מנוסח</span></div>
+            <div class="dict-formal" id="dict-formal">
+              <p><strong>סיכום שיחה · משפ׳ רוזנברג</strong></p>
+              <p>נערכה שיחה ביום שלישי <span class="hl">י״ט בניסן תשפ״ו</span> עם הורי <span class="hl">שמואל רוזנברג</span>, כיתה ז׳ א׳.</p>
+              <p>עלתה סוגיית המוטיבציה בלימודי הקודש. הוחלט על תכנית חיזוק אישית בשיתוף <span class="hl">המלמד הרב כהן</span>. פגישת המשך נקבעה בעוד שבועיים.</p>
+            </div>
+          </div>
+        </div>
+        <div class="dict-foot">
+          <div class="dict-foot-left">
+            <span><i data-lucide="file-text"></i>נשמר ב־REPORT</span>
+            <span><i data-lucide="user"></i>תיק שמואל רוזנברג</span>
+          </div>
+          <button class="dict-save"><i data-lucide="check"></i>אשר ושמור</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2 — Exam scan -->
+    <div class="ai-row">
+      <div class="scan-card reveal">
+        <div class="scan-head">
+          <i data-lucide="scan-line"></i>
+          <span>מבחן · גמרא מסכת ברכות · כיתה ח׳ ב׳</span>
+          <span class="pill">AI · OCR</span>
+        </div>
+        <div class="scan-body">
+          <div class="scan-page">
+            <div class="scan-line"></div>
+            <div class="scan-page-title">מבחן · ברכות דף ל׳</div>
+            <div class="scan-page-row"><span class="q">שאלה א׳ · פירוש רש״י</span><span class="s">18/20</span></div>
+            <div class="scan-page-row"><span class="q">שאלה ב׳ · תוספות</span><span class="s">15/15</span></div>
+            <div class="scan-page-row"><span class="q">שאלה ג׳ · סוגיה</span><span class="s">22/25</span></div>
+            <div class="scan-page-row"><span class="q">שאלה ד׳ · הלכה</span><span class="s">19/20</span></div>
+            <div class="scan-page-row"><span class="q">שאלה ה׳ · בקיאות</span><span class="s">14/20</span></div>
+            <div class="scan-page-row" style="border-top: 2px solid #2a2618; padding-top: 4px; margin-top: 6px; font-weight: 700;"><span class="q">סה״כ</span><span class="s">88/100</span></div>
+          </div>
+          <div class="scan-extract">
+            <div class="scan-extract-label">שדות שחולצו אוטומטית <span class="tag">זוהה · 100%</span></div>
+            <div class="scan-field"><span class="k">תלמיד</span><span class="v">יצחק גולדברג</span><span class="conf"><i data-lucide="check-circle"></i>99%</span></div>
+            <div class="scan-field"><span class="k">כיתה</span><span class="v">ח׳ ב׳</span><span class="conf"><i data-lucide="check-circle"></i>100%</span></div>
+            <div class="scan-field"><span class="k">מסכת</span><span class="v">ברכות · דף ל׳</span><span class="conf"><i data-lucide="check-circle"></i>98%</span></div>
+            <div class="scan-field"><span class="k">תאריך</span><span class="v">י״ט ניסן תשפ״ו</span><span class="conf"><i data-lucide="check-circle"></i>100%</span></div>
+            <div class="scan-total"><span class="k">ציון כולל</span><span class="v">88<span style="font-size:11px;opacity:0.6"> / 100</span></span><span class="grade">טוב מאוד</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-copy reveal">
+        <div class="ai-chip"><span class="dot"></span>OCR · זיהוי מבחנים</div>
+        <h3>מצלמים את המבחן.<br/>המערכת <span class="em">עושה את השאר.</span></h3>
+        <p>המלמד מסיים לבדוק מבחן בכיתה, מצלם בטלפון — ותוך חמש שניות: שם התלמיד, כיתה, נושא, ציונים לכל שאלה, סה״כ, ותיוג לגיליון הציונים. בלי הקלדה. בלי טעויות העתקה. בלי Excel בלילה.</p>
+        <div class="ai-features">
+          <div class="ai-feat"><div class="ai-feat-idx">01</div><div><div class="ai-feat-t">זיהוי כתב יד בעברית</div><div class="ai-feat-s">כולל כתב רש״י, ספרות עבריות (י״ט), ותיקוני מלמדים בצבעים שונים.</div></div></div>
+          <div class="ai-feat"><div class="ai-feat-idx">02</div><div><div class="ai-feat-t">חיבור אוטומטי לגיליון</div><div class="ai-feat-s">הציון נכנס ישירות ל־GRADE, מעדכן ממוצע, מזהה תלמידים שיורדים ברמה.</div></div></div>
+          <div class="ai-feat"><div class="ai-feat-idx">03</div><div><div class="ai-feat-t">אצווה של עשרות מבחנים</div><div class="ai-feat-s">סורקים כיתה שלמה בפעולה אחת. המערכת מפצלת, מזהה, משייכת, ומעלה דוח השוואתי.</div></div></div>
+          <div class="ai-feat"><div class="ai-feat-idx">04</div><div><div class="ai-feat-t">ביקורת לפני שמירה</div><div class="ai-feat-s">אם המערכת לא בטוחה בציון — היא מסמנת אותו באדום ומבקשת אישור. לא שומרת טעות בדממה.</div></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ 3 PILLARS ============================ -->
+<section class="section" id="pillars">
+  <div class="section-head reveal">
+    <div class="section-caps">למה תל-חץ</div>
+    <h2 class="section-title">לא עוד מערכת.<br/><span class="em">תשתית אדמיניסטרטיבית.</span></h2>
+    <p class="section-sub">בנויה מההתחלה להלכות הפעולה של מוסדות חינוך חרדיים. מכבדת את השפה, את הלוח, את ההיררכיה, את פרטי המשפחות. מעבירה את העבודה השגרתית למערכת — ומחזירה לכם את הזמן ליעוד.</p>
+  </div>
+
+  <div class="pillars reveal-stagger">
+    <div class="pillar">
+      <div class="pillar-num">01 · יסוד</div>
+      <h3 class="pillar-title">שפה אחת<br/>לכל התהליך.</h3>
+      <p class="pillar-body">תלמידה נרשמת, משפחה מתחייבת לשכר לימוד, מלמדת מעבירה מבחן, מנהל מאשר דוח, הורים מקבלים עדכון — הכל באותו מסמך נתונים. לא שבעה מסמכים Excel נפרדים שמישהו מתחזק בערב.</p>
+      <div class="pillar-foot">נתון אחד · מקור אחד <i data-lucide="arrow-left"></i></div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02 · תצפית</div>
+      <h3 class="pillar-title">רואים את<br/><span class="em">התמונה.</span></h3>
+      <p class="pillar-body">מי מאחר השבוע, מי לא שילם בחודש האחרון, מי טרם מילא טופס ביטוח, איזה כיתה דורשת התערבות פדגוגית. תל-חץ מצלמת את המצב פעמיים ביום — ומתריעה רק כשבאמת יש מה להתריע.</p>
+      <div class="pillar-foot">נוכחות · כספים · טפסים <i data-lucide="arrow-left"></i></div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03 · שקט</div>
+      <h3 class="pillar-title">מעביר את<br/>הלחץ הצידה.</h3>
+      <p class="pillar-body">סוף החודש מופיע עם דוחות שכר חתומים, תשלומי הורים נסגרים אוטומטית, מערכות שעות מחולקות מראש, ועדות השמה מתועדות. המנהל שחוזר הביתה מרגיש שהוא חזר מעבודה שנגמרה.</p>
+      <div class="pillar-foot">אוטומציה · דוחות · חיובים <i data-lucide="arrow-left"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PERSONAS ============================ -->
+<section class="personas-wrap" id="personas">
+  <div class="section">
+    <div class="section-head reveal">
+      <div class="section-caps">למי זה מיועד</div>
+      <h2 class="section-title">מותאמת לכל <span class="em">תפקיד</span> במוסד.</h2>
+    </div>
+    <div class="personas reveal-stagger">
+      <div class="persona">
+        <div class="persona-icon"><i data-lucide="building-2"></i></div>
+        <div class="persona-role">מנהל מוסד</div>
+        <div class="persona-title">שליטה שקטה. החלטות מבוססות.</div>
+        <p class="persona-body">לוח בקרה שמספר את האמת. תקציב, נוכחות, שכר — בלחיצה אחת. בלי להתקשר לרכזת, בלי להפוך ארון מסמכים.</p>
+        <div class="persona-uses">
+          <div class="persona-use"><span class="c">BUDGET</span>ניצול תקציב</div>
+          <div class="persona-use"><span class="c">REPORT</span>דוחות לרשות</div>
+          <div class="persona-use"><span class="c">ALERT</span>התראות ניהוליות</div>
+        </div>
+      </div>
+      <div class="persona">
+        <div class="persona-icon"><i data-lucide="graduation-cap"></i></div>
+        <div class="persona-role">מלמד · מחנכת</div>
+        <div class="persona-title">כיתה אחת. מסך אחד.</div>
+        <p class="persona-body">רשימה, נוכחות, ציונים, פגישות הורים, הערות פדגוגיות — הכל בתוך הכיתה. לא בדף נפרד, לא באפליקציה אחרת.</p>
+        <div class="persona-uses">
+          <div class="persona-use"><span class="c">ATTEND</span>נוכחות יומית</div>
+          <div class="persona-use"><span class="c">GRADE</span>ציונים ומבחנים</div>
+          <div class="persona-use"><span class="c">MEETING</span>פגישות הורים</div>
+        </div>
+      </div>
+      <div class="persona">
+        <div class="persona-icon"><i data-lucide="shield-check"></i></div>
+        <div class="persona-role">יועצת · רכז סיוע</div>
+        <div class="persona-title">תיק תלמיד שלם, בעין אחת.</div>
+        <p class="persona-body">היסטוריה פדגוגית, ועדות השמה, טפסים רפואיים, שיחות עם הורים — כולם בתיק אחד. שומר שקט ודיסקרטיות.</p>
+        <div class="persona-uses">
+          <div class="persona-use"><span class="c">PROCESS</span>ועדות השמה</div>
+          <div class="persona-use"><span class="c">FORM</span>טפסים רגישים</div>
+          <div class="persona-use"><span class="c">TAG</span>סיווג דיסקרטי</div>
+        </div>
+      </div>
+      <div class="persona">
+        <div class="persona-icon"><i data-lucide="banknote"></i></div>
+        <div class="persona-role">מנהל כספים</div>
+        <div class="persona-title">סוף חודש נסגר עצמו.</div>
+        <p class="persona-body">חיובי משפחות, שכר מלמדים, תקציב, גבייה — מערכת אחת מחוברת. חשבונית דיגיטלית, תזכורות אוטומטיות, דיווח לרו״ח בקליק.</p>
+        <div class="persona-uses">
+          <div class="persona-use"><span class="c">BILLING</span>חיובים חוזרים</div>
+          <div class="persona-use"><span class="c">SALARY</span>שכר צוות</div>
+          <div class="persona-use"><span class="c">BUDGET</span>בקרת תקציב</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ QUOTE ============================ -->
+<section class="quote-wrap">
+  <div class="quote-inner reveal">
+    <div class="quote-caps">עדות · מנהלים</div>
+    <p class="quote-body">
+      לפני תל-חץ, ניהול המוסד לקח חצי מיום העבודה שלי. היום <span class="em">אני חוזר לעסוק בחינוך</span> — המערכת מטפלת בשאר.
+    </p>
+    <div class="quote-attr">
+      <div class="quote-avatar">מ</div>
+      <div>
+        <div class="quote-attr-name">מנהל · רשת ת״ת במגזר החרדי</div>
+        <div class="quote-attr-role">ציטוט מלקוח — שם מלא יפורסם עם אישור בכתב</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="faq-wrap" id="faq">
+  <div class="faq-inner">
+    <div class="reveal">
+      <div class="section-caps">שאלות נפוצות</div>
+      <h2 class="section-title">מה שכדאי<br/>לדעת <span class="em">מראש.</span></h2>
+      <p class="section-sub">לא מצאת תשובה? צור קשר — נענה תוך יום עסקים.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q"><span class="faq-q-idx">01</span><span>כמה זמן לוקחת הטמעה במוסד חדש?</span><span class="faq-q-mark"><i data-lucide="plus"></i></span></button>
+        <div class="faq-a"><div class="faq-a-inner">בדרך כלל בין שבועיים לחודש, תלוי בגודל המוסד ובכמות הנתונים להעברה. הצוות שלנו מלווה אתכם לאורך כל התהליך — מייבוא המסד הקיים ועד הדרכה מלאה של הצוות הפדגוגי והאדמיניסטרטיבי.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span class="faq-q-idx">02</span><span>המערכת מתאימה גם למרכזי סיוע ולא רק למוסדות?</span><span class="faq-q-mark"><i data-lucide="plus"></i></span></button>
+        <div class="faq-a"><div class="faq-a-inner">כן. תל-חץ משמשת כיום מוסדות חינוך פורמליים, ישיבות, סמינרים, מרכזי סיוע לתלמידים ותלמידות, ומסגרות טיפוליות. המודולים של תיוגים, טפסים רגישים ותהליכים מותאמים לעבודת רכזי הסיוע.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span class="faq-q-idx">03</span><span>מה לגבי אבטחת מידע ופרטיות המשפחות?</span><span class="faq-q-mark"><i data-lucide="plus"></i></span></button>
+        <div class="faq-a"><div class="faq-a-inner">תל-חץ מאובטחת ברמה בנקאית. גישה רב-גורמית, הצפנת מידע במנוחה ובתנועה, הרשאות מפורטות ברמת המשתמש והשדה, גיבויים אוטומטיים, ויומן פעולות מלא. התשתית ממוקמת בשרתים בישראל.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span class="faq-q-idx">04</span><span>אפשר לייבא נתונים קיימים מ־Excel או ממערכת אחרת?</span><span class="faq-q-mark"><i data-lucide="plus"></i></span></button>
+        <div class="faq-a"><div class="faq-a-inner">ודאי. אנחנו תומכים בייבוא מקבצי Excel, CSV, וממערכות נפוצות אחרות. צוות הקליטה שלנו עובר איתכם על המידע הקיים, מנרמל אותו, ומעלה אותו למערכת ללא אובדן נתונים.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span class="faq-q-idx">05</span><span>יש תמיכה בשפה — האם הממשק באמת בעברית מלאה?</span><span class="faq-q-mark"><i data-lucide="plus"></i></span></button>
+        <div class="faq-a"><div class="faq-a-inner">כולה. תל-חץ נבנתה מהבסיס כמערכת RTL-first. לוח עברי, שמות חודשים, ימי השבוע, מונחים פדגוגיים — הכל מותאם למגזר החרדי. גם הטופוגרפיה (Frank Ruhl Libre, Heebo) נבחרה עבור קריאות ארוכה בעברית.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span class="faq-q-idx">06</span><span>מה לגבי תמיכה טכנית שוטפת?</span><span class="faq-q-mark"><i data-lucide="plus"></i></span></button>
+        <div class="faq-a"><div class="faq-a-inner">תמיכה בעברית, בטלפון ובמייל, בימים א׳-ה׳ בין 08:30 ל־18:00. ללקוחות Premium יש קו ישיר עם מנהל חשבון ייעודי וזמן תגובה מובטח.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CTA ============================ -->
+<section class="cta-wrap" id="contact">
+  <div class="cta-inner reveal">
+    <div class="cta-caps">צרו קשר</div>
+    <h2 class="cta-title">בואו נראה לכם<br/>איך זה <span class="em">עובד.</span></h2>
+    <p class="cta-sub">הדגמה אישית עם מנהל חשבון, מותאמת למוסד שלכם. 30 דקות בלי מחויבות. הצעת מחיר — מיד לאחר מכן.</p>
+
+    <form class="cta-form" onsubmit="event.preventDefault(); submitContact(this);">
+      <input type="email" class="cta-input" placeholder="האימייל שלך · info@mosad.org.il" required/>
+      <button class="cta-btn" type="submit">קבלו הצעת מחיר <i data-lucide="arrow-left"></i></button>
+    </form>
+
+    <div class="cta-note">
+      <span><i data-lucide="shield-check"></i>ללא התחייבות</span>
+      <span><i data-lucide="clock"></i>מענה תוך יום עסקים</span>
+      <span><i data-lucide="phone"></i><a href="tel:+97223750599" style="color:inherit">02-375-0599</a></span>
+      <span><i data-lucide="map-pin"></i>המגיד ממעזריטש 40, ביתר עילית</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-foot">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <img src="/assets/logo-full.png" alt="תל-חץ · ניהול חכם, התקדמות מהירה" class="foot-logo"/>
+      <p>תוכנה לניהול מוסד חינוכי במגזר החרדי — ישיבות, תלמודי תורה, סמינרים, בתי ספר ומרכזי סיוע. מהימנה. מסודרת. מכובדת.</p>
+      <address style="font-style:normal; font-size:13px; color:rgba(238,242,247,0.6); line-height:1.7; margin:0;">
+        המגיד ממעזריטש 40, ביתר עילית<br/>
+        <a href="tel:+97223750599" style="color:inherit">02-375-0599</a> · <a href="mailto:office@telchetz.com" style="color:inherit">office@telchetz.com</a>
+      </address>
+      <p class="foot-mono" style="color: rgba(238,242,247,0.45); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em;">תשפ״ו · גרסה 2.0</p>
+    </div>
+    <div class="foot-col">
+      <div class="foot-col-head">המוצר</div>
+      <ul>
+        <li><a href="#system">המודולים</a></li>
+        <li><a href="#peek">לוח הבקרה</a></li>
+        <li><a href="#personas">למי מתאים</a></li>
+        <li><a href="https://app.telchetz.com/">כניסה ללקוחות</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <div class="foot-col-head">החברה</div>
+      <ul>
+        <li><a href="#">אודות</a></li>
+        <li><a href="#">אבטחה ופרטיות</a></li>
+        <li><a href="#">תנאי שימוש</a></li>
+        <li><a href="#">צור קשר</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <div class="foot-col-head">תמיכה</div>
+      <ul>
+        <li><a href="#">מרכז עזרה</a></li>
+        <li><a href="#">הדרכות</a></li>
+        <li><a href="#">סטטוס מערכת</a></li>
+        <li><a href="mailto:support@telchetz.com">support@telchetz.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© תל-חץ ·  כל הזכויות שמורות</div>
+    <div class="foot-mono">TELCHETZ.COM</div>
+  </div>
+</footer>
+
+<script>
+  // Dictation typewriter
+  const dictRaw = document.getElementById('dict-raw');
+  const dictText = 'אז כאן... נפגשתי היום עם הורים של שמואל רוזנברג מכיתה ז׳ א׳, אם שמואל הוא קצת מוטיבציה בלימודים שלו לאחרונה הייתה צניחה קצת, ובאמת רוצים שהוא יתחזק אישית בלימודים אולי בשיתוף המלמד הרב כהן...';
+  if (dictRaw) {
+    const dio = new IntersectionObserver((es) => {
+      es.forEach(e => {
+        if (e.isIntersecting && !dictRaw.dataset.done) {
+          dictRaw.dataset.done = '1';
+          let i = 0;
+          const type = () => {
+            if (i > dictText.length) return;
+            dictRaw.innerHTML = dictText.slice(0, i) + '<span class="cursor"></span>';
+            i++;
+            setTimeout(type, 38 + Math.random() * 40);
+          };
+          type();
+          dio.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.35 });
+    dio.observe(dictRaw);
+  }
+
+  // Lucide icons
+  lucide.createIcons();
+
+  // Topnav scroll state
+  const topnav = document.getElementById('topnav');
+  window.addEventListener('scroll', () => {
+    topnav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Ticker — build + duplicate for seamless loop
+  const tickerItems = [
+    { code: 'GRADE', label: 'מבחנים וציונים' },
+    { code: 'TASK', label: 'משימות צוות' },
+    { code: 'MEETING', label: 'פגישות הורים' },
+    { code: 'REPORT', label: 'דוחות אוטומטיים' },
+    { code: 'ALERT', label: 'התראות חכמות' },
+    { code: 'ATTENDANCE', label: 'ניהול נוכחות' },
+    { code: 'TAG', label: 'תיוגים מתקדמים' },
+    { code: 'FORM', label: 'טפסים דיגיטליים' },
+    { code: 'PROCESS', label: 'תהליכים ואישורים' },
+    { code: 'SALARY', label: 'שכר ותלושים' },
+    { code: 'BILLING', label: 'חיובי משפחות' },
+    { code: 'BUDGET', label: 'בקרת תקציב' },
+    { code: 'PLAN', label: 'תכנון שנתי' }
+  ];
+  const track = document.getElementById('ticker-track');
+  const renderTicker = () => tickerItems.map(t =>
+    `<div class="ticker-item"><span class="code">${t.code}</span><span>${t.label}</span><span class="dot"></span></div>`
+  ).join('');
+  track.innerHTML = renderTicker() + renderTicker();
+
+  // Count-up stats
+  const countEls = document.querySelectorAll('[data-count]');
+  const countUp = (el) => {
+    const target = +el.dataset.count;
+    const t0 = performance.now();
+    const dur = 1400;
+    const tick = (now) => {
+      const p = Math.min((now - t0) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 4);
+      el.textContent = Math.round(target * eased).toLocaleString('he-IL');
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  // Reveal on scroll + count-up trigger
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        e.target.querySelectorAll('[data-count]').forEach(el => {
+          if (!el.dataset.done) { el.dataset.done = '1'; countUp(el); }
+        });
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Contact form
+  function submitContact(form) {
+    const input = form.querySelector('input');
+    const btn = form.querySelector('button');
+    btn.innerHTML = '✓ תודה, ניצור קשר';
+    btn.style.background = 'var(--success)';
+    btn.style.color = '#fff';
+    input.value = '';
+    input.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = 'קבלו הצעת מחיר';
+      btn.style.background = '';
+      btn.style.color = '';
+      input.disabled = false;
+    }, 3500);
+    // re-add icon
+    setTimeout(() => lucide.createIcons(), 3550);
+  }
+
+  // Smooth scroll for same-page anchors (belt + suspenders — html scroll-behavior already on)
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (id.length > 1) {
+        const el = document.querySelector(id);
+        if (el) { e.preventDefault(); window.scrollTo({ top: el.offsetTop - 60, behavior: 'smooth' }); }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
