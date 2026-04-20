@@ -1774,10 +1774,11 @@
     <h2 class="cta-title">בואו נראה לכם<br/>איך זה <span class="em">עובד.</span></h2>
     <p class="cta-sub">הדגמה אישית עם מנהל חשבון, מותאמת למוסד שלכם. 30 דקות בלי מחויבות. הצעת מחיר — מיד לאחר מכן.</p>
 
-    <form class="cta-form" onsubmit="event.preventDefault(); submitContact(this);">
-      <input type="email" class="cta-input" placeholder="האימייל שלך · info@mosad.org.il" required/>
+    <form class="cta-form" id="lead-form" onsubmit="event.preventDefault(); submitContact(this);">
+      <input type="email" name="email" class="cta-input" placeholder="האימייל שלך · info@mosad.org.il" autocomplete="email" required/>
       <button class="cta-btn" type="submit">קבלו הצעת מחיר <i data-lucide="arrow-left"></i></button>
     </form>
+    <div id="lead-form-status" role="status" aria-live="polite" style="min-height:18px;margin-top:14px;font-size:12px;color:rgba(238,242,247,0.6)"></div>
 
     <div class="cta-note">
       <span><i data-lucide="shield-check"></i>ללא התחייבות</span>
@@ -1928,23 +1929,67 @@
     });
   });
 
-  // Contact form
-  function submitContact(form) {
-    const input = form.querySelector('input');
-    const btn = form.querySelector('button');
-    btn.innerHTML = '✓ תודה, ניצור קשר';
-    btn.style.background = 'var(--success)';
-    btn.style.color = '#fff';
-    input.value = '';
+  // Contact form — POST /api/lead, then show real success / error
+  async function submitContact(form) {
+    const input = form.querySelector('input[name="email"]');
+    const btn   = form.querySelector('button');
+    const status = document.getElementById('lead-form-status');
+    const email = (input.value || '').trim();
+    if (!email) return;
+
+    const prevHtml = btn.innerHTML;
+    btn.disabled = true;
     input.disabled = true;
+    btn.innerHTML = 'שולח…';
+    status.textContent = '';
+    status.style.color = 'rgba(238,242,247,0.6)';
+
+    try {
+      const resp = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      const data = await resp.json().catch(() => ({}));
+      if (resp.ok && data.ok) {
+        btn.innerHTML = '✓ תודה, ניצור קשר';
+        btn.style.background = 'var(--success)';
+        btn.style.color = '#fff';
+        input.value = '';
+        status.style.color = 'rgba(16,185,129,0.85)';
+        status.textContent = 'הבקשה התקבלה · נחזור אליך תוך יום עסקים.';
+      } else {
+        const reason = data.error === 'invalid_email'
+          ? 'אימייל לא תקין'
+          : data.error === 'rate_limited'
+          ? 'יותר מדי בקשות — נסו שוב בעוד שעה'
+          : 'שליחה נכשלה. אפשר גם להתקשר 02-375-0599';
+        btn.innerHTML = prevHtml;
+        btn.disabled = false;
+        input.disabled = false;
+        status.style.color = 'rgba(220,38,38,0.9)';
+        status.textContent = reason;
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+        return;
+      }
+    } catch (e) {
+      btn.innerHTML = prevHtml;
+      btn.disabled = false;
+      input.disabled = false;
+      status.style.color = 'rgba(220,38,38,0.9)';
+      status.textContent = 'תקלת רשת. אפשר להתקשר 02-375-0599';
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+      return;
+    }
+
     setTimeout(() => {
-      btn.innerHTML = 'קבלו הצעת מחיר';
+      btn.innerHTML = prevHtml;
       btn.style.background = '';
       btn.style.color = '';
+      btn.disabled = false;
       input.disabled = false;
-    }, 3500);
-    // re-add icon
-    setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, 3550);
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }, 6000);
   }
 
   // Smooth scroll for same-page anchors (belt + suspenders — html scroll-behavior already on)
