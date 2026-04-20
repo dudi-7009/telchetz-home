@@ -11,9 +11,9 @@ FROM debian:12-slim AS svgrender
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
         librsvg2-bin \
-        fonts-noto-hebrew \
         fonts-noto-core \
         fonts-liberation \
+        fonts-dejavu-core \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /render
 COPY assets/og-image.svg ./og-image.svg
