@@ -5,8 +5,16 @@
 # ============================================================================
 
 # --- Stage 1: render the SVG to PNG -----------------------------------------
-FROM alpine:3.20 AS svgrender
-RUN apk add --no-cache librsvg font-noto-hebrew font-noto ttf-liberation
+# Debian slim instead of Alpine — librsvg2-bin is a known-good CLI package
+# and fonts-noto-hebrew ships reliable Hebrew glyph coverage for rendering.
+FROM debian:12-slim AS svgrender
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+        librsvg2-bin \
+        fonts-noto-hebrew \
+        fonts-noto-core \
+        fonts-liberation \
+ && rm -rf /var/lib/apt/lists/*
 WORKDIR /render
 COPY assets/og-image.svg ./og-image.svg
 RUN rsvg-convert -w 1200 -h 630 og-image.svg -o og-image.png \
