@@ -32,6 +32,15 @@ COPY sitemap.xml /usr/share/nginx/html/sitemap.xml
 COPY assets/ /usr/share/nginx/html/assets/
 COPY --from=svgrender /render/og-image.png /usr/share/nginx/html/assets/og-image.png
 
+# Landing pages — each in its own directory so /slug/ serves /slug/index.html
+COPY nihul-nochichut/   /usr/share/nginx/html/nihul-nochichut/
+COPY ciunim-mivchanim/  /usr/share/nginx/html/ciunim-mivchanim/
+COPY chiyuv-horim/      /usr/share/nginx/html/chiyuv-horim/
+COPY talmud-torah/      /usr/share/nginx/html/talmud-torah/
+COPY yeshiva-ktana/     /usr/share/nginx/html/yeshiva-ktana/
+COPY seminar/           /usr/share/nginx/html/seminar/
+COPY merkaz-siyua/      /usr/share/nginx/html/merkaz-siyua/
+
 HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
   CMD wget -qO- http://127.0.0.1/healthz || exit 1
 

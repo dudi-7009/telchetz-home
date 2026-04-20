@@ -9,4 +9,53 @@
     <xhtml:link rel="alternate" hreflang="he-IL" href="https://telchetz.com/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://telchetz.com/"/>
   </url>
+  <url>
+    <loc>https://telchetz.com/nihul-nochichut/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he-IL" href="https://telchetz.com/nihul-nochichut/"/>
+  </url>
+  <url>
+    <loc>https://telchetz.com/ciunim-mivchanim/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he-IL" href="https://telchetz.com/ciunim-mivchanim/"/>
+  </url>
+  <url>
+    <loc>https://telchetz.com/chiyuv-horim/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="he-IL" href="https://telchetz.com/chiyuv-horim/"/>
+  </url>
+  <url>
+    <loc>https://telchetz.com/talmud-torah/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="he-IL" href="https://telchetz.com/talmud-torah/"/>
+  </url>
+  <url>
+    <loc>https://telchetz.com/yeshiva-ktana/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="he-IL" href="https://telchetz.com/yeshiva-ktana/"/>
+  </url>
+  <url>
+    <loc>https://telchetz.com/seminar/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="he-IL" href="https://telchetz.com/seminar/"/>
+  </url>
+  <url>
+    <loc>https://telchetz.com/merkaz-siyua/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="he-IL" href="https://telchetz.com/merkaz-siyua/"/>
+  </url>
 </urlset>
