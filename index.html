@@ -37,7 +37,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Miriam+Libre:wght@400;700&family=Assistant:wght@200;300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest" defer></script>
+<script src="https://unpkg.com/lucide@latest"></script>
 
 <!-- Structured data: Organization + LocalBusiness + SoftwareApplication + WebSite + FAQ -->
 <script type="application/ld+json">
@@ -1814,8 +1814,8 @@
     dio.observe(dictRaw);
   }
 
-  // Lucide icons
-  lucide.createIcons();
+  // Lucide icons (guarded in case CDN fails to load)
+  if (typeof lucide !== 'undefined') lucide.createIcons();
 
   // Topnav scroll state
   const topnav = document.getElementById('topnav');
@@ -1900,7 +1900,7 @@
       input.disabled = false;
     }, 3500);
     // re-add icon
-    setTimeout(() => lucide.createIcons(), 3550);
+    setTimeout(() => { if (typeof lucide !== 'undefined') lucide.createIcons(); }, 3550);
   }
 
   // Smooth scroll for same-page anchors (belt + suspenders — html scroll-behavior already on)
