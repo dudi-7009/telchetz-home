@@ -36,7 +36,7 @@
 <link rel="stylesheet" href="/assets/telchetz.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Miriam+Libre:wght@400;700&family=Assistant:wght@200;300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Bellefair&family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <!-- Structured data: Organization + LocalBusiness + SoftwareApplication + WebSite + FAQ -->
@@ -127,16 +127,18 @@
 }
 </script>
 <style>
-  /* === Typography system · ONE sans (Rubik) + italic gloss (Fraunces) + data mono ===
-     Modular scale: 1.333 (perfect fourth). Base 16px.
-     xs .75rem · sm .875rem · base 1rem · lg 1.333rem · xl 1.777rem
-     display: 3.16rem / 4.21rem / 5.61rem / 7.48rem / 9.97rem (extreme scale jumps for hero) */
+  /* === Typography: Hebrew Brutalism 2026 ===
+     Secular One (brutal slab display) · Bellefair (editorial serif H2) ·
+     Heebo variable 100-900 (whisper body → heavy) · Fraunces italic (Latin gloss) ·
+     JetBrains + IBM Plex Mono (data + uppercase labels).
+     Extreme weight contrast: display 900 vs body 200 (9:1 stress ratio). */
   :root {
-    --font-sans: "Assistant", system-ui, -apple-system, "Segoe UI", sans-serif;
-    --font-display: "Suez One", "Miriam Libre", system-ui, sans-serif;
-    --font-title: "Miriam Libre", "Assistant", system-ui, sans-serif;
-    --font-serif: "Fraunces", Georgia, serif;
-    --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    --font-sans:    "Heebo", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-display: "Secular One", "Heebo", system-ui, sans-serif;
+    --font-title:   "Bellefair", "Heebo", Georgia, serif;
+    --font-serif:   "Fraunces", "Bellefair", Georgia, serif;
+    --font-mono:    "JetBrains Mono", "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    --font-data:    "IBM Plex Mono", "JetBrains Mono", ui-monospace, monospace;
     --navy: #0A1628;
     --navy-classic: #0F2847;
     --navy-deep: #050E1B;
@@ -153,21 +155,26 @@
     font-family: var(--font-sans);
     font-size: 16px;
     line-height: var(--leading-body);
-    font-weight: 400;
+    font-weight: 300;
     font-feature-settings: "kern", "ss01", "cv11";
     font-kerning: normal;
     text-rendering: optimizeLegibility;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-title);
-    font-weight: 700;
-    letter-spacing: -0.025em;
+    font-weight: 400;
+    letter-spacing: -0.02em;
     line-height: var(--leading-tight);
   }
-  .hero-title, .mega-title, h2.section-title {
+  .hero-title, .mega-title {
     font-family: var(--font-display);
     font-weight: 400;
-    letter-spacing: -0.035em;
+    letter-spacing: -0.065em;
+  }
+  h2.section-title {
+    font-family: var(--font-title);
+    font-weight: 400;
+    letter-spacing: -0.025em;
   }
   .tabular, .stat-num, .mini-stat-num, .big-num, .hero-numbers .stat-num { font-variant-numeric: tabular-nums; }
   .editorial-italic { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-variation-settings: "opsz" 96, "SOFT" 80; letter-spacing: -0.015em; }
@@ -244,48 +251,71 @@
   .hero-caps::before { content: ''; width: 48px; height: 1px; background: var(--gold); }
   .hero-caps::after { content: '◎'; color: var(--gold); font-size: 9px; }
 
+  /* ===== HERO TITLE · Hebrew Brutalism 2026 =====
+     Scale monumental · scaleX condensed · grid broken hard · overprint gold */
   .hero-title {
     font-family: var(--font-display);
-    font-size: clamp(80px, 13vw, 232px);
+    font-size: clamp(88px, 17vw, 304px);
     font-weight: 400;
     color: var(--navy-classic);
-    line-height: 0.85;
-    letter-spacing: -0.045em;
+    line-height: 0.82;
+    letter-spacing: -0.065em;
     margin: 0;
     position: relative;
+    font-feature-settings: "kern";
   }
-  .hero-title .block { display: block; position: relative; }
-  .hero-title .block-1 { transform: translateX(-1%); }
-  .hero-title .block-2 { padding-inline-start: 10%; }
-  .hero-title .block-3 { transform: translateX(2%); padding-inline-start: 4%; }
+  .hero-title .block {
+    display: block;
+    position: relative;
+    transform-origin: right center;
+  }
+  /* Brutal grid break — more aggressive than original (-1/+10/+2) */
+  .hero-title .block-1 {
+    transform: translateX(-5%) scaleX(0.94);
+    transform-origin: right center;
+  }
+  .hero-title .block-2 {
+    padding-inline-start: 18%;
+    transform: scaleX(0.96) rotate(-0.6deg);
+    transform-origin: center;
+  }
+  .hero-title .block-3 {
+    transform: translateX(3%) scaleX(0.94);
+    padding-inline-start: 2%;
+    transform-origin: right center;
+  }
+  /* The editorial gold italic — fraunces on Latin, bellefair fallback for Hebrew */
   .hero-title .em {
     font-family: var(--font-serif);
     font-style: italic;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--gold);
     position: relative;
     display: inline-block;
-    letter-spacing: -0.03em;
-    transform: translateY(-0.04em);
-    font-variation-settings: "opsz" 144, "SOFT" 80;
+    letter-spacing: -0.035em;
+    transform: translateY(-0.03em) rotate(-1.2deg);
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    /* Overprint-like stacking: gold on navy shadow for dimensional feel */
+    text-shadow: 2px 3px 0 rgba(10, 22, 40, 0.08);
   }
   .hero-title .em::after { display: none; }
+  /* Monospace chip — kept but tightened */
   .hero-title .knows {
     font-family: var(--font-mono);
-    font-size: 0.1em;
-    font-weight: 500;
-    letter-spacing: 0.14em;
+    font-size: 0.09em;
+    font-weight: 600;
+    letter-spacing: 0.18em;
     position: absolute;
-    top: -0.5em;
-    inset-inline-start: 12%;
-    transform: rotate(-1.5deg);
+    top: -0.45em;
+    inset-inline-start: 8%;
+    transform: rotate(-2.2deg);
     background: var(--navy-classic);
     color: var(--gold-bright);
-    padding: 0.5em 0.9em;
-    border-radius: 4px;
-    text-transform: none;
+    padding: 0.55em 1em;
+    border-radius: 2px;
+    text-transform: uppercase;
     white-space: nowrap;
-    box-shadow: 0 8px 24px rgba(10,22,40,0.2);
+    box-shadow: 4px 4px 0 var(--gold), 0 12px 32px rgba(10, 22, 40, 0.25);
   }
 
   .hero-below {
@@ -297,19 +327,25 @@
   }
   .hero-lede {
     margin: 0;
-    font-size: 20px;
-    line-height: 1.45;
+    font-size: 21px;
+    line-height: 1.5;
     color: var(--navy);
-    font-weight: 400;
+    font-weight: 200;                         /* whisper-thin vs display 900 */
     text-wrap: pretty;
     grid-column: 2;
+    letter-spacing: -0.005em;
   }
-  .hero-lede strong { color: var(--navy-classic); font-weight: 700; background: linear-gradient(180deg, transparent 60%, rgba(212,160,20,0.35) 60%); }
+  .hero-lede strong {
+    color: var(--navy-classic);
+    font-weight: 700;
+    background: linear-gradient(180deg, transparent 60%, rgba(212,160,20,0.35) 60%);
+  }
   .hero-lede .sarcasm {
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 400;
     color: var(--gold);
+    font-variation-settings: "opsz" 96, "SOFT" 100;
   }
   .hero-lede .q-inline {
     display: inline-block;
@@ -340,14 +376,16 @@
     background: var(--gold);
   }
   .big-num {
-    font-family: var(--font-display);
-    font-size: 120px;
-    font-weight: 900;
+    font-family: var(--font-display);             /* Secular One */
+    font-size: 132px;
+    font-weight: 400;                             /* Secular One is single-weight */
     line-height: 0.85;
-    letter-spacing: -0.06em;
+    letter-spacing: -0.065em;
     color: var(--navy-classic);
     font-variant-numeric: tabular-nums;
     margin-bottom: 12px;
+    transform: scaleX(0.94);
+    transform-origin: right center;
   }
   .big-num-lbl {
     font-family: var(--font-mono);
@@ -385,11 +423,11 @@
   .mini-stat { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 1px dashed rgba(255,255,255,0.15); padding-bottom: 14px; }
   .mini-stat:last-child { border-bottom: 0; padding-bottom: 0; }
   .mini-stat-num {
-    font-family: var(--font-display);
-    font-size: 38px;
-    font-weight: 900;
+    font-family: var(--font-display);             /* Secular One */
+    font-size: 42px;
+    font-weight: 400;
     line-height: 1;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.055em;
     font-variant-numeric: tabular-nums;
     color: var(--gold-bright);
     display: flex; align-items: baseline; gap: 1px;
@@ -553,16 +591,22 @@
   .section-caps { font-size: 11px; font-weight: 500; letter-spacing: 0.28em; color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
   .section-caps::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
   .section-title {
-    font-family: var(--font-serif);
-    font-size: clamp(36px, 5.5vw, 68px);
-    font-weight: 500;
+    font-family: var(--font-title);              /* Bellefair editorial serif */
+    font-size: clamp(40px, 6.5vw, 84px);
+    font-weight: 400;
     color: var(--navy-classic);
-    line-height: 1;
+    line-height: 1.02;
     letter-spacing: -0.025em;
     margin: 0;
     text-wrap: balance;
   }
-  .section-title .em { font-style: italic; color: var(--gold); font-weight: 400; }
+  .section-title .em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 400;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+  }
   .section-sub { margin-top: 22px; font-size: 17px; color: var(--fg-2); line-height: 1.55; max-width: 640px; text-wrap: pretty; }
 
   /* ===== SYSTEM / 13 MODULES ===== */
