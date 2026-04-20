@@ -21,11 +21,11 @@
   <rect width="1200" height="630" fill="url(#dotPattern)"/>
   <rect width="1200" height="630" filter="url(#grain)" opacity="0.3"/>
 
-  <!-- Top + bottom gold stripes -->
+  <!-- Gold stripes top + bottom -->
   <rect x="0" y="0"   width="1200" height="6" fill="#C4922A"/>
   <rect x="0" y="624" width="1200" height="6" fill="#C4922A"/>
 
-  <!-- Top bar -->
+  <!-- Top bar: chip left, TELCHETZ.COM right -->
   <g transform="translate(60, 52)">
     <rect x="0" y="0" width="260" height="38" fill="#0F2847" rx="4"/>
     <circle cx="22" cy="19" r="5" fill="#F5C23C"/>
@@ -40,51 +40,45 @@
     </text>
   </g>
 
-  <!-- MAIN HEADLINE — Hebrew RTL, forced with direction + unicode-bidi -->
-  <!-- Using single-string text elements (no tspan styling splits) so RTL renders correctly -->
-  <text x="1140" y="230" text-anchor="end"
-        direction="rtl" unicode-bidi="bidi-override" xml:lang="he"
-        font-size="92" font-weight="900" letter-spacing="-3" fill="#0F2847">עם תל-חץ,</text>
+  <!-- MAIN HEADLINE: Hebrew text, no direction override, no tspan with mixed styles.
+       Rely on Unicode bidi for correct RTL rendering, and use text-anchor=start
+       with right-edge x positioning so text grows leftward naturally. -->
+  <text x="60" y="240" text-anchor="start" font-size="88" font-weight="900" letter-spacing="-3" fill="#0F2847" xml:lang="he">עם תל-חץ,</text>
+  <text x="60" y="348" text-anchor="start" font-size="88" font-weight="900" letter-spacing="-3" fill="#0F2847" xml:lang="he">אני שולט בהכל.</text>
 
-  <text x="1140" y="340" text-anchor="end"
-        direction="rtl" unicode-bidi="bidi-override" xml:lang="he"
-        font-size="92" font-weight="900" letter-spacing="-3" fill="#0F2847">אני שולט בהכל.</text>
-
-  <!-- Gold underline beneath the headline -->
-  <line x1="800" y1="372" x2="1140" y2="372" stroke="#C4922A" stroke-width="4"/>
+  <!-- Gold underline -->
+  <line x1="60" y1="378" x2="420" y2="378" stroke="#C4922A" stroke-width="4"/>
 
   <!-- Subtitle -->
-  <text x="1140" y="418" text-anchor="end"
-        direction="rtl" unicode-bidi="bidi-override" xml:lang="he"
-        font-size="28" font-weight="500" fill="#1C2B3A">תוכנה לניהול מוסד חינוכי · המגזר החרדי</text>
+  <text x="60" y="425" text-anchor="start" font-size="26" font-weight="500" fill="#1C2B3A" xml:lang="he">תוכנה לניהול מוסד חינוכי · המגזר החרדי</text>
 
-  <!-- Stats row — each stat its own block, numbers are ASCII so no RTL issue -->
-  <!-- Column 1: 19 מוסדות -->
-  <g transform="translate(80, 470)">
-    <text x="0" y="70" font-size="92" font-weight="900" fill="#0F2847" letter-spacing="-3">19</text>
-    <text x="0" y="108" direction="rtl" unicode-bidi="bidi-override" xml:lang="he"
-          font-size="15" font-weight="700" letter-spacing="2" fill="#475569">מוסדות · 6 רשתות</text>
+  <!-- Stats row — 3 columns -->
+  <g transform="translate(60, 490)">
+    <!-- Column 1 -->
+    <g>
+      <text x="0" y="70" font-size="84" font-weight="900" fill="#0F2847" letter-spacing="-3">19</text>
+      <text x="0" y="102" font-size="13" font-weight="700" letter-spacing="2" fill="#475569" xml:lang="he">מוסדות · 6 רשתות</text>
+    </g>
+    <!-- Column 2 -->
+    <g transform="translate(260, 0)">
+      <text x="0" y="70" font-size="84" font-weight="900" fill="#0F2847" letter-spacing="-3">13</text>
+      <text x="0" y="102" font-size="13" font-weight="700" letter-spacing="2" fill="#475569" xml:lang="he">מודולים מחוברים</text>
+    </g>
+    <!-- Column 3 — gold accent -->
+    <g transform="translate(520, 0)">
+      <text x="0" y="70" font-size="84" font-weight="900" fill="#C4922A" letter-spacing="-3">100%</text>
+      <text x="0" y="102" font-size="13" font-weight="700" letter-spacing="2" fill="#475569" xml:lang="he">שליטה אצל המנהל</text>
+    </g>
   </g>
 
-  <!-- Column 2: 13 מודולים -->
-  <g transform="translate(320, 470)">
-    <text x="0" y="70" font-size="92" font-weight="900" fill="#0F2847" letter-spacing="-3">13</text>
-    <text x="0" y="108" direction="rtl" unicode-bidi="bidi-override" xml:lang="he"
-          font-size="15" font-weight="700" letter-spacing="2" fill="#475569">מודולים מחוברים</text>
-  </g>
-
-  <!-- Column 3: 100% שליטה -->
-  <g transform="translate(560, 470)">
-    <text x="0" y="70" font-size="92" font-weight="900" fill="#C4922A" letter-spacing="-3">100%</text>
-    <text x="0" y="108" direction="rtl" unicode-bidi="bidi-override" xml:lang="he"
-          font-size="15" font-weight="700" letter-spacing="2" fill="#475569">שליטה אצל המנהל</text>
-  </g>
-
-  <!-- Bottom-right: URL -->
+  <!-- Bottom-right URL -->
   <text x="1140" y="600" text-anchor="end" font-size="18" font-weight="700" letter-spacing="4" fill="#0F2847">
     HTTPS://TELCHETZ.COM
   </text>
 
-  <!-- Gold corner accent top-left -->
-  <path d="M 0 0 L 100 0 L 0 100 Z" fill="#C4922A" fill-opacity="0.20"/>
+  <!-- Decorative gold triangle in top-left corner (contained, subtle) -->
+  <path d="M 0 0 L 100 0 L 0 100 Z" fill="#C4922A" fill-opacity="0.22"/>
+
+  <!-- Decorative gold triangle bottom-right -->
+  <path d="M 1200 530 L 1200 624 L 1106 624 Z" fill="#C4922A" fill-opacity="0.14"/>
 </svg>
