@@ -595,26 +595,27 @@
   }
 
   /* Verified partner: warm glow from mark corner + logo badge */
+  /* Mark sits at bottom-physical-LEFT in RTL (opposite text, opposite Hebrew idx) */
   .mg-verified {
-    padding-inline-end: 28px;
+    padding-inline-start: 96px;  /* reserve space on physical LEFT for the mark */
     padding-bottom: 28px;
     background:
-      radial-gradient(circle at 12% 88%, rgba(245,241,232,0.12), transparent 38%),
-      radial-gradient(ellipse at 0% 100%, color-mix(in oklab, var(--tile-tone, var(--gold)) 10%, transparent), transparent 55%),
+      radial-gradient(circle at 88% 88%, rgba(245,241,232,0.12), transparent 38%),
+      radial-gradient(ellipse at 100% 100%, color-mix(in oklab, var(--tile-tone, var(--gold)) 10%, transparent), transparent 55%),
       linear-gradient(180deg, #0d1b31 0%, #0a1628 100%);
   }
   .mg-verified:hover {
     background:
-      radial-gradient(circle at 12% 88%, rgba(245,241,232,0.18), transparent 42%),
-      radial-gradient(ellipse at 0% 100%, color-mix(in oklab, var(--tile-tone, var(--gold)) 18%, transparent), transparent 60%),
+      radial-gradient(circle at 88% 88%, rgba(245,241,232,0.18), transparent 42%),
+      radial-gradient(ellipse at 100% 100%, color-mix(in oklab, var(--tile-tone, var(--gold)) 18%, transparent), transparent 60%),
       linear-gradient(180deg, #142544 0%, #0f1d35 100%);
   }
   .mg-verified .mg-mark {
     position: absolute;
     bottom: 22px;
-    inset-inline-start: 24px;
-    width: 50px;
-    height: 50px;
+    inset-inline-end: 24px;        /* physical LEFT side in RTL */
+    width: 56px;
+    height: 56px;
     object-fit: contain;
     padding: 6px;
     background: #fdf7e8;
@@ -691,8 +692,8 @@
     .megilla-title { font-size: clamp(36px, 10vw, 56px); }
     .megilla-foot { flex-wrap: wrap; gap: 10px; }
     .mg-cat { padding: 20px 20px 12px; font-size: 10px; letter-spacing: 0.26em; }
-    .mg-verified { padding-bottom: 76px; }
-    .mg-verified .mg-mark { bottom: 20px; width: 40px; height: 40px; }
+    .mg-verified { padding-inline-start: 80px; padding-bottom: 22px; }
+    .mg-verified .mg-mark { bottom: 18px; inset-inline-end: 18px; width: 48px; height: 48px; }
   }
 
   /* ===== SECTION SCAFFOLD ===== */
