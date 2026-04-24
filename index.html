@@ -445,39 +445,21 @@
     50% { opacity: 0.45; transform: scale(0.82); }
   }
   .megilla-title {
-    font-family: var(--font-display);
-    font-size: clamp(72px, 14vw, 220px);
+    font-family: var(--font-title);
+    font-size: clamp(40px, 5.4vw, 72px);
     font-weight: 400;
-    line-height: 0.86;
-    letter-spacing: -0.065em;
+    line-height: 1;
+    letter-spacing: -0.025em;
     color: #fff;
     margin: 0;
-  }
-  .megilla-title .mg-t-a {
-    display: block;
     font-variant-numeric: tabular-nums;
   }
-  .megilla-title .mg-t-b {
-    display: block;
-    padding-inline-start: clamp(20px, 6%, 80px);
-    margin-top: -0.06em;
-    letter-spacing: -0.035em;
-    font-size: 0.72em;
-  }
-  .megilla-title .em {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-weight: 300;
-    color: var(--gold);
-    font-variation-settings: "opsz" 144, "SOFT" 100;
-    padding-inline: 0.04em;
-  }
   .megilla-sub {
-    font-size: clamp(16px, 1.4vw, 19px);
+    font-size: clamp(15px, 1.35vw, 17px);
     line-height: 1.55;
-    color: rgba(238,242,247,0.72);
-    margin: 36px 0 0;
-    max-width: 560px;
+    color: rgba(238,242,247,0.65);
+    margin: 20px 0 0;
+    max-width: 520px;
     font-weight: 300;
     text-wrap: pretty;
   }
@@ -515,94 +497,7 @@
     background: linear-gradient(to left, transparent, rgba(196,146,42,0.4));
   }
 
-  /* ----- Seal (featured: with logo) ----- */
-  .mg-seal {
-    grid-column: span 4;
-    background: var(--cream);
-    color: var(--navy-deep);
-    min-height: 280px;
-    padding: 30px 34px;
-    position: relative;
-    display: grid;
-    grid-template-rows: 1fr auto;
-    gap: 20px;
-    transition:
-      transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
-      box-shadow 500ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .mg-seal:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 24px 60px -16px rgba(0,0,0,0.55), 0 0 0 1px rgba(196,146,42,0.5);
-    z-index: 2;
-  }
-  /* Seal stamp corner decoration (top-end) */
-  .mg-seal::before {
-    content: '';
-    position: absolute;
-    top: 18px;
-    inset-inline-end: 18px;
-    width: 14px; height: 14px;
-    border: 1.5px solid var(--gold);
-    border-radius: 50%;
-  }
-  /* Hebrew letter index (top-start) via CSS var */
-  .mg-seal::after {
-    content: var(--idx, '');
-    position: absolute;
-    top: 12px;
-    inset-inline-start: 22px;
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-weight: 300;
-    font-size: 22px;
-    color: var(--gold);
-    font-variation-settings: "opsz" 96, "SOFT" 100;
-    line-height: 1;
-  }
-  .mg-seal-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 28px 16px 16px;
-    min-height: 140px;
-  }
-  .mg-seal-logo img {
-    max-width: 100%;
-    max-height: 130px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .mg-seal:hover .mg-seal-logo img { transform: scale(1.04); }
-  .mg-seal-meta {
-    border-top: 1px solid rgba(5,14,27,0.14);
-    padding-top: 16px;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 14px;
-  }
-  .mg-seal-meta .mg-name {
-    font-family: var(--font-title);
-    font-size: clamp(20px, 1.9vw, 24px);
-    font-weight: 400;
-    letter-spacing: -0.018em;
-    margin: 0;
-    color: var(--navy-deep);
-    line-height: 1.05;
-  }
-  .mg-seal-meta .mg-city {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    color: rgba(5,14,27,0.55);
-    text-transform: uppercase;
-    flex-shrink: 0;
-    font-weight: 500;
-  }
-
-  /* ----- Inscription (text-only tile) ----- */
+  /* ----- Inscription tile (unified for all 19) ----- */
   .mg-inscription {
     background: var(--navy-deep);
     position: relative;
@@ -667,6 +562,33 @@
     position: relative; z-index: 1;
   }
 
+  /* Verified partner: small logo mark at bottom-inline-start (visual left in RTL) */
+  .mg-verified { padding-inline-end: 28px; padding-bottom: 28px; }
+  .mg-verified .mg-mark {
+    position: absolute;
+    bottom: 22px;
+    inset-inline-start: 24px;
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    padding: 5px;
+    background: var(--cream);
+    border-radius: 10px;
+    box-shadow:
+      0 0 0 1px rgba(196,146,42,0.22),
+      0 6px 14px rgba(0,0,0,0.32);
+    z-index: 2;
+    transition:
+      transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .mg-verified:hover .mg-mark {
+    transform: translateY(-2px);
+    box-shadow:
+      0 0 0 1px rgba(196,146,42,0.5),
+      0 10px 22px rgba(0,0,0,0.45);
+  }
+
   /* Size variants (span control) */
   .mg-inscription[data-size="sm"]    { grid-column: span 3; }
   .mg-inscription[data-size="md"]    { grid-column: span 4; }
@@ -700,7 +622,6 @@
   /* ----- Responsive ----- */
   @media (max-width: 1100px) {
     .megilla-wall { grid-template-columns: repeat(6, 1fr); }
-    .mg-seal { grid-column: span 6; }
     .mg-inscription[data-size="sm"]    { grid-column: span 3; }
     .mg-inscription[data-size="md"]    { grid-column: span 3; }
     .mg-inscription[data-size="wide"]  { grid-column: span 6; }
@@ -710,7 +631,7 @@
   @media (max-width: 620px) {
     .megilla { padding: 60px 20px; }
     .megilla-wall { grid-template-columns: 1fr; }
-    .mg-seal, .mg-inscription,
+    .mg-inscription,
     .mg-inscription[data-size="sm"],
     .mg-inscription[data-size="md"],
     .mg-inscription[data-size="wide"],
@@ -719,12 +640,12 @@
     .mg-inscription { min-height: 120px; }
     .mg-inscription[data-size="full"] { min-height: 140px; }
     .mg-inscription[data-size="full"] .mg-name { font-size: clamp(28px, 7vw, 40px); }
-    .mg-seal { min-height: 220px; }
     .mg-tilt-a, .mg-tilt-b { transform: none; }
-    .megilla-title { font-size: clamp(64px, 18vw, 120px); }
-    .megilla-title .mg-t-b { font-size: 0.78em; }
+    .megilla-title { font-size: clamp(36px, 10vw, 56px); }
     .megilla-foot { flex-wrap: wrap; gap: 10px; }
     .mg-cat { padding: 20px 20px 12px; font-size: 10px; letter-spacing: 0.26em; }
+    .mg-verified { padding-bottom: 76px; }
+    .mg-verified .mg-mark { bottom: 20px; width: 40px; height: 40px; }
   }
 
   /* ===== SECTION SCAFFOLD ===== */
@@ -1525,26 +1446,19 @@
 
   <div class="megilla-inner">
     <header class="megilla-head">
-      <div class="megilla-caps"><span class="mg-led"></span>מגילה · תשפ״ו · בפרודקשן</div>
-      <h2 class="megilla-title">
-        <span class="mg-t-a">י״ט.</span>
-        <span class="mg-t-b">סיפורי <span class="em">אמונה</span>.</span>
-      </h2>
-      <p class="megilla-sub">לא רשימת לקוחות. רשימת שותפים — כל מוסד בחר בתל-חץ, והמערכת הותאמה לדרכו. להלן כולם, בסדר הטמעתם.</p>
+      <div class="megilla-caps"><span class="mg-led"></span>שותפים · פעילים בפרודקשן</div>
+      <h2 class="megilla-title">19 שותפים.</h2>
+      <p class="megilla-sub">לא רשימת לקוחות — רשימת שותפים. כל מוסד בחר בתל-חץ, והמערכת הותאמה לדרכו.</p>
     </header>
 
     <div class="megilla-wall">
       <!-- Category: באיאן (5 institutions · 1 seal) -->
       <div class="mg-cat"><span>א · רשת באיאן</span></div>
 
-      <article class="mg-seal" style="--idx: 'א'">
-        <div class="mg-seal-logo">
-          <img src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/fa20eee2-bbb8-4eb2-889a-1c4bcb752705_1776933274908.png" alt="באיאן ביתר עילית" loading="lazy"/>
-        </div>
-        <div class="mg-seal-meta">
-          <h3 class="mg-name">ת״ת באיאן</h3>
-          <span class="mg-city">ביתר עילית</span>
-        </div>
+      <article class="mg-inscription mg-verified" data-size="md" style="--idx: 'א'">
+        <img class="mg-mark" src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/fa20eee2-bbb8-4eb2-889a-1c4bcb752705_1776933274908.png" alt="" loading="lazy"/>
+        <h3 class="mg-name">ת״ת באיאן</h3>
+        <span class="mg-city">ביתר עילית</span>
       </article>
 
       <article class="mg-inscription" data-size="md" style="--idx: 'ב'">
@@ -1613,14 +1527,10 @@
       <!-- Category: מתיקות (3 · 1 seal) + בית ספר (1) -->
       <div class="mg-cat"><span>ג · רשת מתיקות התורה + מתיקות החינוך</span></div>
 
-      <article class="mg-seal" style="--idx: 'י״ד'">
-        <div class="mg-seal-logo">
-          <img src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/289b1404-e447-4273-a239-1a1377915373_1776249606345.png" alt="מתיקות התורה בית שמש" loading="lazy"/>
-        </div>
-        <div class="mg-seal-meta">
-          <h3 class="mg-name">ת״ת מתיקות התורה</h3>
-          <span class="mg-city">בית שמש</span>
-        </div>
+      <article class="mg-inscription mg-verified" data-size="md" style="--idx: 'י״ד'">
+        <img class="mg-mark" src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/289b1404-e447-4273-a239-1a1377915373_1776249606345.png" alt="" loading="lazy"/>
+        <h3 class="mg-name">ת״ת מתיקות התורה</h3>
+        <span class="mg-city">בית שמש</span>
       </article>
 
       <article class="mg-inscription" data-size="md" style="--idx: 'ט״ו'">
@@ -1641,14 +1551,10 @@
       <!-- Category: מרכזי סיוע (2 · 1 seal) -->
       <div class="mg-cat"><span>ד · מרכזי סיוע</span></div>
 
-      <article class="mg-seal" style="--idx: 'י״ח'">
-        <div class="mg-seal-logo">
-          <img src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/f729b34b-9759-4553-9010-29ac0ff2c072_1773307738225.jpg" alt="מרכז הרב וובר" loading="lazy"/>
-        </div>
-        <div class="mg-seal-meta">
-          <h3 class="mg-name">מרכז הרב וובר</h3>
-          <span class="mg-city">מרכז סיוע</span>
-        </div>
+      <article class="mg-inscription mg-verified" data-size="md" style="--idx: 'י״ח'">
+        <img class="mg-mark" src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/f729b34b-9759-4553-9010-29ac0ff2c072_1773307738225.jpg" alt="" loading="lazy"/>
+        <h3 class="mg-name">מרכז הרב וובר</h3>
+        <span class="mg-city">מרכז סיוע</span>
       </article>
 
       <article class="mg-inscription" data-size="xwide" style="--idx: 'י״ט'">
