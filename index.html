@@ -384,92 +384,347 @@
   .btn-ghost-xl:hover { background: rgba(28,43,58,0.06); }
   .btn-ghost-xl .lucide { width: 14px; height: 14px; }
 
-  /* ===== CLIENTS (19 institutions individually) ===== */
-  .clients {
-    max-width: 1400px; margin: 0 auto;
-    padding: 80px 40px 100px;
-    border-top: 1px solid rgba(28, 43, 58, 0.08);
+  /* ===== מגילת תל-חץ · 19 מוסדות · Editorial dark section ===== */
+  .megilla {
+    background: var(--navy-deep);
+    color: #fff;
+    padding: clamp(80px, 12vh, 140px) 40px clamp(80px, 12vh, 140px);
+    position: relative;
+    overflow: hidden;
+    border-block: 1px solid rgba(196,146,42,0.18);
+    isolation: isolate;
   }
-  .clients-head { margin-bottom: 48px; max-width: 720px; }
-  .clients-caps {
+  /* Diagonal hairlines watermark — subtle scroll feel */
+  .megilla-bg {
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent 0 96px,
+        rgba(196,146,42,0.05) 96px 97px
+      ),
+      radial-gradient(ellipse at 85% 10%, rgba(196,146,42,0.1), transparent 55%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .megilla-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ----- Header ----- */
+  .megilla-head {
+    margin-bottom: clamp(64px, 9vh, 112px);
+    max-width: 840px;
+  }
+  .megilla-caps {
     font-family: var(--font-mono);
-    font-size: 11px; font-weight: 500; letter-spacing: 0.28em;
+    font-size: 11px;
+    letter-spacing: 0.28em;
     color: var(--gold);
-    margin-bottom: 16px;
-    display: flex; align-items: center; gap: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 7px 14px 7px 16px;
+    border: 1px solid rgba(196,146,42,0.35);
     text-transform: uppercase;
+    margin-bottom: 40px;
+    background: rgba(196,146,42,0.04);
   }
-  .clients-caps::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
-  .clients-title {
-    font-family: var(--font-title);
-    font-size: clamp(28px, 4vw, 48px);
+  .mg-led {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--gold-bright);
+    box-shadow: 0 0 10px rgba(245,194,60,0.7);
+    animation: mg-led-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes mg-led-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.45; transform: scale(0.82); }
+  }
+  .megilla-title {
+    font-family: var(--font-display);
+    font-size: clamp(72px, 14vw, 220px);
     font-weight: 400;
-    color: var(--navy-classic);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
+    line-height: 0.86;
+    letter-spacing: -0.065em;
+    color: #fff;
     margin: 0;
   }
-  .clients-title .em { color: var(--gold); font-family: var(--font-serif); font-style: italic; font-weight: 400; }
-  .clients-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 1px;
-    background: rgba(28,43,58,0.08);
-    border: 1px solid rgba(28,43,58,0.08);
+  .megilla-title .mg-t-a {
+    display: block;
+    font-variant-numeric: tabular-nums;
   }
-  .client {
-    background: #fff;
-    padding: 22px 18px 20px;
-    display: flex; flex-direction: column; align-items: center; gap: 10px;
-    text-align: center;
-    transition: background 250ms;
+  .megilla-title .mg-t-b {
+    display: block;
+    padding-inline-start: clamp(20px, 6%, 80px);
+    margin-top: -0.06em;
+    letter-spacing: -0.035em;
+    font-size: 0.72em;
+  }
+  .megilla-title .em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--gold);
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    padding-inline: 0.04em;
+  }
+  .megilla-sub {
+    font-size: clamp(16px, 1.4vw, 19px);
+    line-height: 1.55;
+    color: rgba(238,242,247,0.72);
+    margin: 36px 0 0;
+    max-width: 560px;
+    font-weight: 300;
+    text-wrap: pretty;
+  }
+
+  /* ----- Wall grid ----- */
+  .megilla-wall {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1px;
+    background: rgba(196,146,42,0.12);
+    border: 1px solid rgba(196,146,42,0.18);
+    position: relative;
+  }
+  /* No gaps inside -- tiles abut, only hairlines show through background */
+
+  /* ----- Category separator (spans whole row) ----- */
+  .mg-cat {
+    grid-column: 1 / -1;
+    background: var(--navy-deep);
+    padding: 28px 28px 18px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .mg-cat span { flex-shrink: 0; }
+  .mg-cat::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to left, transparent, rgba(196,146,42,0.4));
+  }
+
+  /* ----- Seal (featured: with logo) ----- */
+  .mg-seal {
+    grid-column: span 4;
+    background: var(--cream);
+    color: var(--navy-deep);
+    min-height: 280px;
+    padding: 30px 34px;
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 20px;
+    transition:
+      transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 500ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .mg-seal:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 60px -16px rgba(0,0,0,0.55), 0 0 0 1px rgba(196,146,42,0.5);
+    z-index: 2;
+  }
+  /* Seal stamp corner decoration (top-end) */
+  .mg-seal::before {
+    content: '';
+    position: absolute;
+    top: 18px;
+    inset-inline-end: 18px;
+    width: 14px; height: 14px;
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+  }
+  /* Hebrew letter index (top-start) via CSS var */
+  .mg-seal::after {
+    content: var(--idx, '');
+    position: absolute;
+    top: 12px;
+    inset-inline-start: 22px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 22px;
+    color: var(--gold);
+    font-variation-settings: "opsz" 96, "SOFT" 100;
+    line-height: 1;
+  }
+  .mg-seal-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 16px 16px;
     min-height: 140px;
   }
-  .client:hover { background: #fffdf7; }
-  .client-logo {
-    width: 48px; height: 48px;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 4px;
-  }
-  .client-logo img {
-    max-width: 100%; max-height: 100%;
+  .mg-seal-logo img {
+    max-width: 100%;
+    max-height: 130px;
+    width: auto;
+    height: auto;
     object-fit: contain;
-    filter: grayscale(0.3);
-    transition: filter 250ms;
+    transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .client:hover .client-logo img { filter: grayscale(0); }
-  .client-logo.placeholder {
-    width: 48px; height: 48px;
-    border-radius: 10px;
-    background: var(--cream);
-    color: var(--navy-classic);
-    font-family: var(--font-serif);
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    border: 1px solid rgba(28,43,58,0.08);
+  .mg-seal:hover .mg-seal-logo img { transform: scale(1.04); }
+  .mg-seal-meta {
+    border-top: 1px solid rgba(5,14,27,0.14);
+    padding-top: 16px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
   }
-  .client-name {
-    font-family: var(--font-serif);
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--navy-classic);
-    letter-spacing: -0.01em;
-    line-height: 1.25;
+  .mg-seal-meta .mg-name {
+    font-family: var(--font-title);
+    font-size: clamp(20px, 1.9vw, 24px);
+    font-weight: 400;
+    letter-spacing: -0.018em;
+    margin: 0;
+    color: var(--navy-deep);
+    line-height: 1.05;
   }
-  .client-city {
+  .mg-seal-meta .mg-city {
     font-family: var(--font-mono);
     font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    color: var(--fg-2);
+    letter-spacing: 0.2em;
+    color: rgba(5,14,27,0.55);
     text-transform: uppercase;
-    min-height: 12px;
+    flex-shrink: 0;
+    font-weight: 500;
   }
-  @media (max-width: 720px) {
-    .clients { padding: 60px 20px 70px; }
-    .clients-grid { grid-template-columns: repeat(2, 1fr); }
-    .client { min-height: 120px; padding: 16px 12px; }
+
+  /* ----- Inscription (text-only tile) ----- */
+  .mg-inscription {
+    background: var(--navy-deep);
+    position: relative;
+    padding: 28px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 160px;
+    overflow: hidden;
+    transition: background 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  /* Hebrew letter index — huge, faint, top-right */
+  .mg-inscription::before {
+    content: var(--idx, '');
+    position: absolute;
+    top: 12px;
+    inset-inline-end: 22px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(44px, 5vw, 72px);
+    line-height: 0.9;
+    color: rgba(196,146,42,0.28);
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    transition: color 450ms cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+  .mg-inscription:hover { background: #0A1628; }
+  .mg-inscription:hover::before { color: var(--gold); }
+
+  /* Ink line on hover */
+  .mg-inscription::after {
+    content: '';
+    position: absolute;
+    bottom: 0; inset-inline-end: 0;
+    height: 2px; width: 0;
+    background: var(--gold);
+    transition: width 550ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .mg-inscription:hover::after { width: 100%; }
+
+  .mg-inscription .mg-name {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(24px, 2.4vw, 36px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin: 0 0 10px;
+    text-wrap: balance;
+    font-variation-settings: "opsz" 96, "SOFT" 80;
+    position: relative; z-index: 1;
+  }
+  .mg-inscription .mg-city {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 500;
+    position: relative; z-index: 1;
+  }
+
+  /* Size variants (span control) */
+  .mg-inscription[data-size="sm"]    { grid-column: span 3; }
+  .mg-inscription[data-size="md"]    { grid-column: span 4; }
+  .mg-inscription[data-size="wide"]  { grid-column: span 6; }
+  .mg-inscription[data-size="xwide"] { grid-column: span 8; }
+  .mg-inscription[data-size="full"]  { grid-column: span 12; min-height: 180px; }
+  .mg-inscription[data-size="full"] .mg-name { font-size: clamp(32px, 3.4vw, 56px); }
+  .mg-inscription[data-size="full"]::before { font-size: clamp(64px, 7vw, 120px); }
+
+  /* Subtle rotations (brutalism accent) — on select items only */
+  .mg-tilt-a { transform: rotate(-0.35deg); }
+  .mg-tilt-b { transform: rotate(0.3deg); }
+  .mg-tilt-a:hover, .mg-tilt-b:hover { transform: rotate(0) translateY(-2px); }
+
+  /* ----- Footer line ----- */
+  .megilla-foot {
+    margin-top: 72px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    color: rgba(238,242,247,0.4);
+    text-transform: uppercase;
+    padding-top: 24px;
+    border-top: 1px solid rgba(196,146,42,0.15);
+  }
+  .megilla-foot .mg-foot-dot { color: var(--gold); opacity: 0.7; font-size: 8px; }
+
+  /* ----- Responsive ----- */
+  @media (max-width: 1100px) {
+    .megilla-wall { grid-template-columns: repeat(6, 1fr); }
+    .mg-seal { grid-column: span 6; }
+    .mg-inscription[data-size="sm"]    { grid-column: span 3; }
+    .mg-inscription[data-size="md"]    { grid-column: span 3; }
+    .mg-inscription[data-size="wide"]  { grid-column: span 6; }
+    .mg-inscription[data-size="xwide"] { grid-column: span 6; }
+    .mg-inscription[data-size="full"]  { grid-column: span 6; }
+  }
+  @media (max-width: 620px) {
+    .megilla { padding: 60px 20px; }
+    .megilla-wall { grid-template-columns: 1fr; }
+    .mg-seal, .mg-inscription,
+    .mg-inscription[data-size="sm"],
+    .mg-inscription[data-size="md"],
+    .mg-inscription[data-size="wide"],
+    .mg-inscription[data-size="xwide"],
+    .mg-inscription[data-size="full"] { grid-column: 1 / -1; }
+    .mg-inscription { min-height: 120px; }
+    .mg-inscription[data-size="full"] { min-height: 140px; }
+    .mg-inscription[data-size="full"] .mg-name { font-size: clamp(28px, 7vw, 40px); }
+    .mg-seal { min-height: 220px; }
+    .mg-tilt-a, .mg-tilt-b { transform: none; }
+    .megilla-title { font-size: clamp(64px, 18vw, 120px); }
+    .megilla-title .mg-t-b { font-size: 0.78em; }
+    .megilla-foot { flex-wrap: wrap; gap: 10px; }
+    .mg-cat { padding: 20px 20px 12px; font-size: 10px; letter-spacing: 0.26em; }
   }
 
   /* ===== SECTION SCAFFOLD ===== */
@@ -1264,36 +1519,149 @@
   </div>
 </section>
 
-<!-- credibility strip — 19 subscribed institutions, individual display (user consent per institution) -->
-<section class="clients reveal">
-  <div class="clients-head">
-    <div class="clients-caps">פעילה ב־19 מוסדות</div>
-    <h2 class="clients-title">המוסדות <span class="em">שבוחרים</span> בתל-חץ</h2>
-  </div>
-  <div class="clients-grid">
-    <!-- תלמודי תורה באיאן -->
-    <div class="client"><div class="client-logo"><img src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/fa20eee2-bbb8-4eb2-889a-1c4bcb752705_1776933274908.png" alt="ת״ת באיאן ביתר עילית" loading="lazy"/></div><div class="client-name">ת״ת באיאן</div><div class="client-city">ביתר עילית</div></div>
-    <div class="client"><div class="client-logo placeholder">בא</div><div class="client-name">ת״ת באיאן</div><div class="client-city">קרית גת</div></div>
-    <div class="client"><div class="client-logo placeholder">בא</div><div class="client-name">ת״ת באיאן</div><div class="client-city">ירושלים</div></div>
-    <div class="client"><div class="client-logo placeholder">בא</div><div class="client-name">ישיבה קטנה באיאן</div><div class="client-city">ירושלים</div></div>
-    <div class="client"><div class="client-logo placeholder">בג</div><div class="client-name">ת״ת באיאן גנים</div><div class="client-city">ביתר עילית</div></div>
-    <!-- תלמודי תורה בעלזא -->
-    <div class="client"><div class="client-logo placeholder">בע</div><div class="client-name">ת״ת בעלזא</div><div class="client-city">גבעת זאב</div></div>
-    <div class="client"><div class="client-logo placeholder">בע</div><div class="client-name">ת״ת בעלזא</div><div class="client-city">קרית גת</div></div>
-    <div class="client"><div class="client-logo placeholder">בע</div><div class="client-name">ת״ת בעלזא</div><div class="client-city">חיפה</div></div>
-    <div class="client"><div class="client-logo placeholder">בע</div><div class="client-name">ת״ת בעלזא · רובע ג</div><div class="client-city">ירושלים</div></div>
-    <div class="client"><div class="client-logo placeholder">בע</div><div class="client-name">ת״ת בעלזא · רובע ז</div><div class="client-city">ירושלים</div></div>
-    <div class="client"><div class="client-logo placeholder">בע</div><div class="client-name">ת״ת בעלזא · קדושת אהרן</div><div class="client-city">ירושלים</div></div>
-    <div class="client"><div class="client-logo placeholder">נת</div><div class="client-name">ת״ת בעלזא נתיבות התורה</div><div class="client-city"></div></div>
-    <div class="client"><div class="client-logo placeholder">פר</div><div class="client-name">ת״ת בעלזא פרשת מרדכי</div><div class="client-city"></div></div>
-    <!-- מתיקות התורה -->
-    <div class="client"><div class="client-logo"><img src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/289b1404-e447-4273-a239-1a1377915373_1776249606345.png" alt="ת״ת מתיקות התורה בית שמש" loading="lazy"/></div><div class="client-name">ת״ת מתיקות התורה</div><div class="client-city">בית שמש</div></div>
-    <div class="client"><div class="client-logo placeholder">מת</div><div class="client-name">ת״ת מתיקות התורה</div><div class="client-city">ביתר עילית</div></div>
-    <div class="client"><div class="client-logo placeholder">מת</div><div class="client-name">ת״ת מתיקות התורה</div><div class="client-city">בני ברק</div></div>
-    <!-- בית ספר + מרכזי סיוע -->
-    <div class="client"><div class="client-logo placeholder">מח</div><div class="client-name">בית ספר מתיקות החינוך</div><div class="client-city">ביתר עילית</div></div>
-    <div class="client"><div class="client-logo"><img src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/f729b34b-9759-4553-9010-29ac0ff2c072_1773307738225.jpg" alt="מרכז הרב וובר" loading="lazy"/></div><div class="client-name">מרכז הרב וובר</div><div class="client-city">מרכז סיוע</div></div>
-    <div class="client"><div class="client-logo placeholder">של</div><div class="client-name">מרכז שלהבת</div><div class="client-city">מרכז סיוע</div></div>
+<!-- ============================ מגילת תל-חץ · 19 מוסדות ============================ -->
+<section class="megilla reveal">
+  <div class="megilla-bg" aria-hidden="true"></div>
+
+  <div class="megilla-inner">
+    <header class="megilla-head">
+      <div class="megilla-caps"><span class="mg-led"></span>מגילה · תשפ״ו · בפרודקשן</div>
+      <h2 class="megilla-title">
+        <span class="mg-t-a">י״ט.</span>
+        <span class="mg-t-b">סיפורי <span class="em">אמונה</span>.</span>
+      </h2>
+      <p class="megilla-sub">לא רשימת לקוחות. רשימת שותפים — כל מוסד בחר בתל-חץ, והמערכת הותאמה לדרכו. להלן כולם, בסדר הטמעתם.</p>
+    </header>
+
+    <div class="megilla-wall">
+      <!-- Category: באיאן (5 institutions · 1 seal) -->
+      <div class="mg-cat"><span>א · רשת באיאן</span></div>
+
+      <article class="mg-seal" style="--idx: 'א'">
+        <div class="mg-seal-logo">
+          <img src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/fa20eee2-bbb8-4eb2-889a-1c4bcb752705_1776933274908.png" alt="באיאן ביתר עילית" loading="lazy"/>
+        </div>
+        <div class="mg-seal-meta">
+          <h3 class="mg-name">ת״ת באיאן</h3>
+          <span class="mg-city">ביתר עילית</span>
+        </div>
+      </article>
+
+      <article class="mg-inscription" data-size="md" style="--idx: 'ב'">
+        <h3 class="mg-name">ת״ת באיאן</h3>
+        <span class="mg-city">קרית גת</span>
+      </article>
+
+      <article class="mg-inscription" data-size="md" style="--idx: 'ג'">
+        <h3 class="mg-name">ת״ת באיאן</h3>
+        <span class="mg-city">ירושלים</span>
+      </article>
+
+      <article class="mg-inscription mg-tilt-a" data-size="xwide" style="--idx: 'ד'">
+        <h3 class="mg-name">ישיבה קטנה באיאן</h3>
+        <span class="mg-city">ירושלים · הישיבה הראשונה ברשת</span>
+      </article>
+
+      <article class="mg-inscription" data-size="md" style="--idx: 'ה'">
+        <h3 class="mg-name">ת״ת באיאן גנים</h3>
+        <span class="mg-city">ביתר עילית</span>
+      </article>
+
+      <!-- Category: בעלזא (8 institutions) -->
+      <div class="mg-cat"><span>ב · רשת בעלזא</span></div>
+
+      <article class="mg-inscription" data-size="sm" style="--idx: 'ו'">
+        <h3 class="mg-name">ת״ת בעלזא</h3>
+        <span class="mg-city">גבעת זאב</span>
+      </article>
+
+      <article class="mg-inscription" data-size="sm" style="--idx: 'ז'">
+        <h3 class="mg-name">ת״ת בעלזא</h3>
+        <span class="mg-city">קרית גת</span>
+      </article>
+
+      <article class="mg-inscription mg-tilt-b" data-size="sm" style="--idx: 'ח'">
+        <h3 class="mg-name">ת״ת בעלזא</h3>
+        <span class="mg-city">חיפה</span>
+      </article>
+
+      <article class="mg-inscription" data-size="sm" style="--idx: 'ט'">
+        <h3 class="mg-name">ת״ת בעלזא · רובע ג</h3>
+        <span class="mg-city">ירושלים</span>
+      </article>
+
+      <article class="mg-inscription" data-size="md" style="--idx: 'י'">
+        <h3 class="mg-name">ת״ת בעלזא · רובע ז</h3>
+        <span class="mg-city">ירושלים</span>
+      </article>
+
+      <article class="mg-inscription" data-size="md" style="--idx: 'י״א'">
+        <h3 class="mg-name">ת״ת בעלזא · קדושת אהרן</h3>
+        <span class="mg-city">ירושלים</span>
+      </article>
+
+      <article class="mg-inscription mg-tilt-a" data-size="md" style="--idx: 'י״ב'">
+        <h3 class="mg-name">בעלזא נתיבות התורה</h3>
+        <span class="mg-city">— —</span>
+      </article>
+
+      <article class="mg-inscription" data-size="full" style="--idx: 'י״ג'">
+        <h3 class="mg-name">בעלזא פרשת מרדכי</h3>
+        <span class="mg-city">תלמוד תורה</span>
+      </article>
+
+      <!-- Category: מתיקות (3 · 1 seal) + בית ספר (1) -->
+      <div class="mg-cat"><span>ג · רשת מתיקות התורה + מתיקות החינוך</span></div>
+
+      <article class="mg-seal" style="--idx: 'י״ד'">
+        <div class="mg-seal-logo">
+          <img src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/289b1404-e447-4273-a239-1a1377915373_1776249606345.png" alt="מתיקות התורה בית שמש" loading="lazy"/>
+        </div>
+        <div class="mg-seal-meta">
+          <h3 class="mg-name">ת״ת מתיקות התורה</h3>
+          <span class="mg-city">בית שמש</span>
+        </div>
+      </article>
+
+      <article class="mg-inscription" data-size="md" style="--idx: 'ט״ו'">
+        <h3 class="mg-name">ת״ת מתיקות התורה</h3>
+        <span class="mg-city">ביתר עילית</span>
+      </article>
+
+      <article class="mg-inscription" data-size="md" style="--idx: 'ט״ז'">
+        <h3 class="mg-name">ת״ת מתיקות התורה</h3>
+        <span class="mg-city">בני ברק</span>
+      </article>
+
+      <article class="mg-inscription mg-tilt-b" data-size="full" style="--idx: 'י״ז'">
+        <h3 class="mg-name">בית ספר מתיקות החינוך</h3>
+        <span class="mg-city">ביתר עילית · בנות · בית הספר היחיד ברשימה</span>
+      </article>
+
+      <!-- Category: מרכזי סיוע (2 · 1 seal) -->
+      <div class="mg-cat"><span>ד · מרכזי סיוע</span></div>
+
+      <article class="mg-seal" style="--idx: 'י״ח'">
+        <div class="mg-seal-logo">
+          <img src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/f729b34b-9759-4553-9010-29ac0ff2c072_1773307738225.jpg" alt="מרכז הרב וובר" loading="lazy"/>
+        </div>
+        <div class="mg-seal-meta">
+          <h3 class="mg-name">מרכז הרב וובר</h3>
+          <span class="mg-city">מרכז סיוע</span>
+        </div>
+      </article>
+
+      <article class="mg-inscription" data-size="xwide" style="--idx: 'י״ט'">
+        <h3 class="mg-name">מרכז שלהבת</h3>
+        <span class="mg-city">מרכז סיוע · חינוך</span>
+      </article>
+    </div>
+
+    <footer class="megilla-foot">
+      <span>י״ט מוסדות · 4 קטגוריות · 7 ערים</span>
+      <span class="mg-foot-dot">●</span>
+      <span>עוד בשלבי הטמעה</span>
+    </footer>
   </div>
 </section>
 
