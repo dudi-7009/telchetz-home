@@ -25,7 +25,7 @@
       var prevHtml = btn.innerHTML;
       btn.disabled = true;
       input.disabled = true;
-      btn.innerHTML = 'שולח…';
+      btn.innerHTML = 'שולחים…';
       if (status) { status.textContent = ''; status.style.color = 'rgba(238,242,247,0.6)'; }
       try {
         var resp = await fetch('/api/lead', {
@@ -35,17 +35,17 @@
         });
         var data = await resp.json().catch(function () { return {}; });
         if (resp.ok && data.ok) {
-          btn.innerHTML = '✓ תודה, ניצור קשר';
+          btn.innerHTML = '✓ קיבלנו — נחזור אליכם';
           btn.style.background = 'var(--success)';
           btn.style.color = '#fff';
           input.value = '';
-          if (status) { status.style.color = 'rgba(16,185,129,0.85)'; status.textContent = 'הבקשה התקבלה · נחזור אליך תוך יום עסקים.'; }
+          if (status) { status.style.color = 'rgba(16,185,129,0.85)'; status.textContent = 'הבקשה התקבלה. נחזור אליכם תוך יום עסקים.'; }
         } else {
           var reason = data.error === 'invalid_email'
-            ? 'אימייל לא תקין'
+            ? 'נראה שהאימייל לא תקין — בדקו את ה־@ ואת הדומיין.'
             : data.error === 'rate_limited'
-            ? 'יותר מדי בקשות — נסו שוב בעוד שעה'
-            : 'שליחה נכשלה. אפשר גם להתקשר 02-375-0599';
+            ? 'כבר קיבלנו בקשה מכם. צריך עכשיו? התקשרו 02-375-0599.'
+            : 'לא הצלחנו לשלוח כרגע. התקשרו 02-375-0599 ונסגור את זה בטלפון.';
           btn.innerHTML = prevHtml; btn.disabled = false; input.disabled = false;
           if (status) { status.style.color = 'rgba(220,38,38,0.9)'; status.textContent = reason; }
           if (typeof lucide !== 'undefined') lucide.createIcons();
@@ -53,7 +53,7 @@
         }
       } catch (err) {
         btn.innerHTML = prevHtml; btn.disabled = false; input.disabled = false;
-        if (status) { status.style.color = 'rgba(220,38,38,0.9)'; status.textContent = 'תקלת רשת. אפשר להתקשר 02-375-0599'; }
+        if (status) { status.style.color = 'rgba(220,38,38,0.9)'; status.textContent = 'אין חיבור לאינטרנט. נסו שוב — או התקשרו 02-375-0599.'; }
         if (typeof lucide !== 'undefined') lucide.createIcons();
         return;
       }

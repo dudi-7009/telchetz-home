@@ -159,7 +159,7 @@
     font-size: 16px;
     line-height: var(--leading-body);
     font-weight: 300;
-    font-feature-settings: "kern", "ss01", "cv11";
+    font-feature-settings: "kern";
     font-kerning: normal;
     text-rendering: optimizeLegibility;
   }
@@ -179,7 +179,7 @@
     font-weight: 400;
     letter-spacing: -0.025em;
   }
-  .tabular, .stat-num, .mini-stat-num, .big-num, .hero-numbers .stat-num { font-variant-numeric: tabular-nums; }
+  .tabular { font-variant-numeric: tabular-nums; }
   .editorial-italic { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-variation-settings: "opsz" 96, "SOFT" 80; letter-spacing: -0.015em; }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -193,7 +193,7 @@
     position: fixed; inset: 0;
     pointer-events: none;
     z-index: 100;
-    opacity: 0.35;
+    opacity: 0.18;
     mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.11  0 0 0 0 0.10  0 0 0 0 0.09  0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
@@ -321,21 +321,14 @@
     box-shadow: 4px 4px 0 var(--gold), 0 12px 32px rgba(10, 22, 40, 0.25);
   }
 
-  .hero-below {
-    margin-top: 80px;
-    display: grid;
-    grid-template-columns: 0.4fr 1fr 0.8fr;
-    gap: 64px;
-    align-items: start;
-  }
   .hero-lede {
-    margin: 0;
-    font-size: 21px;
-    line-height: 1.5;
+    margin: 80px 0 0;
+    max-width: 720px;
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.55;
     color: var(--navy);
     font-weight: 200;                         /* whisper-thin vs display 900 */
     text-wrap: pretty;
-    grid-column: 2;
     letter-spacing: -0.005em;
   }
   .hero-lede strong {
@@ -365,108 +358,6 @@
   .hero-lede .q-inline em { font-style: italic; }
   .hero-ctas { margin: 64px 0 0; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
 
-  .hero-aside-num {
-    grid-column: 1;
-    position: relative;
-    padding-inline-end: 24px;
-    border-inline-end: 1px solid rgba(10,22,40,0.15);
-  }
-  .hero-aside-num::before {
-    content: '';
-    position: absolute;
-    top: 0; inset-inline-end: -1px;
-    width: 2px; height: 44px;
-    background: var(--gold);
-  }
-  .big-num {
-    font-family: var(--font-display);             /* Secular One */
-    font-size: 132px;
-    font-weight: 400;                             /* Secular One is single-weight */
-    line-height: 0.85;
-    letter-spacing: -0.065em;
-    color: var(--navy-classic);
-    font-variant-numeric: tabular-nums;
-    margin-bottom: 12px;
-    transform: scaleX(0.94);
-    transform-origin: right center;
-  }
-  .big-num-lbl {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--navy);
-    letter-spacing: 0.12em;
-    line-height: 1.4;
-    text-transform: uppercase;
-  }
-
-  .hero-stats-mini {
-    grid-column: 3;
-    display: flex; flex-direction: column; gap: 18px;
-    padding: 24px 28px;
-    background: var(--navy-classic);
-    color: #fff;
-    border-radius: 0;
-    position: relative;
-    transform: rotate(-1deg) translateY(-10px);
-    box-shadow: 12px 12px 0 var(--gold);
-  }
-  .hero-stats-mini::before {
-    content: 'IN PRODUCTION';
-    position: absolute;
-    top: -12px; inset-inline-end: 16px;
-    font-family: var(--font-mono);
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    background: var(--gold-bright);
-    color: var(--navy-deep);
-    padding: 3px 8px;
-    font-weight: 600;
-  }
-  .mini-stat { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 1px dashed rgba(255,255,255,0.15); padding-bottom: 14px; }
-  .mini-stat:last-child { border-bottom: 0; padding-bottom: 0; }
-  .mini-stat-num {
-    font-family: var(--font-display);             /* Secular One */
-    font-size: 42px;
-    font-weight: 400;
-    line-height: 1;
-    letter-spacing: -0.055em;
-    font-variant-numeric: tabular-nums;
-    color: var(--gold-bright);
-    display: flex; align-items: baseline; gap: 1px;
-  }
-  .mini-stat-num .u { font-size: 18px; color: #fff; font-weight: 500; margin-inline-start: 2px; }
-  .mini-stat-lbl {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.16em;
-    color: rgba(255,255,255,0.6);
-    text-transform: uppercase;
-  }
-
-  .hero-signature {
-    margin-top: 120px;
-    font-family: var(--font-display);
-    font-size: clamp(40px, 7vw, 110px);
-    font-weight: 900;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(10,22,40,0.18);
-    letter-spacing: -0.05em;
-    line-height: 0.95;
-    user-select: none;
-    pointer-events: none;
-    display: flex; flex-direction: column; gap: 0;
-    overflow: hidden;
-    mask-image: linear-gradient(180deg, #000 20%, transparent 95%);
-  }
-  .hero-signature .sig-line:nth-child(2) { transform: translateX(8%); }
-  .hero-signature em {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-weight: 300;
-    color: var(--gold);
-    -webkit-text-stroke: 0;
-  }
   .btn-primary-xl {
     font-size: 14px; font-weight: 600; color: #fff;
     background: var(--navy-classic);
@@ -493,99 +384,92 @@
   .btn-ghost-xl:hover { background: rgba(28,43,58,0.06); }
   .btn-ghost-xl .lucide { width: 14px; height: 14px; }
 
-  /* Hero right column — numbers */
-  .hero-numbers {
-    position: relative;
-    padding: 32px 0;
-    border-top: 1px solid rgba(28, 43, 58, 0.14);
-  }
-  .hero-numbers::before {
-    content: ''; position: absolute; top: -1px; inset-inline-start: 0;
-    width: 120px; height: 2px;
-    background: var(--gold);
-    transform-origin: right;
-  }
-  .hero-numbers-caps {
-    font-size: 10px; font-weight: 500; letter-spacing: 0.28em; color: var(--fg-2); margin-bottom: 26px;
-  }
-  .hero-numbers-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 40px;
-  }
-  .stat { border-inline-end: 1px solid rgba(28, 43, 58, 0.08); padding-inline-end: 24px; }
-  .stat:nth-child(even) { border-inline-end: none; padding-inline-end: 0; }
-  .stat-num {
-    font-family: var(--font-serif);
-    font-size: 56px;
-    font-weight: 500;
-    color: var(--navy-classic);
-    line-height: 0.95;
-    letter-spacing: -0.025em;
-    font-variant-numeric: tabular-nums;
-    display: flex; align-items: baseline; gap: 2px;
-  }
-  .stat-num .u { font-size: 20px; color: var(--gold); font-weight: 400; margin-inline-start: 4px; }
-  .stat-lbl {
-    font-size: 11px; font-weight: 500; letter-spacing: 0.18em; color: var(--fg-2);
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px dotted rgba(28,43,58,0.18);
-  }
-
-  /* Hero credibility strip */
-  .credibility {
+  /* ===== CLIENTS (19 institutions individually) ===== */
+  .clients {
     max-width: 1400px; margin: 0 auto;
-    padding: 28px 40px 60px;
-    display: flex; align-items: center; gap: 40px;
+    padding: 80px 40px 100px;
     border-top: 1px solid rgba(28, 43, 58, 0.08);
   }
-  .credibility-label { font-size: 10px; letter-spacing: 0.28em; color: var(--fg-2); font-weight: 500; flex-shrink: 0; max-width: 140px; line-height: 1.5; }
-  .credibility-logos { display: flex; gap: 48px; flex-wrap: wrap; align-items: center; flex: 1; }
-  .inst-logo { display: flex; align-items: center; gap: 10px; opacity: 0.55; transition: opacity 300ms; filter: grayscale(1); }
-  .inst-logo:hover { opacity: 1; filter: grayscale(0); }
-  .inst-logo-mark { width: 22px; height: 22px; border-radius: 50%; background: var(--navy-classic); color: #fff; font-family: var(--font-serif); font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
-  .inst-logo-name { font-family: var(--font-serif); font-size: 16px; font-weight: 500; color: var(--navy-classic); letter-spacing: -0.01em; }
-
-  /* ===== MARQUEE TICKER ===== */
-  .ticker {
-    position: relative;
-    background: var(--navy-deep);
-    color: #fff;
-    padding: 22px 0;
-    overflow: hidden;
-    border-block: 1px solid rgba(196, 146, 42, 0.25);
+  .clients-head { margin-bottom: 48px; max-width: 720px; }
+  .clients-caps {
+    font-family: var(--font-mono);
+    font-size: 11px; font-weight: 500; letter-spacing: 0.28em;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 12px;
+    text-transform: uppercase;
   }
-  .ticker::before, .ticker::after {
-    content: ''; position: absolute; inset-block: 0; width: 80px; z-index: 2;
+  .clients-caps::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+  .clients-title {
+    font-family: var(--font-title);
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 400;
+    color: var(--navy-classic);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0;
   }
-  .ticker::before { inset-inline-start: 0; background: linear-gradient(to right, var(--navy-deep), transparent); }
-  .ticker::after { inset-inline-end: 0; background: linear-gradient(to left, var(--navy-deep), transparent); }
-  .ticker-track {
-    display: flex; gap: 56px; align-items: center;
-    animation: ticker-scroll 60s linear infinite;
-    width: max-content;
+  .clients-title .em { color: var(--gold); font-family: var(--font-serif); font-style: italic; font-weight: 400; }
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1px;
+    background: rgba(28,43,58,0.08);
+    border: 1px solid rgba(28,43,58,0.08);
   }
-  .ticker-item {
-    display: flex; align-items: center; gap: 14px;
+  .client {
+    background: #fff;
+    padding: 22px 18px 20px;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    text-align: center;
+    transition: background 250ms;
+    min-height: 140px;
+  }
+  .client:hover { background: #fffdf7; }
+  .client-logo {
+    width: 48px; height: 48px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 4px;
+  }
+  .client-logo img {
+    max-width: 100%; max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(0.3);
+    transition: filter 250ms;
+  }
+  .client:hover .client-logo img { filter: grayscale(0); }
+  .client-logo.placeholder {
+    width: 48px; height: 48px;
+    border-radius: 10px;
+    background: var(--cream);
+    color: var(--navy-classic);
     font-family: var(--font-serif);
-    font-size: 22px;
-    color: rgba(238,242,247,0.9);
-    letter-spacing: -0.01em;
-    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    border: 1px solid rgba(28,43,58,0.08);
   }
-  .ticker-item .code {
+  .client-name {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy-classic);
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+  }
+  .client-city {
     font-family: var(--font-mono);
     font-size: 10px;
-    letter-spacing: 0.2em;
-    color: var(--gold);
     font-weight: 500;
-    padding: 3px 8px;
-    border: 1px solid rgba(196,146,42,0.35);
-    border-radius: 3px;
+    letter-spacing: 0.12em;
+    color: var(--fg-2);
+    text-transform: uppercase;
+    min-height: 12px;
   }
-  .ticker-item .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); opacity: 0.5; }
-  @keyframes ticker-scroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(50%); }
+  @media (max-width: 720px) {
+    .clients { padding: 60px 20px 70px; }
+    .clients-grid { grid-template-columns: repeat(2, 1fr); }
+    .client { min-height: 120px; padding: 16px 12px; }
   }
 
   /* ===== SECTION SCAFFOLD ===== */
@@ -795,7 +679,7 @@
   .peek-stat-n { font-family: var(--font-serif); font-size: 16px; font-weight: 700; color: var(--navy-classic); font-variant-numeric: tabular-nums; }
   .peek-stat-l { font-size: 10px; color: var(--fg-3); }
   .peek-rule { height: 2px; background: linear-gradient(to left, var(--gold), transparent); border-radius: 2px; margin: 14px 0 20px; }
-  .peek-qgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+  .peek-qgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 16px; max-width: 420px; }
   .peek-qs { background: #fff; padding: 10px 12px; }
   .peek-qs-l { font-size: 8px; letter-spacing: 0.1em; color: var(--fg-3); font-weight: 500; text-transform: uppercase; }
   .peek-qs-v { font-family: var(--font-serif); font-size: 20px; font-weight: 700; color: var(--navy-classic); line-height: 1.1; margin-top: 2px; font-variant-numeric: tabular-nums; }
@@ -845,44 +729,55 @@
   .pillar-foot { margin-top: 28px; font-size: 12px; color: var(--navy-classic); font-weight: 500; display: flex; align-items: center; gap: 6px; border-top: 1px solid rgba(28,43,58,0.08); padding-top: 16px; }
   .pillar-foot .lucide { width: 12px; height: 12px; transform: scaleX(-1); color: var(--gold); }
 
-  /* ===== PERSONAS ===== */
+  /* ===== PERSONAS · 1 feature + 3 compact ===== */
   .personas-wrap { background: #fff; border-top: 1px solid rgba(28,43,58,0.08); }
-  .personas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .personas {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 0;
+  }
   .persona {
-    padding: 44px 32px 56px;
+    padding: 44px 32px 48px;
     border-inline-start: 1px solid rgba(28,43,58,0.08);
     position: relative;
     transition: background 300ms;
     cursor: default;
+    display: flex; flex-direction: column;
   }
   .persona:first-child { border-inline-start: none; }
   .persona:hover { background: #fffdf7; }
-  .persona-icon {
-    width: 44px; height: 44px;
-    border-radius: 10px;
+  .persona-feature {
     background: var(--navy-deep);
-    color: var(--gold);
+    color: #fff;
+    padding: 56px 36px;
+  }
+  .persona-feature:hover { background: #0b1a30; }
+  .persona-feature .persona-title { color: #fff; }
+  .persona-feature .persona-body { color: rgba(238,242,247,0.75); font-size: 15px; }
+  .persona-feature .persona-use { color: rgba(238,242,247,0.9); font-size: 13px; }
+  .persona-icon {
+    width: 40px; height: 40px;
+    border-radius: 9px;
+    background: var(--cream);
+    color: var(--navy-classic);
     display: flex; align-items: center; justify-content: center;
-    margin-bottom: 22px;
-    position: relative;
+    margin-bottom: 20px;
   }
-  .persona-icon .lucide { width: 20px; height: 20px; }
-  .persona-icon::after {
-    content: ''; position: absolute; bottom: -4px; inset-inline-end: -4px;
-    width: 10px; height: 10px; border-radius: 50%;
-    background: var(--gold);
-    border: 2px solid #fff;
-  }
+  .persona-icon .lucide { width: 18px; height: 18px; }
+  .persona-feature .persona-icon { background: var(--gold); color: var(--navy-deep); }
   .persona-role {
     font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em; color: var(--gold); font-weight: 500; margin-bottom: 10px;
+    text-transform: uppercase;
   }
   .persona-title {
     font-family: var(--font-serif); font-size: 22px; font-weight: 500; color: var(--navy-classic); letter-spacing: -0.015em; line-height: 1.15; margin-bottom: 14px;
   }
-  .persona-body { font-size: 13.5px; color: var(--fg-2); line-height: 1.6; margin-bottom: 22px; }
-  .persona-uses { display: flex; flex-direction: column; gap: 6px; }
+  .persona-feature .persona-title { font-size: 30px; line-height: 1.1; }
+  .persona-body { font-size: 13.5px; color: var(--fg-2); line-height: 1.6; margin-bottom: 20px; flex: 1; }
+  .persona-uses { display: flex; flex-direction: column; gap: 6px; margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(238,242,247,0.1); }
+  .persona:not(.persona-feature) .persona-uses { border-top-color: rgba(28,43,58,0.08); }
   .persona-use { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--fg); }
-  .persona-use .c { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.18em; color: var(--gold); font-weight: 600; min-width: 56px; }
+  .persona-use .c { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.18em; color: var(--gold); font-weight: 600; min-width: 60px; }
 
   /* ===== EDITORIAL QUOTE ===== */
   .quote-wrap {
@@ -893,15 +788,12 @@
     overflow: hidden;
   }
   .quote-wrap::before {
-    content: '“';
+    content: '';
     position: absolute;
-    font-family: var(--font-serif);
-    font-size: 600px;
-    color: var(--gold);
-    opacity: 0.08;
-    top: -100px;
+    top: 60px;
     inset-inline-start: 40px;
-    line-height: 1;
+    width: 48px; height: 3px;
+    background: var(--gold);
     pointer-events: none;
   }
   .quote-inner { max-width: 1100px; margin: 0 auto; position: relative; }
@@ -1299,17 +1191,20 @@
   .reveal-stagger.visible > *:nth-child(5) { transition-delay: 320ms; }
 
   /* responsiveness — keep it dignified on smaller screens */
+  @media (max-width: 1200px) {
+    .personas { grid-template-columns: 1fr; }
+    .personas .persona { border-inline-start: none; border-top: 1px solid rgba(28,43,58,0.08); }
+    .personas .persona:first-child { border-top: none; }
+  }
   @media (max-width: 980px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 56px; }
     .modules-layout { grid-template-columns: 1fr; gap: 48px; }
     .modules-sticky { position: static; }
     .module-count { font-size: 140px; }
-    .pillars, .personas { grid-template-columns: 1fr; }
+    .pillars { grid-template-columns: 1fr; }
     .foot-inner { grid-template-columns: 1fr 1fr; }
     .faq-inner { grid-template-columns: 1fr; gap: 40px; }
     .section { padding: 80px 24px; }
     .hero { padding: 120px 24px 60px; }
-    .credibility { flex-direction: column; align-items: flex-start; padding: 24px; }
     .topnav { padding: 14px 20px; }
     .topnav nav { display: none; }
     /* peek stacks only at very narrow widths — see @media max-width: 720 */
@@ -1348,7 +1243,7 @@
 <section class="hero">
   <div class="hero-grid">
     <div class="reveal">
-      <div class="hero-caps"><span>תשפ״ו</span><span style="opacity:.4">·</span><span>תוכנה לניהול מוסד חינוכי</span><span style="opacity:.4">·</span><span>19 מוסדות · 6 רשתות</span></div>
+      <div class="hero-caps"><span>תשפ״ו</span><span style="opacity:.4">·</span><span>תוכנה לניהול מוסד חינוכי</span><span style="opacity:.4">·</span><span>במגזר החרדי</span></div>
       <h1 class="hero-title">
         <span class="block block-1">עם תל-חץ,</span>
         <span class="block block-2">אני <span class="em">שולט</span></span>
@@ -1356,51 +1251,51 @@
       </h1>
     </div>
 
-    <div class="hero-below reveal">
-      <aside class="hero-aside-num">
-        <div class="big-num" data-count="19">0</div>
-        <div class="big-num-lbl">מוסדות<br/>שולטים. עובדים.</div>
-      </aside>
-      <p class="hero-lede">
-        <strong>תל-חץ</strong> היא <strong>תוכנה לניהול מוסד חינוכי</strong> שבנויה סביב <strong>המנהל</strong> —
-        לא סביב התוכנה, לא סביב המורה, לא סביב הרכזת. מתאימה לישיבות, תלמודי תורה, סמינרים, בתי ספר ומרכזי סיוע במגזר החרדי.
-        <br/><br/>
-        13 מודולים. תלמידים, צוות, כיתות, נוכחות, ציונים, מפגשים, משימות, תקשורת, קבצים, הרשאות, חיוב ועוד — <strong>מסונכרנים במערכת אחת</strong>, עם תצוגה אחת שרואה הכל.
-        אתה לא מקווה. <span class="sarcasm">אתה יודע.</span> אתה לא שואל. <span class="sarcasm">אתה שולט.</span>
-      </p>
-      <div class="hero-stats-mini">
-        <div class="mini-stat"><div class="mini-stat-num"><span data-count="19">0</span></div><div class="mini-stat-lbl">מוסדות בפנים</div></div>
-        <div class="mini-stat"><div class="mini-stat-num">13</div><div class="mini-stat-lbl">מודולים מחוברים</div></div>
-        <div class="mini-stat"><div class="mini-stat-num"><span data-count="100">0</span><span class="u">%</span></div><div class="mini-stat-lbl">שליטה אצל המנהל</div></div>
-      </div>
-    </div>
+    <p class="hero-lede reveal">
+      <strong>תל-חץ</strong> היא <strong>תוכנה לניהול מוסד חינוכי</strong> שבנויה סביב <strong>המנהל</strong> — לא סביב התוכנה, לא סביב המורה, לא סביב הרכזת. מתאימה לישיבות, תלמודי תורה, סמינרים, בתי ספר ומרכזי סיוע במגזר החרדי.
+      <br/><br/>
+      13 מודולים מסונכרנים במערכת אחת, עם תצוגה אחת שרואה הכל. אתם לא מקווים. <span class="sarcasm">אתם יודעים.</span> אתם לא שואלים. <span class="sarcasm">אתם שולטים.</span>
+    </p>
 
     <div class="hero-ctas reveal">
-      <a href="#contact" class="btn-primary-xl">קבע הדגמה חיה <i data-lucide="arrow-left"></i></a>
-      <a href="#system" class="btn-ghost-xl"><i data-lucide="layout-grid"></i>ראה את 13 המודולים</a>
+      <a href="#contact" class="btn-primary-xl">קבעו הדגמה <i data-lucide="arrow-left"></i></a>
+      <a href="#system" class="btn-ghost-xl"><i data-lucide="layout-grid"></i>13 המודולים במבט אחד</a>
     </div>
   </div>
 </section>
 
-<!-- credibility strip — 6 real client networks, displayed with written consent -->
-<div class="credibility reveal">
-  <div class="credibility-label">משמשת 19 מוסדות<br/>ב־6 רשתות חינוך</div>
-  <div class="credibility-logos">
-    <div class="inst-logo"><div class="inst-logo-mark">ב</div><div class="inst-logo-name">רשת באיאן · ת״ת וישיבה קטנה</div></div>
-    <div class="inst-logo"><div class="inst-logo-mark">ב</div><div class="inst-logo-name">רשת בעלזא · תלמודי תורה</div></div>
-    <div class="inst-logo"><div class="inst-logo-mark">מ</div><div class="inst-logo-name">רשת מתיקות התורה</div></div>
-    <div class="inst-logo"><div class="inst-logo-mark">מ</div><div class="inst-logo-name">מתיקות החינוך · בנות</div></div>
-    <div class="inst-logo"><div class="inst-logo-mark">ו</div><div class="inst-logo-name">מרכז הרב וובר</div></div>
-    <div class="inst-logo"><div class="inst-logo-mark">ש</div><div class="inst-logo-name">מרכז שלהבת</div></div>
+<!-- credibility strip — 19 subscribed institutions, individual display (user consent per institution) -->
+<section class="clients reveal">
+  <div class="clients-head">
+    <div class="clients-caps">פעילה ב־19 מוסדות</div>
+    <h2 class="clients-title">המוסדות <span class="em">שבוחרים</span> בתל-חץ</h2>
   </div>
-</div>
-
-<!-- ============================ TICKER ============================ -->
-<div class="ticker">
-  <div class="ticker-track" id="ticker-track">
-    <!-- items will be duplicated via JS for seamless scroll -->
+  <div class="clients-grid">
+    <!-- תלמודי תורה באיאן -->
+    <div class="client"><div class="client-logo"><img src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/fa20eee2-bbb8-4eb2-889a-1c4bcb752705_1776933274908.png" alt="ת״ת באיאן ביתר עילית" loading="lazy"/></div><div class="client-name">ת״ת באיאן</div><div class="client-city">ביתר עילית</div></div>
+    <div class="client"><div class="client-logo placeholder">בא</div><div class="client-name">ת״ת באיאן</div><div class="client-city">קרית גת</div></div>
+    <div class="client"><div class="client-logo placeholder">בא</div><div class="client-name">ת״ת באיאן</div><div class="client-city">ירושלים</div></div>
+    <div class="client"><div class="client-logo placeholder">בא</div><div class="client-name">ישיבה קטנה באיאן</div><div class="client-city">ירושלים</div></div>
+    <div class="client"><div class="client-logo placeholder">בג</div><div class="client-name">ת״ת באיאן גנים</div><div class="client-city">ביתר עילית</div></div>
+    <!-- תלמודי תורה בעלזא -->
+    <div class="client"><div class="client-logo placeholder">בע</div><div class="client-name">ת״ת בעלזא</div><div class="client-city">גבעת זאב</div></div>
+    <div class="client"><div class="client-logo placeholder">בע</div><div class="client-name">ת״ת בעלזא</div><div class="client-city">קרית גת</div></div>
+    <div class="client"><div class="client-logo placeholder">בע</div><div class="client-name">ת״ת בעלזא</div><div class="client-city">חיפה</div></div>
+    <div class="client"><div class="client-logo placeholder">בע</div><div class="client-name">ת״ת בעלזא · רובע ג</div><div class="client-city">ירושלים</div></div>
+    <div class="client"><div class="client-logo placeholder">בע</div><div class="client-name">ת״ת בעלזא · רובע ז</div><div class="client-city">ירושלים</div></div>
+    <div class="client"><div class="client-logo placeholder">בע</div><div class="client-name">ת״ת בעלזא · קדושת אהרן</div><div class="client-city">ירושלים</div></div>
+    <div class="client"><div class="client-logo placeholder">נת</div><div class="client-name">ת״ת בעלזא נתיבות התורה</div><div class="client-city"></div></div>
+    <div class="client"><div class="client-logo placeholder">פר</div><div class="client-name">ת״ת בעלזא פרשת מרדכי</div><div class="client-city"></div></div>
+    <!-- מתיקות התורה -->
+    <div class="client"><div class="client-logo"><img src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/289b1404-e447-4273-a239-1a1377915373_1776249606345.png" alt="ת״ת מתיקות התורה בית שמש" loading="lazy"/></div><div class="client-name">ת״ת מתיקות התורה</div><div class="client-city">בית שמש</div></div>
+    <div class="client"><div class="client-logo placeholder">מת</div><div class="client-name">ת״ת מתיקות התורה</div><div class="client-city">ביתר עילית</div></div>
+    <div class="client"><div class="client-logo placeholder">מת</div><div class="client-name">ת״ת מתיקות התורה</div><div class="client-city">בני ברק</div></div>
+    <!-- בית ספר + מרכזי סיוע -->
+    <div class="client"><div class="client-logo placeholder">מח</div><div class="client-name">בית ספר מתיקות החינוך</div><div class="client-city">ביתר עילית</div></div>
+    <div class="client"><div class="client-logo"><img src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/f729b34b-9759-4553-9010-29ac0ff2c072_1773307738225.jpg" alt="מרכז הרב וובר" loading="lazy"/></div><div class="client-name">מרכז הרב וובר</div><div class="client-city">מרכז סיוע</div></div>
+    <div class="client"><div class="client-logo placeholder">של</div><div class="client-name">מרכז שלהבת</div><div class="client-city">מרכז סיוע</div></div>
   </div>
-</div>
+</section>
 
 <!-- ============================ THE SYSTEM (13 modules) ============================ -->
 <section class="system-wrap" id="system">
@@ -1465,9 +1360,7 @@
 
           <div class="peek-qgrid">
             <div class="peek-qs"><div class="peek-qs-l">נוכחות היום</div><div class="peek-qs-v">94%</div><div class="peek-qs-d" style="color: var(--success)">↑ 2.1%</div></div>
-            <div class="peek-qs"><div class="peek-qs-l">פגישות</div><div class="peek-qs-v">23</div><div class="peek-qs-d" style="color: var(--fg-2)">12 פעילות</div></div>
-            <div class="peek-qs"><div class="peek-qs-l">התראות</div><div class="peek-qs-v">7</div><div class="peek-qs-d" style="color: var(--danger)">↑ 3 חדשות</div></div>
-            <div class="peek-qs"><div class="peek-qs-l">תקציב</div><div class="peek-qs-v">72%</div><div class="peek-qs-d" style="color: var(--fg-2)">₪847K / 1.18M</div></div>
+            <div class="peek-qs"><div class="peek-qs-l">התראות פתוחות</div><div class="peek-qs-v">7</div><div class="peek-qs-d" style="color: var(--danger)">↑ 3 חדשות</div></div>
           </div>
 
           <div class="peek-cards">
@@ -1501,7 +1394,7 @@
         <aside class="peek-side">
           <div class="peek-side-head">
             <img src="/assets/mark.svg" alt=""/>
-            <div><div class="n">תלמוד תורה באיאן</div><div class="s">ביתר עילית</div></div>
+            <div><div class="n">ת״ת לדוגמה</div><div class="s">מסך הדגמה · נתונים מדומים</div></div>
           </div>
           <div class="peek-nav-item active"><i data-lucide="layout-dashboard"></i>לוח בקרה</div>
           <div class="peek-nav-item"><i data-lucide="message-square"></i>שיחות</div>
@@ -1668,14 +1561,14 @@
       <h2 class="section-title">מותאמת לכל <span class="em">תפקיד</span> במוסד.</h2>
     </div>
     <div class="personas reveal-stagger">
-      <div class="persona">
+      <div class="persona persona-feature">
         <div class="persona-icon"><i data-lucide="building-2"></i></div>
-        <div class="persona-role">מנהל מוסד</div>
+        <div class="persona-role">מנהל מוסד · הקהל הראשי</div>
         <div class="persona-title">שליטה שקטה. החלטות מבוססות.</div>
-        <p class="persona-body">לוח בקרה שמספר את האמת. תקציב, נוכחות, שכר — בלחיצה אחת. בלי להתקשר לרכזת, בלי להפוך ארון מסמכים.</p>
+        <p class="persona-body">לוח בקרה שמספר את האמת. תקציב, נוכחות, שכר — בלחיצה אחת. בלי להתקשר לרכזת, בלי להפוך ארון מסמכים. מסך אחד שיודע הכל — והמנהל שולט עליו.</p>
         <div class="persona-uses">
-          <div class="persona-use"><span class="c">BUDGET</span>ניצול תקציב</div>
-          <div class="persona-use"><span class="c">REPORT</span>דוחות לרשות</div>
+          <div class="persona-use"><span class="c">BUDGET</span>ניצול תקציב בזמן אמת</div>
+          <div class="persona-use"><span class="c">REPORT</span>דוחות לרשות ולרשת</div>
           <div class="persona-use"><span class="c">ALERT</span>התראות ניהוליות</div>
         </div>
       </div>
@@ -1683,34 +1576,19 @@
         <div class="persona-icon"><i data-lucide="graduation-cap"></i></div>
         <div class="persona-role">מלמד · מחנכת</div>
         <div class="persona-title">כיתה אחת. מסך אחד.</div>
-        <p class="persona-body">רשימה, נוכחות, ציונים, פגישות הורים, הערות פדגוגיות — הכל בתוך הכיתה. לא בדף נפרד, לא באפליקציה אחרת.</p>
-        <div class="persona-uses">
-          <div class="persona-use"><span class="c">ATTEND</span>נוכחות יומית</div>
-          <div class="persona-use"><span class="c">GRADE</span>ציונים ומבחנים</div>
-          <div class="persona-use"><span class="c">MEETING</span>פגישות הורים</div>
-        </div>
+        <p class="persona-body">רשימה, נוכחות, ציונים, פגישות הורים — הכל בתוך הכיתה.</p>
       </div>
       <div class="persona">
         <div class="persona-icon"><i data-lucide="shield-check"></i></div>
         <div class="persona-role">יועצת · רכז סיוע</div>
-        <div class="persona-title">תיק תלמיד שלם, בעין אחת.</div>
-        <p class="persona-body">היסטוריה פדגוגית, ועדות השמה, טפסים רפואיים, שיחות עם הורים — כולם בתיק אחד. שומר שקט ודיסקרטיות.</p>
-        <div class="persona-uses">
-          <div class="persona-use"><span class="c">PROCESS</span>ועדות השמה</div>
-          <div class="persona-use"><span class="c">FORM</span>טפסים רגישים</div>
-          <div class="persona-use"><span class="c">TAG</span>סיווג דיסקרטי</div>
-        </div>
+        <div class="persona-title">תיק שלם, בעין אחת.</div>
+        <p class="persona-body">היסטוריה פדגוגית, ועדות השמה, טפסים — בתיק אחד דיסקרטי.</p>
       </div>
       <div class="persona">
         <div class="persona-icon"><i data-lucide="banknote"></i></div>
         <div class="persona-role">מנהל כספים</div>
         <div class="persona-title">סוף חודש נסגר עצמו.</div>
-        <p class="persona-body">חיובי משפחות, שכר מלמדים, תקציב, גבייה — מערכת אחת מחוברת. חשבונית דיגיטלית, תזכורות אוטומטיות, דיווח לרו״ח בקליק.</p>
-        <div class="persona-uses">
-          <div class="persona-use"><span class="c">BILLING</span>חיובים חוזרים</div>
-          <div class="persona-use"><span class="c">SALARY</span>שכר צוות</div>
-          <div class="persona-use"><span class="c">BUDGET</span>בקרת תקציב</div>
-        </div>
+        <p class="persona-body">חיובים, שכר, תקציב, גבייה — מערכת אחת. חשבונית דיגיטלית, דיווח לרו״ח בקליק.</p>
       </div>
     </div>
   </div>
@@ -1726,8 +1604,8 @@
     <div class="quote-attr">
       <div class="quote-avatar">מ</div>
       <div>
-        <div class="quote-attr-name">מנהל · רשת ת״ת במגזר החרדי</div>
-        <div class="quote-attr-role">ציטוט מלקוח — שם מלא יפורסם עם אישור בכתב</div>
+        <div class="quote-attr-name">מנהל רשת ת״ת · מגזר חרדי</div>
+        <div class="quote-attr-role">שם יפורסם בקרוב</div>
       </div>
     </div>
   </div>
@@ -1739,7 +1617,7 @@
     <div class="reveal">
       <div class="section-caps">שאלות נפוצות</div>
       <h2 class="section-title">מה שכדאי<br/>לדעת <span class="em">מראש.</span></h2>
-      <p class="section-sub">לא מצאת תשובה? צור קשר — נענה תוך יום עסקים.</p>
+      <p class="section-sub">לא מצאתם תשובה? צרו קשר — נענה תוך יום עסקים.</p>
     </div>
     <div class="faq-list reveal">
       <div class="faq-item">
@@ -1778,8 +1656,8 @@
     <p class="cta-sub">הדגמה אישית עם מנהל חשבון, מותאמת למוסד שלכם. 30 דקות בלי מחויבות. הצעת מחיר — מיד לאחר מכן.</p>
 
     <form class="cta-form" id="lead-form" onsubmit="event.preventDefault(); submitContact(this);">
-      <input type="email" name="email" class="cta-input" placeholder="האימייל שלך · info@mosad.org.il" autocomplete="email" required/>
-      <button class="cta-btn" type="submit">קבלו הצעת מחיר <i data-lucide="arrow-left"></i></button>
+      <input type="email" name="email" class="cta-input" placeholder="info@mosad.org.il" aria-label="האימייל שלכם" autocomplete="email" required/>
+      <button class="cta-btn" type="submit">קבעו הדגמה <i data-lucide="arrow-left"></i></button>
     </form>
     <div id="lead-form-status" role="status" aria-live="polite" style="min-height:18px;margin-top:14px;font-size:12px;color:rgba(238,242,247,0.6)"></div>
 
@@ -1819,7 +1697,7 @@
         <li><a href="#">אודות</a></li>
         <li><a href="#">אבטחה ופרטיות</a></li>
         <li><a href="#">תנאי שימוש</a></li>
-        <li><a href="#">צור קשר</a></li>
+        <li><a href="#contact">צרו קשר</a></li>
       </ul>
     </div>
     <div class="foot-col">
@@ -1871,51 +1749,11 @@
     topnav.classList.toggle('scrolled', window.scrollY > 20);
   });
 
-  // Ticker — build + duplicate for seamless loop
-  const tickerItems = [
-    { code: 'GRADE', label: 'מבחנים וציונים' },
-    { code: 'TASK', label: 'משימות צוות' },
-    { code: 'MEETING', label: 'פגישות הורים' },
-    { code: 'REPORT', label: 'דוחות אוטומטיים' },
-    { code: 'ALERT', label: 'התראות חכמות' },
-    { code: 'ATTENDANCE', label: 'ניהול נוכחות' },
-    { code: 'TAG', label: 'תיוגים מתקדמים' },
-    { code: 'FORM', label: 'טפסים דיגיטליים' },
-    { code: 'PROCESS', label: 'תהליכים ואישורים' },
-    { code: 'SALARY', label: 'שכר ותלושים' },
-    { code: 'BILLING', label: 'חיובי משפחות' },
-    { code: 'BUDGET', label: 'בקרת תקציב' },
-    { code: 'PLAN', label: 'תכנון שנתי' }
-  ];
-  const track = document.getElementById('ticker-track');
-  const renderTicker = () => tickerItems.map(t =>
-    `<div class="ticker-item"><span class="code">${t.code}</span><span>${t.label}</span><span class="dot"></span></div>`
-  ).join('');
-  track.innerHTML = renderTicker() + renderTicker();
-
-  // Count-up stats
-  const countEls = document.querySelectorAll('[data-count]');
-  const countUp = (el) => {
-    const target = +el.dataset.count;
-    const t0 = performance.now();
-    const dur = 1400;
-    const tick = (now) => {
-      const p = Math.min((now - t0) / dur, 1);
-      const eased = 1 - Math.pow(1 - p, 4);
-      el.textContent = Math.round(target * eased).toLocaleString('he-IL');
-      if (p < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  };
-
-  // Reveal on scroll + count-up trigger
+  // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.classList.add('visible');
-        e.target.querySelectorAll('[data-count]').forEach(el => {
-          if (!el.dataset.done) { el.dataset.done = '1'; countUp(el); }
-        });
         io.unobserve(e.target);
       }
     });
@@ -1943,7 +1781,7 @@
     const prevHtml = btn.innerHTML;
     btn.disabled = true;
     input.disabled = true;
-    btn.innerHTML = 'שולח…';
+    btn.innerHTML = 'שולחים…';
     status.textContent = '';
     status.style.color = 'rgba(238,242,247,0.6)';
 
@@ -1955,18 +1793,18 @@
       });
       const data = await resp.json().catch(() => ({}));
       if (resp.ok && data.ok) {
-        btn.innerHTML = '✓ תודה, ניצור קשר';
+        btn.innerHTML = '✓ קיבלנו — נחזור אליכם';
         btn.style.background = 'var(--success)';
         btn.style.color = '#fff';
         input.value = '';
         status.style.color = 'rgba(16,185,129,0.85)';
-        status.textContent = 'הבקשה התקבלה · נחזור אליך תוך יום עסקים.';
+        status.textContent = 'הבקשה התקבלה. נחזור אליכם תוך יום עסקים.';
       } else {
         const reason = data.error === 'invalid_email'
-          ? 'אימייל לא תקין'
+          ? 'נראה שהאימייל לא תקין — בדקו את ה־@ ואת הדומיין.'
           : data.error === 'rate_limited'
-          ? 'יותר מדי בקשות — נסו שוב בעוד שעה'
-          : 'שליחה נכשלה. אפשר גם להתקשר 02-375-0599';
+          ? 'כבר קיבלנו בקשה מכם. צריך עכשיו? התקשרו 02-375-0599.'
+          : 'לא הצלחנו לשלוח כרגע. התקשרו 02-375-0599 ונסגור את זה בטלפון.';
         btn.innerHTML = prevHtml;
         btn.disabled = false;
         input.disabled = false;
@@ -1980,7 +1818,7 @@
       btn.disabled = false;
       input.disabled = false;
       status.style.color = 'rgba(220,38,38,0.9)';
-      status.textContent = 'תקלת רשת. אפשר להתקשר 02-375-0599';
+      status.textContent = 'אין חיבור לאינטרנט. נסו שוב — או התקשרו 02-375-0599.';
       if (typeof lucide !== 'undefined') lucide.createIcons();
       return;
     }
