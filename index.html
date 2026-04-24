@@ -384,28 +384,33 @@
   .btn-ghost-xl:hover { background: rgba(28,43,58,0.06); }
   .btn-ghost-xl .lucide { width: 14px; height: 14px; }
 
-  /* ===== מגילת תל-חץ · 19 מוסדות · Editorial dark section ===== */
+  /* ===== מגילת תל-חץ · 19 מוסדות · Editorial section (colorized) ===== */
   .megilla {
-    background: var(--navy-deep);
+    background:
+      radial-gradient(ellipse 60% 40% at 15% 5%, rgba(245,194,60,0.09), transparent 55%),
+      radial-gradient(ellipse 55% 45% at 95% 85%, rgba(196,146,42,0.08), transparent 50%),
+      radial-gradient(ellipse 40% 60% at 50% 50%, rgba(110,50,30,0.06), transparent 60%),
+      linear-gradient(180deg, #0a1628 0%, #050E1B 55%, #0a1628 100%);
     color: #fff;
     padding: clamp(80px, 12vh, 140px) 40px clamp(80px, 12vh, 140px);
     position: relative;
     overflow: hidden;
-    border-block: 1px solid rgba(196,146,42,0.18);
+    border-block: 1px solid rgba(196,146,42,0.22);
     isolation: isolate;
   }
-  /* Diagonal hairlines watermark — subtle scroll feel */
+  /* Diagonal hairlines watermark + subtle warm grain */
   .megilla-bg {
     position: absolute; inset: 0;
     background-image:
       repeating-linear-gradient(
         45deg,
         transparent 0 96px,
-        rgba(196,146,42,0.05) 96px 97px
+        rgba(235,215,154,0.045) 96px 97px
       ),
-      radial-gradient(ellipse at 85% 10%, rgba(196,146,42,0.1), transparent 55%);
+      radial-gradient(ellipse at 85% 10%, rgba(245,194,60,0.08), transparent 55%);
     pointer-events: none;
     z-index: 0;
+    mix-blend-mode: screen;
   }
   .megilla-inner {
     max-width: 1440px;
@@ -469,37 +474,57 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 1px;
-    background: rgba(196,146,42,0.12);
-    border: 1px solid rgba(196,146,42,0.18);
+    background: linear-gradient(135deg, rgba(196,146,42,0.25), rgba(235,215,154,0.1) 50%, rgba(196,146,42,0.2));
+    border: 1px solid rgba(196,146,42,0.28);
     position: relative;
+    box-shadow: 0 24px 60px -24px rgba(0,0,0,0.6);
   }
   /* No gaps inside -- tiles abut, only hairlines show through background */
 
   /* ----- Category separator (spans whole row) ----- */
   .mg-cat {
     grid-column: 1 / -1;
-    background: var(--navy-deep);
+    background:
+      linear-gradient(90deg, color-mix(in oklab, var(--cat-tone, var(--gold)) 8%, transparent), transparent 60%),
+      #07121f;
     padding: 28px 28px 18px;
     font-family: var(--font-mono);
     font-size: 10.5px;
     letter-spacing: 0.3em;
-    color: var(--gold);
+    color: var(--cat-tone, var(--gold));
     text-transform: uppercase;
     display: flex;
     align-items: center;
     gap: 18px;
+    position: relative;
+  }
+  .mg-cat::before {
+    content: '';
+    position: absolute;
+    top: 0; inset-inline-start: 0;
+    width: 3px; height: 100%;
+    background: var(--cat-tone, var(--gold));
+    opacity: 0.85;
   }
   .mg-cat span { flex-shrink: 0; }
   .mg-cat::after {
     content: '';
     flex: 1;
     height: 1px;
-    background: linear-gradient(to left, transparent, rgba(196,146,42,0.4));
+    background: linear-gradient(to left, transparent, color-mix(in oklab, var(--cat-tone, var(--gold)) 45%, transparent));
   }
+
+  /* ----- Tile tone cascade via sibling combinator ----- */
+  .mg-inscription { --tile-tone: #D4A014; }
+  .mg-cat[data-cat="b"] ~ .mg-inscription { --tile-tone: #EBD79A; }
+  .mg-cat[data-cat="c"] ~ .mg-inscription { --tile-tone: #F5C23C; }
+  .mg-cat[data-cat="d"] ~ .mg-inscription { --tile-tone: #E89B4A; }
 
   /* ----- Inscription tile (unified for all 19) ----- */
   .mg-inscription {
-    background: var(--navy-deep);
+    background:
+      radial-gradient(ellipse at 0% 100%, color-mix(in oklab, var(--tile-tone, var(--gold)) 5%, transparent), transparent 55%),
+      linear-gradient(180deg, #0d1b31 0%, #0a1628 100%);
     position: relative;
     padding: 28px 28px 24px;
     display: flex;
@@ -507,9 +532,11 @@
     justify-content: flex-end;
     min-height: 160px;
     overflow: hidden;
-    transition: background 450ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition:
+      background 450ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 450ms cubic-bezier(0.16, 1, 0.3, 1);
   }
-  /* Hebrew letter index — huge, faint, top-right */
+  /* Hebrew letter index — huge, faint, top-right (inherits category tone) */
   .mg-inscription::before {
     content: var(--idx, '');
     position: absolute;
@@ -520,21 +547,26 @@
     font-weight: 300;
     font-size: clamp(44px, 5vw, 72px);
     line-height: 0.9;
-    color: rgba(196,146,42,0.28);
+    color: color-mix(in oklab, var(--tile-tone, var(--gold)) 32%, transparent);
     font-variation-settings: "opsz" 144, "SOFT" 100;
     transition: color 450ms cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
   }
-  .mg-inscription:hover { background: #0A1628; }
-  .mg-inscription:hover::before { color: var(--gold); }
+  .mg-inscription:hover {
+    background:
+      radial-gradient(ellipse at 0% 100%, color-mix(in oklab, var(--tile-tone, var(--gold)) 12%, transparent), transparent 60%),
+      linear-gradient(180deg, #142544 0%, #0f1d35 100%);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--tile-tone, var(--gold)) 35%, transparent);
+  }
+  .mg-inscription:hover::before { color: var(--tile-tone, var(--gold)); }
 
-  /* Ink line on hover */
+  /* Ink line on hover — category colored */
   .mg-inscription::after {
     content: '';
     position: absolute;
     bottom: 0; inset-inline-end: 0;
     height: 2px; width: 0;
-    background: var(--gold);
+    background: var(--tile-tone, var(--gold));
     transition: width 550ms cubic-bezier(0.16, 1, 0.3, 1);
   }
   .mg-inscription:hover::after { width: 100%; }
@@ -556,37 +588,52 @@
     font-family: var(--font-mono);
     font-size: 10.5px;
     letter-spacing: 0.22em;
-    color: var(--gold);
+    color: var(--tile-tone, var(--gold));
     text-transform: uppercase;
     font-weight: 500;
     position: relative; z-index: 1;
   }
 
-  /* Verified partner: small logo mark at bottom-inline-start (visual left in RTL) */
-  .mg-verified { padding-inline-end: 28px; padding-bottom: 28px; }
+  /* Verified partner: warm glow from mark corner + logo badge */
+  .mg-verified {
+    padding-inline-end: 28px;
+    padding-bottom: 28px;
+    background:
+      radial-gradient(circle at 12% 88%, rgba(245,241,232,0.12), transparent 38%),
+      radial-gradient(ellipse at 0% 100%, color-mix(in oklab, var(--tile-tone, var(--gold)) 10%, transparent), transparent 55%),
+      linear-gradient(180deg, #0d1b31 0%, #0a1628 100%);
+  }
+  .mg-verified:hover {
+    background:
+      radial-gradient(circle at 12% 88%, rgba(245,241,232,0.18), transparent 42%),
+      radial-gradient(ellipse at 0% 100%, color-mix(in oklab, var(--tile-tone, var(--gold)) 18%, transparent), transparent 60%),
+      linear-gradient(180deg, #142544 0%, #0f1d35 100%);
+  }
   .mg-verified .mg-mark {
     position: absolute;
     bottom: 22px;
     inset-inline-start: 24px;
-    width: 46px;
-    height: 46px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
-    padding: 5px;
-    background: var(--cream);
-    border-radius: 10px;
+    padding: 6px;
+    background: #fdf7e8;
+    border-radius: 12px;
     box-shadow:
-      0 0 0 1px rgba(196,146,42,0.22),
-      0 6px 14px rgba(0,0,0,0.32);
+      0 0 0 1px color-mix(in oklab, var(--tile-tone, var(--gold)) 45%, transparent),
+      0 8px 18px rgba(0,0,0,0.4),
+      inset 0 1px 0 rgba(255,255,255,0.6);
     z-index: 2;
     transition:
       transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
       box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1);
   }
   .mg-verified:hover .mg-mark {
-    transform: translateY(-2px);
+    transform: translateY(-3px) rotate(-1.5deg);
     box-shadow:
-      0 0 0 1px rgba(196,146,42,0.5),
-      0 10px 22px rgba(0,0,0,0.45);
+      0 0 0 1px var(--tile-tone, var(--gold)),
+      0 14px 28px rgba(0,0,0,0.5),
+      inset 0 1px 0 rgba(255,255,255,0.7);
   }
 
   /* Size variants (span control) */
@@ -1453,7 +1500,7 @@
 
     <div class="megilla-wall">
       <!-- Category: באיאן (5 institutions · 1 seal) -->
-      <div class="mg-cat"><span>א · רשת באיאן</span></div>
+      <div class="mg-cat" data-cat="a" style="--cat-tone: #D4A014"><span>א · רשת באיאן</span></div>
 
       <article class="mg-inscription mg-verified" data-size="md" style="--idx: 'א'">
         <img class="mg-mark" src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/fa20eee2-bbb8-4eb2-889a-1c4bcb752705_1776933274908.png" alt="" loading="lazy"/>
@@ -1482,7 +1529,7 @@
       </article>
 
       <!-- Category: בעלזא (8 institutions) -->
-      <div class="mg-cat"><span>ב · רשת בעלזא</span></div>
+      <div class="mg-cat" data-cat="b" style="--cat-tone: #EBD79A"><span>ב · רשת בעלזא</span></div>
 
       <article class="mg-inscription" data-size="sm" style="--idx: 'ו'">
         <h3 class="mg-name">ת״ת בעלזא</h3>
@@ -1525,7 +1572,7 @@
       </article>
 
       <!-- Category: מתיקות (3 · 1 seal) + בית ספר (1) -->
-      <div class="mg-cat"><span>ג · רשת מתיקות התורה + מתיקות החינוך</span></div>
+      <div class="mg-cat" data-cat="c" style="--cat-tone: #F5C23C"><span>ג · רשת מתיקות התורה + מתיקות החינוך</span></div>
 
       <article class="mg-inscription mg-verified" data-size="md" style="--idx: 'י״ד'">
         <img class="mg-mark" src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/289b1404-e447-4273-a239-1a1377915373_1776249606345.png" alt="" loading="lazy"/>
@@ -1549,7 +1596,7 @@
       </article>
 
       <!-- Category: מרכזי סיוע (2 · 1 seal) -->
-      <div class="mg-cat"><span>ד · מרכזי סיוע</span></div>
+      <div class="mg-cat" data-cat="d" style="--cat-tone: #E89B4A"><span>ד · מרכזי סיוע</span></div>
 
       <article class="mg-inscription mg-verified" data-size="md" style="--idx: 'י״ח'">
         <img class="mg-mark" src="https://api.telchetz.com/storage/v1/object/public/logos/institutions/f729b34b-9759-4553-9010-29ac0ff2c072_1773307738225.jpg" alt="" loading="lazy"/>
